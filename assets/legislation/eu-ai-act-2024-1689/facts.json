@@ -26,6 +26,12 @@
       "limited_risk_transparency",
       "minimal_risk"
     ],
+    "value_descriptions": {
+      "prohibited": "Practices explicitly banned under Art. 5 — e.g. subliminal manipulation, social scoring by public authorities, real-time remote biometric identification in public spaces (with narrow exceptions), emotion recognition in workplaces or schools.",
+      "high_risk": "AI systems posing significant risks to health, safety or fundamental rights. Includes safety components of Annex I regulated products (machinery, medical devices, vehicles) and use cases listed in Annex III (biometrics, critical infrastructure, employment, law enforcement, border control, justice).",
+      "limited_risk_transparency": "AI systems requiring transparency obligations only — e.g. chatbots interacting with users, systems generating synthetic content (deepfakes). No conformity assessment required.",
+      "minimal_risk": "AI systems with minimal or no risk (e.g. spam filters, AI in video games). No mandatory requirements under this Regulation."
+    },
     "description": "The risk tier of the AI system as determined by Art. 5 (prohibited), Art. 6 (high-risk), Art. 50 (limited risk — transparency only), or no mandatory requirements (minimal risk). Determines the applicable obligation set.",
     "source": "Provider's classification assessment; confirmed by conformity assessment for high-risk systems",
     "source_article": "Art. 5; Art. 6; Art. 50",
@@ -41,6 +47,12 @@
       "both",
       "not_high_risk"
     ],
+    "value_descriptions": {
+      "annex_i_product_safety_component": "The AI system is a safety component of a product regulated under Annex I legislation (e.g. machinery, medical devices, vehicles, toys). Conformity assessment must align with the product's own procedure — third-party notified body assessment is typically required.",
+      "annex_iii_use_case": "The AI system falls within one of the 8 use case areas listed in Annex III. Most can use internal conformity assessment (Annex VI) unless it is a biometric identification system.",
+      "both": "The AI system is both a safety component of an Annex I product AND falls within an Annex III use case. The stricter Annex I product conformity procedure applies.",
+      "not_high_risk": "The AI system does not meet Annex I or Annex III criteria, or the Art. 6(3) exemption applies. High-risk obligations do not apply."
+    },
     "description": "Whether the high-risk classification arises from Art. 6(1) (safety component of an Annex I product requiring 3rd-party conformity assessment) or Art. 6(2) (listed in Annex III use cases). Affects conformity assessment procedure and application deadlines.",
     "source": "Provider's classification assessment; product legislation check for Annex I",
     "source_article": "Art. 6(1); Art. 6(2)",
@@ -61,6 +73,17 @@
       "8_administration_of_justice_democratic_processes",
       "none"
     ],
+    "value_descriptions": {
+      "1_biometrics": "Remote biometric identification systems, biometric categorisation inferring sensitive attributes (race, political views, religion, sexual orientation), emotion recognition systems.",
+      "2_critical_infrastructure": "AI used as safety components in critical infrastructure: electricity, water, gas, heating, transport, internet.",
+      "3_education_vocational_training": "AI determining access to educational institutions, evaluating learning outcomes, assessing students, monitoring during exams.",
+      "4_employment_workers_management": "AI for recruitment, CV screening, job advertisements, promotion decisions, task allocation, performance and behaviour monitoring.",
+      "5_essential_services_benefits": "AI for credit scoring, social benefits or services eligibility, emergency services dispatch, health and life insurance risk assessment.",
+      "6_law_enforcement": "AI for individual risk assessment in criminal investigations, polygraph-type tools, crime prediction, evidence reliability assessment, facial recognition from CCTV footage.",
+      "7_migration_asylum_border": "AI for visa or asylum application risk assessment, document authenticity verification, examining protection applications.",
+      "8_administration_of_justice_democratic_processes": "AI assisting courts in fact-finding or applying the law, influencing elections or voting behaviour.",
+      "none": "The AI system does not fall within any Annex III use case. High-risk classification under Art. 6(2) does not apply."
+    },
     "description": "The Annex III category that triggers high-risk classification. Area 1 includes: remote biometric identification systems, biometric categorisation inferring sensitive attributes, emotion recognition. Areas 2-8 cover infrastructure, education, employment, essential services, law enforcement, migration, justice/democracy.",
     "source": "Provider's classification assessment against Annex III use cases",
     "source_article": "Annex III; Art. 6(2)",
@@ -84,6 +107,11 @@
       "third_party_notified_body",
       "not_applicable"
     ],
+    "value_descriptions": {
+      "internal_control": "Annex VI procedure: the provider conducts the assessment internally and draws up the EU Declaration of Conformity. Available for most Annex III systems.",
+      "third_party_notified_body": "Annex VII procedure: an accredited notified body must conduct or oversee the assessment. Required for Annex I product safety components and real-time remote biometric identification systems.",
+      "not_applicable": "No conformity assessment required — the system is not high-risk."
+    },
     "description": "Whether the high-risk AI system requires internal conformity assessment (Annex VI) or third-party assessment by a notified body (Annex VII). Systems in Annex I product legislation areas generally require notified body assessment; some Annex III systems allow internal assessment.",
     "source": "Determined by applicable conformity assessment procedure (Art. 43)",
     "source_article": "Art. 43; Annex VI; Annex VII",
