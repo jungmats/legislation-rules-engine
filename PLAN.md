@@ -13,23 +13,23 @@ Status legend: `[ ]` todo · `[x]` done · `[-]` skipped
 
 ## Phase 2 — Engine (pure TypeScript)
 
-- [ ] 2.1 `types.ts` — interfaces for all 13 JSON file types
-- [ ] 2.2 `loader.ts` — load and index JSON files into `RegulationIndex`
-- [ ] 2.3 `scorer.ts` — gating score computation, dynamic recomputation after each answer
-- [ ] 2.4 `evaluator.ts` — three-state rule evaluation (confirmed / possible / ruled_out)
-- [ ] 2.5 `deadlines.ts` — fixed and fact-relative deadline computation
-- [ ] 2.6 `session.ts` — session state machine
+- [x] 2.1 `types.ts` — interfaces for all 13 JSON file types
+- [x] 2.2 `loader.ts` — load and index JSON files into `RegulationIndex`
+- [x] 2.3 `scorer.ts` — gating score computation, dynamic recomputation after each answer
+- [x] 2.4 `evaluator.ts` — three-state rule evaluation (confirmed / possible / ruled_out)
+- [x] 2.5 `deadlines.ts` — fixed and fact-relative deadline computation
+- [x] 2.6 `session.ts` — session state machine
 
 ## Phase 3 — UI
 
-- [ ] 3.1 `App.tsx` + step routing (RegulationPick → RoleSelect → Questioning → Complete)
-- [ ] 3.2 `RegulationPicker.tsx` — select regulation from bundled list
-- [ ] 3.3 `RoleSelector.tsx` — select entity role for this session
-- [ ] 3.4 `FactQuestion.tsx` — renders a question based on fact type (boolean / enum / number / date)
-- [ ] 3.5 `Questionnaire.tsx` — sequential question with live results sidebar
-- [ ] 3.6 `ObligationPanel.tsx` — confirmed / possible / ruled-out obligations
-- [ ] 3.7 `ActionPanel.tsx` — required actions with computed deadlines
-- [ ] 3.8 `WarningsPanel.tsx` — exemptions (display only), interaction provisions, role-change warnings
+- [x] 3.1 `App.tsx` + step routing (RegulationPick → RoleSelect → Questioning → Complete)
+- [x] 3.2 `RegulationPicker.tsx` — select regulation from bundled list
+- [x] 3.3 `RoleSelector.tsx` — select entity role for this session
+- [x] 3.4 `FactQuestion.tsx` — renders a question based on fact type (boolean / enum / number / date)
+- [x] 3.5 `Questionnaire.tsx` — sequential question with live results sidebar
+- [x] 3.6 `ObligationPanel.tsx` — confirmed / possible / ruled-out obligations
+- [x] 3.7 `ActionPanel.tsx` — required actions with computed deadlines
+- [x] 3.8 `WarningsPanel.tsx` — exemptions (display only), interaction provisions, role-change warnings
 
 ## Phase 4 — Integration & Deploy
 
