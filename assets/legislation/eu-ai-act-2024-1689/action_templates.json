@@ -117,7 +117,7 @@
     "required_inputs": ["serious_incident_occurred"],
     "evidence_produced": "ev_serious_incident_report",
     "prerequisites": [],
-    "triggered_by": "serious_incident_occurred = true",
+    "triggered_by": "ob_report_serious_incidents",
     "source_article": "Art. 73",
     "confidence": "high"
   },

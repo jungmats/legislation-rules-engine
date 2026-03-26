@@ -204,6 +204,15 @@
     "confidence": "high"
   },
   {
+    "id": "date_log_generated",
+    "label": "Date the automatically generated log was created",
+    "type": "date",
+    "description": "The date on which the AI system automatically generated a specific log. Used to compute the minimum 6-month retention deadline for that log under Art. 26(6). Deployers must retain each log for at least 6 months from its generation date.",
+    "source": "Deployer's log management system",
+    "source_article": "Art. 26(6)",
+    "confidence": "high"
+  },
+  {
     "id": "established_or_located_in_union",
     "label": "Entity is established or located in the European Union",
     "type": "boolean",

@@ -21,6 +21,16 @@ export default function ActionPanel({ confirmed, index, factMap, selectedRole }:
     return confirmedObligationIds.has(a.triggered_by);
   });
 
+  // Precompute all confirmed deadlines sorted by date, for inheritance fallback
+  const sortedDeadlines = confirmed
+    .map((o) => computeDeadline(o.deadlinePolicy, factMap, factLabels))
+    .filter((d) => d.status === 'computed')
+    .sort((a, b) => {
+      if (a.status !== 'computed' || b.status !== 'computed') return 0;
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    });
+  const earliestDeadline = sortedDeadlines[0] ?? null;
+
   if (relevantActions.length === 0) {
     return (
       <div className="text-xs text-gray-400 italic">
@@ -32,13 +42,13 @@ export default function ActionPanel({ confirmed, index, factMap, selectedRole }:
   return (
     <ol className="space-y-3">
       {relevantActions.map((action, i) => {
-        // Find the deadline from the confirmed obligation this action serves
+        // Use the specific obligation's deadline if linked; otherwise inherit the earliest confirmed deadline
         const matchedObligation = action.triggered_by
           ? confirmed.find((o) => o.obligation.id === action.triggered_by)
           : undefined;
         const deadline = matchedObligation
           ? computeDeadline(matchedObligation.deadlinePolicy, factMap, factLabels)
-          : null;
+          : earliestDeadline;
 
         return (
           <li key={action.id} className="flex gap-3 text-sm">
