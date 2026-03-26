@@ -80,6 +80,14 @@
     "confidence": "high"
   },
   {
+    "id": "gpai_model_provider",
+    "label": "GPAI Model Provider",
+    "definition": "A provider who develops and places a general-purpose AI (GPAI) model on the market, regardless of whether the model is subsequently integrated into an AI system by the same or a different provider. Subject to Art. 53-56 obligations; systemic risk GPAI model providers face additional obligations under Art. 55.",
+    "source_article": "Art. 3(63); Art. 51-56",
+    "primary_obligations": ["ob_gpai_technical_documentation", "ob_gpai_copyright_policy", "ob_gpai_publish_training_data_summary"],
+    "confidence": "high"
+  },
+  {
     "id": "notified_body",
     "label": "Notified Body",
     "definition": "A conformity assessment body designated by a notifying authority to carry out third-party conformity assessment for high-risk AI systems",

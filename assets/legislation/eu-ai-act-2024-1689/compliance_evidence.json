@@ -101,6 +101,28 @@
     "confidence": "high"
   },
   {
+    "id": "ev_risk_management_documentation",
+    "label": "Risk Management System Documentation (Art. 9)",
+    "description": "Documentation of the continuous, iterative risk management system for a high-risk AI system. Must cover: identified known and foreseeable risks; estimated and evaluated risks (probability, severity, reversibility); risk mitigation measures adopted; residual risks and their justification. Must be maintained and updated throughout the system lifecycle.",
+    "platform": "Provider records; available for inspection by market surveillance authority on request",
+    "required_fields": ["risk_identification_register", "risk_estimation_methodology", "mitigation_measures", "residual_risk_justification", "post_market_update_log"],
+    "frequency": "continuous_lifecycle",
+    "retention_years": 10,
+    "source_article": "Art. 9; Art. 18",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_quality_management_system",
+    "label": "Quality Management System Documentation (Art. 17)",
+    "description": "Documentation of the QMS established by the provider of a high-risk AI system. Must cover: compliance strategy; data examination and validation procedures; testing and validation methodologies; risk management procedures; post-market monitoring plan; serious incident reporting procedures; communication plan; documentation management policy.",
+    "platform": "Provider records; available for inspection by market surveillance authority on request",
+    "required_fields": ["compliance_strategy", "data_governance_procedures", "testing_methodology", "risk_management_integration", "post_market_monitoring_plan", "incident_reporting_procedures", "document_control_policy"],
+    "frequency": "continuous_lifecycle",
+    "retention_years": 10,
+    "source_article": "Art. 17; Art. 18",
+    "confidence": "high"
+  },
+  {
     "id": "ev_gpai_model_evaluation",
     "label": "GPAI Systemic Risk Model Evaluation and Adversarial Testing Report",
     "description": "Documentation of model evaluation and adversarial testing conducted by the provider of a GPAI model with systemic risk. Must cover: evaluation protocols used; adversarial testing methodology; systemic risks identified; mitigation measures implemented.",

@@ -204,6 +204,96 @@
     "confidence": "high"
   },
   {
+    "id": "market_or_service_in_union",
+    "label": "AI system is placed on the EU market or put into service in the Union",
+    "type": "boolean",
+    "description": "Whether the provider places the AI system on the EU market or puts it into service within the Union, regardless of where the provider is established.",
+    "source": "Provider's commercial and operational assessment",
+    "source_article": "Art. 2(1)(a)",
+    "confidence": "high"
+  },
+  {
+    "id": "ai_system_bundled_with_product",
+    "label": "AI system is placed on the market together with a physical product",
+    "type": "boolean",
+    "description": "Whether the entity places a physical product on the EU market under their name or trademark and the AI system is an integral component of that product. Triggers product manufacturer obligations under Art. 2(1)(e).",
+    "source": "Entity's product and commercialisation assessment",
+    "source_article": "Art. 2(1)(e)",
+    "confidence": "high"
+  },
+  {
+    "id": "ai_system_purpose",
+    "label": "Primary purpose of the AI system",
+    "type": "enum",
+    "allowed_values": [
+      "general",
+      "military",
+      "military_exclusive",
+      "defence",
+      "defence_exclusive",
+      "national_security_exclusive",
+      "law_enforcement_real_time_rbi"
+    ],
+    "value_descriptions": {
+      "general": "The AI system is used for general commercial, administrative, or civil purposes not falling into any of the other categories.",
+      "military": "The AI system is used for military purposes, though not exclusively (it may also have civilian applications).",
+      "military_exclusive": "The AI system is used exclusively for military purposes with no civilian application. Triggers full exclusion from this Regulation under Art. 2(3).",
+      "defence": "The AI system is used for defence purposes, though not exclusively.",
+      "defence_exclusive": "The AI system is used exclusively for defence purposes. Triggers full exclusion from this Regulation under Art. 2(3).",
+      "national_security_exclusive": "The AI system is used exclusively for national security purposes. Triggers full exclusion from this Regulation under Art. 2(3). Note: if the same system is later repurposed for civilian use, this Regulation applies.",
+      "law_enforcement_real_time_rbi": "The AI system is a real-time remote biometric identification system deployed in publicly accessible spaces for law enforcement purposes. Subject to the near-total prohibition in Art. 5(1)(h), with narrow exceptions under Art. 5(2)-(7)."
+    },
+    "source": "Provider's or deployer's assessment of the system's intended purpose and operational context",
+    "source_article": "Art. 2(3); Art. 5(1)(h)",
+    "confidence": "medium",
+    "human_review_note": "Scope.json and exemptions.json use slightly different value sets for military/defence exclusions (scope uses 'military','defence'; exemptions use 'military_exclusive','defence_exclusive'). Both sets are included in allowed_values. A reviewer should harmonise the conditions across scope.json and exemptions.json to use a single consistent set of values."
+  },
+  {
+    "id": "use_is_personal_nonprofessional",
+    "label": "AI system is used solely for personal non-professional activity",
+    "type": "boolean",
+    "description": "Whether a natural person uses the AI system exclusively in the course of a purely personal non-professional activity. If true, deployer obligations do not apply under Art. 2(10), though the Art. 5 prohibited practices prohibition still applies.",
+    "source": "Self-declaration by the natural person",
+    "source_article": "Art. 2(10)",
+    "confidence": "high"
+  },
+  {
+    "id": "use_is_scientific_research_only",
+    "label": "AI system is developed and used solely for scientific research and development",
+    "type": "boolean",
+    "description": "Whether the AI system is developed and used exclusively for scientific R&D purposes before being placed on the market. If true, the Regulation does not apply. Note: testing in real-world conditions outside a laboratory (using actual data on real persons) is NOT excluded and is governed by Art. 57-63 (AI regulatory sandboxes).",
+    "source": "Organisation's research mandate and operational assessment",
+    "source_article": "Art. 2(6)",
+    "confidence": "high"
+  },
+  {
+    "id": "system_authorised_for_law_enforcement_detection",
+    "label": "AI system is legally authorised to detect, prevent, investigate or prosecute criminal offences",
+    "type": "boolean",
+    "description": "Whether the AI system is authorised by law to detect, prevent, investigate, or prosecute criminal offences. If true, the deployer is exempt from transparency disclosure obligations under Art. 50(1), (2), and (4), unless the system is also publicly accessible for crime reporting purposes.",
+    "source": "Legal authorisation (national law or EU law empowering the system for law enforcement purposes)",
+    "source_article": "Art. 50(1); Art. 50(3); Art. 50(4)",
+    "confidence": "high"
+  },
+  {
+    "id": "ai_interaction_obviously_apparent",
+    "label": "It is obvious to a reasonably well-informed person that they are interacting with an AI system",
+    "type": "boolean",
+    "description": "Whether the AI interaction is obviously apparent from context to a reasonably well-informed natural person — e.g. a clearly branded AI chatbot interface. If true, the Art. 50(1) disclosure obligation does not apply.",
+    "source": "Deployer's or provider's assessment of the interaction context",
+    "source_article": "Art. 50(1)",
+    "confidence": "high"
+  },
+  {
+    "id": "date_serious_incident_identified",
+    "label": "Date on which a serious incident was identified",
+    "type": "date",
+    "description": "The date on which the provider or deployer became aware of a serious incident. Used to compute the incident reporting deadlines: 2 days for death, 10 days for death or serious health damage, 15 days for other serious incidents (Art. 73).",
+    "source": "Provider's or deployer's post-market monitoring and incident management system",
+    "source_article": "Art. 73",
+    "confidence": "high"
+  },
+  {
     "id": "date_log_generated",
     "label": "Date the automatically generated log was created",
     "type": "date",
