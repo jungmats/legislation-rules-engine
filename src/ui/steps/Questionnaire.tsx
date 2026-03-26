@@ -5,6 +5,7 @@ import FactQuestion from '../components/FactQuestion';
 import ObligationPanel from '../panels/ObligationPanel';
 import ActionPanel from '../panels/ActionPanel';
 import WarningsPanel from '../panels/WarningsPanel';
+import PenaltiesPanel from '../panels/PenaltiesPanel';
 import { useState } from 'react';
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
   dispatch: (action: SessionAction) => void;
 }
 
-const TABS = ['Obligations', 'Actions', 'Warnings'] as const;
+const TABS = ['Obligations', 'Actions', 'Penalties', 'Warnings'] as const;
 type Tab = typeof TABS[number];
 
 export default function Questionnaire({ state, index, dispatch }: Props) {
@@ -114,7 +115,11 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
                 confirmed={state.confirmed}
                 index={index}
                 factMap={state.factMap}
+                selectedRole={state.selectedRole}
               />
+            )}
+            {activeTab === 'Penalties' && (
+              <PenaltiesPanel index={index} />
             )}
             {activeTab === 'Warnings' && (
               <WarningsPanel index={index} factMap={state.factMap} />

@@ -7,17 +7,19 @@ interface Props {
   confirmed: ResolvedObligation[];
   index: RegulationIndex;
   factMap: FactMap;
+  selectedRole: string | null;
 }
 
-export default function ActionPanel({ confirmed, index, factMap }: Props) {
+export default function ActionPanel({ confirmed, index, factMap, selectedRole }: Props) {
   const factLabels = new Map(Array.from(index.facts.values()).map((f) => [f.id, f.label]));
 
-  // Collect actions relevant to confirmed obligations
-  const relevantActions = index.actionTemplates.filter((a) =>
-    confirmed.some(() =>
-      a.evidence_produced !== null
-    )
-  );
+  // Show actions for the user's role that serve a confirmed obligation
+  const confirmedObligationIds = new Set(confirmed.map((o) => o.obligation.id));
+  const relevantActions = index.actionTemplates.filter((a) => {
+    if (a.responsible_party !== selectedRole) return false;
+    if (!a.triggered_by) return true; // no obligation link — always show for role
+    return confirmedObligationIds.has(a.triggered_by);
+  });
 
   if (relevantActions.length === 0) {
     return (
@@ -30,10 +32,10 @@ export default function ActionPanel({ confirmed, index, factMap }: Props) {
   return (
     <ol className="space-y-3">
       {relevantActions.map((action, i) => {
-        // Find the deadline from the first confirmed obligation this action serves
-        const matchedObligation = confirmed.find(() =>
-          action.evidence_produced === index.complianceEvidence.get(action.evidence_produced ?? '')?.id
-        );
+        // Find the deadline from the confirmed obligation this action serves
+        const matchedObligation = action.triggered_by
+          ? confirmed.find((o) => o.obligation.id === action.triggered_by)
+          : undefined;
         const deadline = matchedObligation
           ? computeDeadline(matchedObligation.deadlinePolicy, factMap, factLabels)
           : null;
