@@ -1,0 +1,390 @@
+[
+  {
+    "id": "ob_no_prohibited_practice",
+    "label": "Do not place on market, put into service, or use a prohibited AI system",
+    "description": "Absolute prohibition on the development, placing on market, putting into service, or use of any AI system listed in Art. 5(1)(a)-(h). Applies to providers, deployers, importers, distributors.",
+    "obligation_type": "prohibition",
+    "prohibited_practices": [
+      {"id": "proh_a", "description": "AI systems deploying subliminal techniques beyond a person's consciousness or purposefully manipulative/deceptive techniques causing material behavioural distortion and significant harm"},
+      {"id": "proh_b", "description": "AI systems exploiting vulnerabilities of natural persons due to age, disability, or social/economic situation causing material behavioural distortion and significant harm"},
+      {"id": "proh_c", "description": "Social scoring systems by public or private entities evaluating persons based on social behaviour or personality, causing detrimental treatment unrelated to context or disproportionate to behaviour"},
+      {"id": "proh_d", "description": "AI systems for risk assessment of natural persons to predict criminal offence risk, based solely on profiling or personality traits (except systems supporting human assessment based on objective verifiable facts directly related to criminal activity)"},
+      {"id": "proh_e", "description": "AI systems creating or expanding facial recognition databases through untargeted scraping of facial images from the internet or CCTV footage"},
+      {"id": "proh_f", "description": "AI systems inferring emotions of natural persons in workplace or educational institutions (except for medical or safety purposes)"},
+      {"id": "proh_g", "description": "Biometric categorisation systems categorising natural persons based on biometric data to infer race, political opinions, trade union membership, religious beliefs, sex life, or sexual orientation (except lawful dataset labelling or filtering by law enforcement)"},
+      {"id": "proh_h", "description": "Real-time remote biometric identification systems in publicly accessible spaces for law enforcement, with narrow exceptions: searching for missing persons/victims, preventing specific imminent threat to life or terrorism, locating/identifying suspects in offences carrying ≥4 year sentence — subject to prior judicial or independent administrative authorisation, fundamental rights impact assessment, and proportionality review"}
+    ],
+    "source_article": "Art. 5(1)(a)-(h)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_risk_management_system",
+    "label": "Establish and maintain a risk management system throughout the AI system lifecycle",
+    "description": "Providers of high-risk AI systems must establish, implement, document and maintain a risk management system covering: identification and analysis of known and reasonably foreseeable risks; estimation and evaluation of risks arising from intended use and reasonably foreseeable misuse; evaluation of risks based on post-market monitoring data; adoption of risk management measures.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 9",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_data_governance",
+    "label": "Implement data governance and management practices for training, validation and testing data",
+    "description": "Providers of high-risk AI systems must implement data governance practices covering: relevant design choices; data collection processes; examination for possible biases; identification of relevant data gaps or shortcomings; data preparation operations (annotation, labelling, cleaning, enrichment, aggregation). Data must be relevant, representative, free of errors and complete to the extent possible.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 10",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_technical_documentation",
+    "label": "Draw up and keep up-to-date technical documentation (Annex IV)",
+    "description": "Providers must draw up and maintain technical documentation in accordance with Annex IV before placing the high-risk AI system on the market or putting it into service. Documentation must contain sufficient information to assess compliance and enable market surveillance authorities to assess compliance.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "documentation_template": "Annex IV",
+    "source_article": "Art. 11; Annex IV",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_logging_and_recordkeeping",
+    "label": "Ensure automatic logging capabilities and retain logs",
+    "description": "High-risk AI systems must have logging capabilities enabling automatic recording of events ('logs') throughout the lifetime of the system. Logs must be fit for the purpose of monitoring and ensure traceability. Providers must retain logs under their control for the period defined by applicable EU or national law (minimum: period appropriate to intended purpose, at least 6 months).",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 12; Art. 19",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_transparency_to_deployers",
+    "label": "Provide instructions for use with sufficient transparency information to deployers",
+    "description": "Providers must ensure high-risk AI systems come with instructions for use in appropriate digital or other form. Instructions must include: identity and contact details of the provider; system characteristics, capabilities and limitations; performance in relation to the persons on whom the system is used; level of accuracy and cybersecurity measures; human oversight measures; computational and hardware requirements; description of changes versus prior versions; guidance on monitoring, functioning and control.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 13",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_human_oversight_design",
+    "label": "Design high-risk AI systems to enable effective human oversight",
+    "description": "Providers must design and develop high-risk AI systems to be effectively overseen by natural persons during the period of use. Oversight measures must enable persons to: understand the capabilities and limitations of the system; detect and address dysfunctions or unexpected performance; remain aware of automation bias; correctly interpret outputs; decide not to use the system in particular cases; intervene or interrupt the system.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 14",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_accuracy_robustness_cybersecurity",
+    "label": "Ensure appropriate levels of accuracy, robustness and cybersecurity",
+    "description": "High-risk AI systems must achieve appropriate levels of accuracy, robustness, and cybersecurity throughout their lifecycle. They must be resilient to errors, faults, or inconsistencies that may arise within the system or its environment. Technical redundancy solutions and backup plans must be implemented where appropriate.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 15",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_quality_management_system",
+    "label": "Establish and maintain a quality management system (QMS)",
+    "description": "Providers of high-risk AI systems must establish a QMS ensuring compliance with this Regulation. The QMS must cover at minimum: the provider's strategy for regulatory compliance; techniques/procedures for data examination; validation and testing procedures and metrics; technical specifications; data management systems; risk management system; post-market monitoring; serious incident reporting; communication with authorities; documentation management; resource management; accountability framework.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 17",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_conformity_assessment",
+    "label": "Undergo conformity assessment before placing on market or putting into service",
+    "description": "Providers must ensure the high-risk AI system undergoes the relevant conformity assessment procedure (Art. 43) prior to being placed on the market or put into service. Annex VI (internal control) is available for most Annex III systems. Third-party assessment by a notified body (Annex VII) is required for Annex I product safety components requiring third-party assessment and for high-risk AI in biometric identification.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 43; Annex VI; Annex VII",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_eu_declaration_of_conformity",
+    "label": "Draw up an EU Declaration of Conformity (Annex V)",
+    "description": "Providers must draw up a written EU Declaration of Conformity in accordance with Annex V for each high-risk AI system, stating that the system complies with applicable requirements. The declaration must be kept up to date and submitted to authorities upon request. It must be drawn up in one of the EU's official languages and contain the elements specified in Annex V.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "documentation_template": "Annex V",
+    "source_article": "Art. 47; Annex V",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_ce_marking",
+    "label": "Affix the CE marking to the high-risk AI system",
+    "description": "Providers must affix the CE marking to the high-risk AI system, or where not possible, to its packaging or accompanying documentation. The CE marking must be visible, legible and indelible. It must be affixed before the system is placed on the market or put into service. The CE marking rules of Regulation (EC) No 765/2008 apply.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "note": "Only applies to systems also subject to Union harmonisation legislation requiring CE marking. For Annex III-only systems, the CE marking requirement still applies by virtue of this Regulation.",
+    "source_article": "Art. 48",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_register_eu_database_provider",
+    "label": "Register the high-risk AI system in the EU database (Art. 71)",
+    "description": "Providers must register themselves and their high-risk AI systems in the EU database before placing on the market or putting into service. Registration must include: provider identity; AI system name, version, intended purpose; conformity assessment information; declaration of conformity reference; contact details; Annex III use case. Public authorities are exempted from registration where national security, defence, or classified information is at stake.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 49(1); Art. 71",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_post_market_monitoring",
+    "label": "Establish and implement a post-market monitoring system",
+    "description": "Providers must establish, document, and implement a post-market monitoring system proportionate to the nature of the AI technology and its risks. The system must actively and systematically collect, document, and analyse data from deployers to evaluate whether the system continues to meet requirements throughout its lifetime.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 72",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_report_serious_incidents",
+    "label": "Report serious incidents to market surveillance authorities",
+    "description": "Providers must report serious incidents to the market surveillance authorities of the Member States where the incident occurred, without undue delay and in any case within: 15 days for risks to health/safety; 10 days for deaths or serious health damage; 2 days for death. Providers must investigate the incident, identify corrective actions, and follow up with authorities.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to_risk_level": "high_risk",
+    "deadlines_days": {
+      "risk_to_health_or_safety": 15,
+      "death_or_serious_health_damage": 10,
+      "death": 2
+    },
+    "source_article": "Art. 73",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_use_per_instructions",
+    "label": "Use the high-risk AI system in accordance with the provider's instructions for use",
+    "description": "Deployers must take appropriate technical and organisational measures to ensure they use high-risk AI systems in accordance with the instructions for use accompanying the system (Art. 13).",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 26(1)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_human_oversight_deployment",
+    "label": "Assign and implement human oversight measures",
+    "description": "Deployers must assign the task of overseeing the high-risk AI system to natural persons with the necessary competence, training and authority. Where the instructions for use identify specific human oversight measures, deployers must implement those measures.",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 26(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_input_data_quality",
+    "label": "Ensure input data quality where deployer controls input data",
+    "description": "Where the deployer controls the input data, they must ensure that input data is relevant and sufficiently representative in view of the intended purpose of the high-risk AI system.",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 26(4)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_monitor_and_report_deployer",
+    "label": "Monitor AI system performance and report risks or serious incidents",
+    "description": "Deployers must monitor the operation of the high-risk AI system. If a risk to health, safety, or fundamental rights is identified, or a serious incident occurs, the deployer must immediately inform the provider and relevant market surveillance authority.",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 26(5)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_retain_logs_deployer",
+    "label": "Retain automatically generated logs for at least 6 months",
+    "description": "Deployers must retain the logs automatically generated by the high-risk AI system for a period appropriate to the intended purpose of the AI system, of at least 6 months, unless otherwise required by EU or national law.",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "minimum_retention_months": 6,
+    "source_article": "Art. 26(6)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_inform_workers",
+    "label": "Inform workers and their representatives about use of high-risk AI systems",
+    "description": "Where the high-risk AI system is used in an employment context, deployers must inform workers and their representatives that they will be subject to the use of the high-risk AI system, prior to putting it into service.",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "condition": "deployer_uses_ai_in_employment_context = true",
+    "source_article": "Art. 26(7)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_inform_affected_persons",
+    "label": "Inform natural persons subject to high-risk AI decisions",
+    "description": "Deployers must inform natural persons that they are subject to the use of a high-risk AI system when decisions affecting them are made or assisted by the system. This is in addition to information rights under GDPR.",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 26(11)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_register_eu_database_deployer",
+    "label": "Register in the EU database (public authority deployers)",
+    "description": "Deployers that are public authorities must register their use of high-risk AI systems in the EU database (Art. 71) before putting the AI system into service. They must also verify that the AI system is registered by the provider.",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "condition": "deployer_is_public_authority = true",
+    "source_article": "Art. 26(8); Art. 49(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_fundamental_rights_impact_assessment",
+    "label": "Conduct a Fundamental Rights Impact Assessment (FRIA)",
+    "description": "Deployers that are public authorities, or private entities providing public services, or deployers using Annex III systems in the areas of: education, employment, essential services, law enforcement, migration, justice/democracy — must conduct a Fundamental Rights Impact Assessment before putting the AI system into service. Results must be notified to the market surveillance authority upon request.",
+    "obligation_type": "requirement",
+    "applies_to": "deployer",
+    "applies_to_risk_level": "high_risk",
+    "condition": "deployer_is_public_authority = true OR annex_iii_use_case_area in [3,4,5,6,7,8]",
+    "source_article": "Art. 27",
+    "confidence": "medium",
+    "human_review_note": "Art. 27 specifies which deployers must conduct a FRIA. The exact scope of private deployers subject to this obligation (beyond public authorities) requires careful reading of the full article text. The condition listed here is a simplification."
+  },
+  {
+    "id": "ob_importer_verify_compliance",
+    "label": "Importers must verify the AI system complies with this Regulation before placing on market",
+    "description": "Importers must verify that: (a) the provider has carried out the relevant conformity assessment; (b) the provider has drawn up the technical documentation; (c) the system bears the required CE marking and is accompanied by the EU Declaration of Conformity; (d) the provider has a registered authorised representative in the EU.",
+    "obligation_type": "requirement",
+    "applies_to": "importer",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 23",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_distributor_verify_compliance",
+    "label": "Distributors must verify CE marking and documentation before making available on market",
+    "description": "Before making a high-risk AI system available on the market, distributors must verify that: (a) it bears the CE marking; (b) it is accompanied by the required documentation; (c) the provider and importer have fulfilled their obligations. Distributors must not make available systems that do not comply.",
+    "obligation_type": "requirement",
+    "applies_to": "distributor",
+    "applies_to_risk_level": "high_risk",
+    "source_article": "Art. 24",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_disclose_ai_interaction",
+    "label": "Disclose to users that they are interacting with an AI system",
+    "description": "Providers of AI systems intended to interact directly with natural persons must ensure those persons are informed they are interacting with an AI system, unless this is obvious from the context. Disclosure must be made at the latest at the time of first interaction.",
+    "obligation_type": "transparency",
+    "applies_to": "provider",
+    "applies_to_risk_level": "limited_risk_transparency",
+    "exception": "Systems authorised by law to detect, prevent, investigate, or prosecute criminal offences are exempt from this disclosure requirement, unless publicly available for crime reporting purposes.",
+    "source_article": "Art. 50(1)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_mark_synthetic_content",
+    "label": "Mark AI-generated synthetic content in machine-readable format",
+    "description": "Providers of AI systems generating synthetic audio, image, video or text content must ensure outputs are marked in a machine-readable format and detectable as artificially generated or manipulated. Solutions must be effective, interoperable, robust, and reliable, in line with technical standards.",
+    "obligation_type": "transparency",
+    "applies_to": "provider",
+    "applies_to_risk_level": "limited_risk_transparency",
+    "exceptions": ["Assistive editing functions", "AI systems not substantially altering input data", "Systems authorised for criminal detection/investigation"],
+    "source_article": "Art. 50(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_disclose_emotion_biometric",
+    "label": "Inform persons exposed to emotion recognition or biometric categorisation",
+    "description": "Deployers operating emotion recognition or biometric categorisation systems must inform the natural persons exposed to the operation of those systems. Disclosure must be made at the latest at the time of first exposure.",
+    "obligation_type": "transparency",
+    "applies_to": "deployer",
+    "source_article": "Art. 50(3)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_disclose_deepfake",
+    "label": "Deployers must disclose AI-generated or manipulated content (deepfakes)",
+    "description": "Deployers using AI systems to generate or manipulate image, audio, or video content that appreciably resembles existing persons, places, or events must disclose that the content is artificially generated or manipulated. For AI-generated text published to inform the public on matters of public interest, deployers must disclose that the text was AI-generated.",
+    "obligation_type": "transparency",
+    "applies_to": "deployer",
+    "exceptions": ["Creative works where disclosure would hamper enjoyment (limited disclosure)", "AI-generated text with human editorial review and clear editorial responsibility", "Systems authorised for criminal investigation"],
+    "source_article": "Art. 50(4)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_gpai_technical_documentation",
+    "label": "GPAI model providers must draw up and maintain technical documentation (Annex XI + XII)",
+    "description": "Providers of GPAI models must: (a) draw up and keep up-to-date technical documentation per Annex XI for the AI Office and national authorities; (b) draw up and keep up-to-date documentation for downstream AI system integrators per Annex XII, enabling them to understand capabilities/limitations and meet their own compliance obligations.",
+    "obligation_type": "requirement",
+    "applies_to": "provider",
+    "applies_to": "gpai_model_provider",
+    "documentation_templates": ["Annex XI", "Annex XII"],
+    "exception": "Open-source GPAI models exempt from (a) and (b) unless they have systemic risk",
+    "source_article": "Art. 53(1)(a)(b)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_gpai_copyright_policy",
+    "label": "GPAI model providers must establish a copyright compliance policy",
+    "description": "Providers of GPAI models must put in place a policy to comply with Union law on copyright and related rights, in particular to identify and comply with a reservation of rights as referred to in Directive 2019/790 Art. 4(3).",
+    "obligation_type": "requirement",
+    "applies_to": "gpai_model_provider",
+    "source_article": "Art. 53(1)(c)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_gpai_training_data_summary",
+    "label": "GPAI model providers must publish a summary of training data",
+    "description": "Providers of GPAI models must publish a sufficiently detailed summary of the content used for training the model, following the template provided by the AI Office.",
+    "obligation_type": "transparency",
+    "applies_to": "gpai_model_provider",
+    "source_article": "Art. 53(1)(d)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_gpai_systemic_risk_model_evaluation",
+    "label": "GPAI models with systemic risk: conduct model evaluation and adversarial testing",
+    "description": "Providers of GPAI models with systemic risk must perform model evaluation in accordance with standardised protocols and tools, including adversarial testing to identify and mitigate systemic risks.",
+    "obligation_type": "requirement",
+    "applies_to": "gpai_model_provider_systemic_risk",
+    "source_article": "Art. 55(1)(a)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_gpai_systemic_risk_assessment",
+    "label": "GPAI models with systemic risk: assess and mitigate systemic risks at Union level",
+    "description": "Providers of GPAI models with systemic risk must assess and mitigate possible systemic risks at the Union level that may arise from development, placing on market, or use of those models, including their sources.",
+    "obligation_type": "requirement",
+    "applies_to": "gpai_model_provider_systemic_risk",
+    "source_article": "Art. 55(1)(b)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_gpai_systemic_risk_incident_reporting",
+    "label": "GPAI models with systemic risk: track and report serious incidents to AI Office",
+    "description": "Providers of GPAI models with systemic risk must keep track of, document, and report without undue delay to the AI Office any serious incidents and possible corrective measures.",
+    "obligation_type": "requirement",
+    "applies_to": "gpai_model_provider_systemic_risk",
+    "source_article": "Art. 55(1)(c)",
+    "confidence": "high"
+  },
+  {
+    "id": "ob_gpai_systemic_risk_cybersecurity",
+    "label": "GPAI models with systemic risk: ensure adequate cybersecurity protection",
+    "description": "Providers of GPAI models with systemic risk must ensure adequate cybersecurity protection for the GPAI model and its physical infrastructure.",
+    "obligation_type": "requirement",
+    "applies_to": "gpai_model_provider_systemic_risk",
+    "source_article": "Art. 55(1)(d)",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,196 @@
+[
+  {
+    "id": "entity_role",
+    "label": "Role of the entity in relation to the AI system",
+    "type": "enum",
+    "allowed_values": [
+      "provider",
+      "deployer",
+      "importer",
+      "distributor",
+      "authorised_representative",
+      "product_manufacturer"
+    ],
+    "description": "The role of the natural or legal person in the AI system supply chain. A single entity may hold multiple roles for different systems (e.g., provider of one system and deployer of another).",
+    "source": "Self-declaration; determined by nature of relationship to AI system",
+    "source_article": "Art. 3(3)-(8)",
+    "confidence": "high"
+  },
+  {
+    "id": "ai_system_risk_category",
+    "label": "Risk category of the AI system",
+    "type": "enum",
+    "allowed_values": [
+      "prohibited",
+      "high_risk",
+      "limited_risk_transparency",
+      "minimal_risk"
+    ],
+    "description": "The risk tier of the AI system as determined by Art. 5 (prohibited), Art. 6 (high-risk), Art. 50 (limited risk — transparency only), or no mandatory requirements (minimal risk). Determines the applicable obligation set.",
+    "source": "Provider's classification assessment; confirmed by conformity assessment for high-risk systems",
+    "source_article": "Art. 5; Art. 6; Art. 50",
+    "confidence": "high"
+  },
+  {
+    "id": "high_risk_classification_basis",
+    "label": "Basis for high-risk classification",
+    "type": "enum",
+    "allowed_values": [
+      "annex_i_product_safety_component",
+      "annex_iii_use_case",
+      "both",
+      "not_high_risk"
+    ],
+    "description": "Whether the high-risk classification arises from Art. 6(1) (safety component of an Annex I product requiring 3rd-party conformity assessment) or Art. 6(2) (listed in Annex III use cases). Affects conformity assessment procedure and application deadlines.",
+    "source": "Provider's classification assessment; product legislation check for Annex I",
+    "source_article": "Art. 6(1); Art. 6(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "annex_iii_use_case_area",
+    "label": "Annex III use case area (for high-risk classification under Art. 6(2))",
+    "type": "enum",
+    "allowed_values": [
+      "1_biometrics",
+      "2_critical_infrastructure",
+      "3_education_vocational_training",
+      "4_employment_workers_management",
+      "5_essential_services_benefits",
+      "6_law_enforcement",
+      "7_migration_asylum_border",
+      "8_administration_of_justice_democratic_processes",
+      "none"
+    ],
+    "description": "The Annex III category that triggers high-risk classification. Area 1 includes: remote biometric identification systems, biometric categorisation inferring sensitive attributes, emotion recognition. Areas 2-8 cover infrastructure, education, employment, essential services, law enforcement, migration, justice/democracy.",
+    "source": "Provider's classification assessment against Annex III use cases",
+    "source_article": "Annex III; Art. 6(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "art6_3_exemption_applies",
+    "label": "Art. 6(3) exemption: AI system in Annex III but not high-risk",
+    "type": "boolean",
+    "description": "Despite being listed in Annex III, a system is NOT high-risk if it: (a) performs a narrow procedural task; (b) improves the result of a previously completed human activity; (c) detects decision-making patterns for human review without replacing human assessment; (d) performs a preparatory task. Exception: systems that profile natural persons are ALWAYS high-risk regardless of these conditions.",
+    "source": "Provider's assessment; documented in technical documentation",
+    "source_article": "Art. 6(3)",
+    "confidence": "high"
+  },
+  {
+    "id": "conformity_assessment_type",
+    "label": "Type of conformity assessment required",
+    "type": "enum",
+    "allowed_values": [
+      "internal_control",
+      "third_party_notified_body",
+      "not_applicable"
+    ],
+    "description": "Whether the high-risk AI system requires internal conformity assessment (Annex VI) or third-party assessment by a notified body (Annex VII). Systems in Annex I product legislation areas generally require notified body assessment; some Annex III systems allow internal assessment.",
+    "source": "Determined by applicable conformity assessment procedure (Art. 43)",
+    "source_article": "Art. 43; Annex VI; Annex VII",
+    "confidence": "high"
+  },
+  {
+    "id": "deployer_is_public_authority",
+    "label": "Deployer is a public authority or body",
+    "type": "boolean",
+    "description": "Whether the deployer is a public authority or body (including EU institutions). Public authority deployers of high-risk AI systems have additional obligations: register in EU database (Art. 26(8)) and conduct a Fundamental Rights Impact Assessment (Art. 27).",
+    "source": "Entity classification",
+    "source_article": "Art. 26(8); Art. 27",
+    "confidence": "high"
+  },
+  {
+    "id": "is_gpai_model",
+    "label": "The AI system is a general-purpose AI model (GPAI model)",
+    "type": "boolean",
+    "description": "Whether the product is a GPAI model: an AI model displaying significant generality and capable of competently performing a wide range of distinct tasks, trained on large amounts of data using self-supervised learning, that can be integrated into AI systems or applications.",
+    "source": "Provider's determination based on model characteristics",
+    "source_article": "Art. 3(63); Art. 51",
+    "confidence": "high"
+  },
+  {
+    "id": "gpai_systemic_risk",
+    "label": "GPAI model is classified as having systemic risk",
+    "type": "boolean",
+    "description": "Whether the GPAI model has systemic risk, either by: (a) presumption — training compute > 10^25 floating point operations (FLOPs); (b) Commission designation based on high-impact capabilities. Systemic risk triggers additional obligations under Art. 55.",
+    "source": "Provider's calculation of training compute; or Commission designation",
+    "source_article": "Art. 51; Annex XIII",
+    "confidence": "high",
+    "threshold": {
+      "training_flops": "10^25",
+      "unit": "floating point operations (FLOPs)",
+      "note": "Presumption of systemic risk if cumulative training compute exceeds this threshold. Commission may adjust threshold by delegated act."
+    }
+  },
+  {
+    "id": "gpai_open_source",
+    "label": "GPAI model is released under a free and open-source licence",
+    "type": "boolean",
+    "description": "Whether the GPAI model is released under a free and open-source licence with publicly available parameters, architecture, and model card. Open-source GPAI models are exempt from Art. 53(1)(a)(b) documentation requirements UNLESS they have systemic risk.",
+    "source": "Provider's licence terms",
+    "source_article": "Art. 53(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "ai_system_involves_user_interaction",
+    "label": "AI system directly interacts with natural persons",
+    "type": "boolean",
+    "description": "Whether the AI system is intended to interact directly with natural persons (chatbots, virtual assistants, etc.). Triggers Art. 50(1) disclosure obligation for providers.",
+    "source": "Provider's determination based on intended purpose",
+    "source_article": "Art. 50(1)",
+    "confidence": "high"
+  },
+  {
+    "id": "ai_system_generates_synthetic_content",
+    "label": "AI system generates synthetic audio, image, video or text content",
+    "type": "boolean",
+    "description": "Whether the AI system generates synthetic content (deepfakes, AI-generated text, images, audio, video). Triggers Art. 50(2) machine-readable marking obligation for providers and Art. 50(4) disclosure obligation for deployers.",
+    "source": "Provider's determination based on system outputs",
+    "source_article": "Art. 50(2); Art. 50(4)",
+    "confidence": "high"
+  },
+  {
+    "id": "ai_system_uses_emotion_recognition_or_biometric_categorisation",
+    "label": "AI system uses emotion recognition or biometric categorisation",
+    "type": "boolean",
+    "description": "Whether the AI system uses emotion recognition (inferring emotional states) or biometric categorisation (assigning persons to categories based on biometric data). Triggers Art. 50(3) disclosure obligation for deployers.",
+    "source": "Provider's determination in technical documentation / instructions for use",
+    "source_article": "Art. 50(3)",
+    "confidence": "high"
+  },
+  {
+    "id": "deployer_uses_ai_in_employment_context",
+    "label": "Deployer uses the AI system in an employment or work context",
+    "type": "boolean",
+    "description": "Whether the high-risk AI system is used in an employment context affecting workers. Triggers Art. 26(7) obligation to inform workers and their representatives.",
+    "source": "Deployer's determination",
+    "source_article": "Art. 26(7)",
+    "confidence": "high"
+  },
+  {
+    "id": "serious_incident_occurred",
+    "label": "A serious incident has occurred involving the AI system",
+    "type": "boolean",
+    "description": "Whether a serious incident has occurred: an incident leading to death or serious harm to health, a serious and irreversible disruption of critical infrastructure, infringement of fundamental rights obligations, or serious property or environmental damage.",
+    "source": "Provider's post-market monitoring; deployer's operational monitoring",
+    "source_article": "Art. 3(49); Art. 73",
+    "confidence": "high"
+  },
+  {
+    "id": "established_or_located_in_union",
+    "label": "Entity is established or located in the European Union",
+    "type": "boolean",
+    "description": "Whether the provider or deployer has their place of establishment or is located within the EU. Affects scope applicability and which provisions apply directly.",
+    "source": "Entity registration / place of establishment",
+    "source_article": "Art. 2(1)(b)(c)",
+    "confidence": "high"
+  },
+  {
+    "id": "ai_output_used_in_union",
+    "label": "Outputs of the AI system are used in the European Union",
+    "type": "boolean",
+    "description": "Whether the output produced by the AI system is used in the Union, even if the provider or deployer is established outside the EU.",
+    "source": "Operational assessment of where outputs are applied",
+    "source_article": "Art. 2(1)(c)",
+    "confidence": "high"
+  }
+]

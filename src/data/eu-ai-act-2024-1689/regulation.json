@@ -1,0 +1,26 @@
+{
+  "id": "regulation-eu-2024-1689",
+  "title": "Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence",
+  "short_name": "EU AI Act",
+  "number": "2024/1689",
+  "eli": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+  "official_journal": "OJ L, 2024/1689, 12.7.2024",
+  "publication_date": "2024-07-12",
+  "entry_into_force": "2024-08-01",
+  "effective_date_general": "2026-08-02",
+  "jurisdiction": "European Union",
+  "issuing_body": "European Parliament and Council of the European Union",
+  "language": "EN (all 24 EU official languages)",
+  "article_count": 113,
+  "chapter_count": 13,
+  "annex_count": 13,
+  "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+  "amendment_chain": [],
+  "application_schedule": {
+    "2025-02-02": "Chapter I (General Provisions), Chapter II (Prohibited AI Practices Art. 5), Art. 53-56 (GPAI obligations), Art. 78, Art. 99(1)(2), Art. 101(5) — 6 months after entry into force",
+    "2025-08-02": "Chapter III Section 4 (Notifying authorities and notified bodies), Chapter V (GPAI governance), Chapter VII (National competent authorities and governance), Chapter XII (Final provisions), Art. 78 — 12 months after entry into force",
+    "2026-08-02": "Full application — all remaining provisions including Chapter III (high-risk AI requirements and obligations), Chapter IV (transparency obligations Art. 50), Chapter VI (AI governance Art. 57-70), Chapter VIII (post-market monitoring), Chapter IX (codes of conduct), Chapter X (penalties) — 24 months after entry into force",
+    "2027-08-02": "Art. 6(1) and corresponding high-risk AI obligations for Annex I products requiring third-party conformity assessment; Art. 6(2) applied to public authority deployers of Annex III AI systems — 36 months after entry into force"
+  },
+  "note": "This regulation establishes a risk-based framework for AI systems in the EU. Risk tiers: (1) Prohibited practices (Art. 5) — absolute ban; (2) High-risk AI (Art. 6 + Annex I or Annex III) — extensive requirements; (3) Limited risk — transparency obligations only (Art. 50); (4) Minimal risk — no mandatory requirements. Additionally, general-purpose AI (GPAI) models have their own obligation track (Art. 51-56), with heightened requirements for models with systemic risk (training compute > 10^25 FLOPs). The EU AI Office (under the Commission) oversees GPAI models; national competent authorities oversee other AI systems."
+}

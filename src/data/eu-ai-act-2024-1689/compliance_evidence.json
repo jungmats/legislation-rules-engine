@@ -1,0 +1,112 @@
+[
+  {
+    "id": "ev_technical_documentation",
+    "label": "Technical Documentation (Annex IV)",
+    "description": "Comprehensive technical documentation drawn up before placing the high-risk AI system on the market or putting it into service. Contains: general description; detailed description of architecture and components; description of development process; monitoring and control measures; test reports and metrics; known limitations; cybersecurity measures.",
+    "platform": "Kept by provider; submitted to market surveillance authority or notified body on request",
+    "required_fields": ["system_description", "architecture_description", "data_practices", "training_methodology", "validation_testing_results", "performance_metrics", "risk_management_measures", "cybersecurity_measures"],
+    "documentation_template": "Annex IV",
+    "frequency": "one_time_maintained",
+    "retention_years": 10,
+    "source_article": "Art. 11; Art. 18; Annex IV",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_eu_declaration_of_conformity",
+    "label": "EU Declaration of Conformity (Annex V)",
+    "description": "Written declaration by the provider that the high-risk AI system complies with all applicable requirements of this Regulation. Must contain: provider identity; AI system identification; statement of conformity; standards/common specifications applied; conformity assessment procedure reference; signatory information.",
+    "platform": "Issued by provider; submitted to market surveillance authority on request",
+    "documentation_template": "Annex V",
+    "frequency": "one_time_maintained",
+    "retention_years": 10,
+    "source_article": "Art. 47; Annex V",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_conformity_assessment_certificate",
+    "label": "Conformity Assessment Certificate (notified body) or Internal Assessment Record (internal)",
+    "description": "For notified body procedures (Annex VII): certificate issued by the notified body confirming conformity. For internal procedures (Annex VI): provider's internal conformity assessment record. Both must demonstrate that all applicable requirements are met.",
+    "platform": "Notified body (Annex VII) or provider records (Annex VI)",
+    "frequency": "one_time_maintained",
+    "retention_years": 10,
+    "source_article": "Art. 43; Annex VI; Annex VII",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_ce_marking",
+    "label": "CE Marking affixed to the AI system",
+    "description": "The CE marking physically affixed to the high-risk AI system (or packaging/documentation) signifying conformity with applicable requirements. Must be affixed before placing on market.",
+    "platform": "Physical product or accompanying documentation",
+    "frequency": "one_time",
+    "source_article": "Art. 48",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_eu_database_registration",
+    "label": "EU Database Registration Record",
+    "description": "Registration of the provider and the high-risk AI system in the publicly accessible EU database managed by the AI Office (Art. 71). Registration number and record serves as evidence of compliance with registration obligations.",
+    "platform": "EU AI Database (managed by EU AI Office, accessible via EU portal)",
+    "required_fields": ["provider_identity", "system_name_version", "intended_purpose", "annex_iii_category", "conformity_assessment_reference", "declaration_of_conformity_reference", "contact_details"],
+    "documentation_template": "Annex VIII (provider) / Annex IX (public authority deployer)",
+    "frequency": "one_time_maintained",
+    "source_article": "Art. 49; Art. 71; Annex VIII",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_post_market_monitoring_plan",
+    "label": "Post-Market Monitoring Plan and Records",
+    "description": "Documented plan for systematically collecting and analysing post-market data. Must include: data collection methodology; relevant performance indicators; frequency of review; process for identifying and reporting issues. Records of monitoring activities, findings, and corrective actions taken.",
+    "platform": "Provider's internal systems; submitted to market surveillance authority on request",
+    "frequency": "annual_or_per_trigger",
+    "source_article": "Art. 72",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_serious_incident_report",
+    "label": "Serious Incident Report submitted to Market Surveillance Authority",
+    "description": "Formal report of a serious incident submitted to the competent market surveillance authority within the applicable deadline. Must include: description of the incident; AI system identification; affected persons; corrective measures taken or planned; follow-up assessment.",
+    "platform": "National market surveillance authority of the Member State where incident occurred",
+    "required_fields": ["incident_description", "ai_system_identification", "date_identified", "persons_affected", "corrective_measures"],
+    "frequency": "on_demand",
+    "deadline_policy_id": "dp_serious_incident_report_standard",
+    "source_article": "Art. 73",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_fundamental_rights_impact_assessment",
+    "label": "Fundamental Rights Impact Assessment (FRIA)",
+    "description": "Assessment conducted by public authority deployers (and certain private deployers) before deploying a high-risk AI system. Must cover: intended purpose; deployment context; duration and frequency; categories of persons affected; specific risks to fundamental rights; human oversight measures; remediation plan.",
+    "platform": "Deployer's records; notified to market surveillance authority on request",
+    "frequency": "one_time_before_deployment",
+    "source_article": "Art. 27",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_gpai_technical_documentation",
+    "label": "GPAI Model Technical Documentation (Annex XI + XII)",
+    "description": "Technical documentation maintained by GPAI model providers: (a) Annex XI documentation for the AI Office — detailed technical specifications, training processes, evaluation results, capabilities, limitations; (b) Annex XII downstream integrator documentation — capabilities, limitations, appropriate uses, safeguards, performance metrics.",
+    "platform": "Provider records; Annex XI submitted to AI Office on request; Annex XII provided to downstream integrators",
+    "documentation_templates": ["Annex XI", "Annex XII"],
+    "frequency": "one_time_maintained",
+    "source_article": "Art. 53(1)(a)(b); Annex XI; Annex XII",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_gpai_training_data_summary",
+    "label": "GPAI Model Training Data Summary (publicly available)",
+    "description": "Publicly available summary of the content used for training the GPAI model, following the AI Office template. Describes the types, sources, and scope of training data, including copyright compliance measures.",
+    "platform": "Public (provider's website or AI Office portal)",
+    "frequency": "one_time_maintained",
+    "source_article": "Art. 53(1)(d)",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_gpai_model_evaluation",
+    "label": "GPAI Systemic Risk Model Evaluation and Adversarial Testing Report",
+    "description": "Documentation of model evaluation and adversarial testing conducted by the provider of a GPAI model with systemic risk. Must cover: evaluation protocols used; adversarial testing methodology; systemic risks identified; mitigation measures implemented.",
+    "platform": "Provider records; submitted to AI Office on request",
+    "frequency": "periodic",
+    "source_article": "Art. 55(1)(a)",
+    "confidence": "high"
+  }
+]

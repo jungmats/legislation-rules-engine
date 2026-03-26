@@ -1,0 +1,122 @@
+[
+  {
+    "id": "provider",
+    "label": "Provider",
+    "definition": "A natural or legal person, public authority, agency or other body that develops an AI system or a general-purpose AI model or that has an AI system or a general-purpose AI model developed and places it on the market or puts the AI system into service under its own name or trademark, whether for payment or free of charge",
+    "source_article": "Art. 3(3)",
+    "primary_obligations": [
+      "ob_risk_management_system",
+      "ob_data_governance",
+      "ob_technical_documentation",
+      "ob_logging_and_recordkeeping",
+      "ob_transparency_to_deployers",
+      "ob_human_oversight_design",
+      "ob_accuracy_robustness_cybersecurity",
+      "ob_quality_management_system",
+      "ob_conformity_assessment",
+      "ob_eu_declaration_of_conformity",
+      "ob_ce_marking",
+      "ob_register_eu_database_provider",
+      "ob_post_market_monitoring",
+      "ob_report_serious_incidents",
+      "ob_disclose_ai_interaction",
+      "ob_mark_synthetic_content"
+    ],
+    "note": "A deployer who modifies a high-risk AI system's intended purpose becomes a provider and must fulfill provider obligations (Art. 25).",
+    "confidence": "high"
+  },
+  {
+    "id": "deployer",
+    "label": "Deployer",
+    "definition": "A natural or legal person, public authority, agency or other body that uses an AI system under its authority except where the AI system is used in the course of a personal non-professional activity",
+    "source_article": "Art. 3(4)",
+    "primary_obligations": [
+      "ob_use_per_instructions",
+      "ob_human_oversight_deployment",
+      "ob_input_data_quality",
+      "ob_monitor_and_report_deployer",
+      "ob_retain_logs_deployer",
+      "ob_inform_workers",
+      "ob_inform_affected_persons",
+      "ob_disclose_emotion_biometric",
+      "ob_disclose_deepfake"
+    ],
+    "additional_obligations_if_public_authority": [
+      "ob_register_eu_database_deployer",
+      "ob_fundamental_rights_impact_assessment"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "importer",
+    "label": "Importer",
+    "definition": "A natural or legal person established or located in the Union that places on the market an AI system that bears the name or trademark of a natural or legal person established in a third country",
+    "source_article": "Art. 3(6)",
+    "primary_obligations": ["ob_importer_verify_compliance"],
+    "confidence": "high"
+  },
+  {
+    "id": "distributor",
+    "label": "Distributor",
+    "definition": "A natural or legal person in the supply chain, other than the provider or the importer, that makes an AI system available on the Union market",
+    "source_article": "Art. 3(7)",
+    "primary_obligations": ["ob_distributor_verify_compliance"],
+    "confidence": "high"
+  },
+  {
+    "id": "authorised_representative",
+    "label": "Authorised Representative",
+    "definition": "A natural or legal person located or established in the Union who has received and accepted a written mandate from a provider of an AI system or a general-purpose AI model to, respectively, perform and carry out on its behalf the obligations and procedures established by this Regulation",
+    "source_article": "Art. 3(5)",
+    "primary_obligations": ["ob_authorised_rep_duties"],
+    "confidence": "high"
+  },
+  {
+    "id": "product_manufacturer",
+    "label": "Product Manufacturer",
+    "definition": "A manufacturer placing on the market or putting into service an AI system together with their product and under their own name or trademark — treated as provider of the AI system",
+    "source_article": "Art. 2(1)(e); Art. 25",
+    "primary_obligations": "same as provider",
+    "confidence": "high"
+  },
+  {
+    "id": "notified_body",
+    "label": "Notified Body",
+    "definition": "A conformity assessment body designated by a notifying authority to carry out third-party conformity assessment for high-risk AI systems",
+    "source_article": "Art. 3(22); Art. 31-39",
+    "responsibilities": [
+      "Conduct conformity assessment procedures (Annex VI or VII)",
+      "Issue, suspend, withdraw, or restrict conformity assessment certificates",
+      "Maintain confidentiality of commercially sensitive information",
+      "Report to notifying authority and AI Office"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "national_competent_authority",
+    "label": "National Competent Authority",
+    "definition": "A notifying authority and/or market surveillance authority designated by each Member State to supervise the application and implementation of this Regulation",
+    "source_article": "Art. 3(48); Art. 70",
+    "responsibilities": [
+      "Market surveillance of AI systems (Art. 74-93)",
+      "Conformity assessment body notification (Art. 30)",
+      "Enforcement and penalty application",
+      "Cooperation with EU AI Office and other national authorities"
+    ],
+    "confidence": "high"
+  },
+  {
+    "id": "eu_ai_office",
+    "label": "EU AI Office",
+    "definition": "The Commission's function responsible for implementation, monitoring, and supervision of AI systems — particularly GPAI models — established within the Commission structure",
+    "source_article": "Art. 3(47); Art. 64-68",
+    "responsibilities": [
+      "Supervision of GPAI models and systemic risk models",
+      "Maintaining EU database of high-risk AI systems (Art. 71)",
+      "Developing codes of practice (Art. 56)",
+      "Coordinating national authorities",
+      "Monitoring AI developments and issuing guidance"
+    ],
+    "confidence": "high"
+  }
+]

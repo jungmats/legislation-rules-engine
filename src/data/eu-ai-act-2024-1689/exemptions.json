@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ex_military_national_security",
+    "label": "Full exclusion — AI systems used exclusively for military, defence or national security",
+    "trigger_conditions": [
+      {"fact_id": "ai_system_purpose", "operator": "in", "value": ["military_exclusive", "defence_exclusive", "national_security_exclusive"]}
+    ],
+    "effect": "waived",
+    "description": "AI systems placed on the market, put into service, or used exclusively for military, defence or national security purposes are outside the scope of this Regulation entirely. If the same system is later repurposed for non-security civilian use, this Regulation applies.",
+    "obligations_modified": "all",
+    "source_article": "Art. 2(3)",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_personal_nonprofessional_use",
+    "label": "Exclusion — AI used solely for personal non-professional activity by a natural person",
+    "trigger_conditions": [
+      {"fact_id": "use_is_personal_nonprofessional", "operator": "=", "value": true}
+    ],
+    "effect": "waived",
+    "description": "Natural persons using AI systems in the course of a purely personal non-professional activity are not subject to deployer obligations. They remain subject to the prohibited practices prohibition (Art. 5).",
+    "obligations_modified": "deployer_obligations_only",
+    "source_article": "Art. 2(10)",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_scientific_research_development",
+    "label": "Exclusion — AI developed and used solely for scientific research and development",
+    "trigger_conditions": [
+      {"fact_id": "use_is_scientific_research_only", "operator": "=", "value": true}
+    ],
+    "effect": "waived",
+    "description": "AI systems developed and used solely for scientific research and development before being placed on the market are excluded from this Regulation. Note: testing in real-world conditions (outside laboratory, using actual data on real persons) is NOT exempt and has specific rules (Art. 57-63, AI regulatory sandbox).",
+    "obligations_modified": "all",
+    "source_article": "Art. 2(6)",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_open_source_gpai_documentation",
+    "label": "Open-source GPAI models exempt from technical documentation obligations (Art. 53(1)(a)(b))",
+    "trigger_conditions": [
+      {"fact_id": "is_gpai_model", "operator": "=", "value": true},
+      {"fact_id": "gpai_open_source", "operator": "=", "value": true},
+      {"fact_id": "gpai_systemic_risk", "operator": "=", "value": false}
+    ],
+    "effect": "reduced",
+    "description": "Providers of GPAI models released under a free and open-source licence, with publicly available parameters, architecture, and usage information, are exempt from Art. 53(1)(a) (technical documentation for AI Office) and Art. 53(1)(b) (documentation for downstream integrators). They remain subject to Art. 53(1)(c) (copyright policy) and Art. 53(1)(d) (training data summary). This exemption does NOT apply to open-source GPAI models that have systemic risk.",
+    "obligations_modified": ["ob_gpai_technical_documentation"],
+    "source_article": "Art. 53(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_art6_3_not_high_risk",
+    "label": "Art. 6(3) — Annex III AI system determined not to be high-risk",
+    "trigger_conditions": [
+      {"fact_id": "high_risk_classification_basis", "operator": "=", "value": "annex_iii_use_case"},
+      {"fact_id": "art6_3_exemption_applies", "operator": "=", "value": true}
+    ],
+    "effect": "waived",
+    "description": "Despite being listed in Annex III, an AI system is not considered high-risk if it does not create a significant risk of harm and meets one of these conditions: (a) narrow procedural task; (b) improves a previously completed human activity; (c) detects decision-making patterns for human review without replacing human assessment; (d) preparatory task for an Annex III assessment. IMPORTANT: Systems that perform profiling of natural persons are ALWAYS high-risk and cannot use this exemption.",
+    "obligations_modified": [
+      "ob_risk_management_system", "ob_data_governance", "ob_technical_documentation",
+      "ob_logging_and_recordkeeping", "ob_transparency_to_deployers", "ob_human_oversight_design",
+      "ob_accuracy_robustness_cybersecurity", "ob_quality_management_system",
+      "ob_conformity_assessment", "ob_eu_declaration_of_conformity", "ob_ce_marking",
+      "ob_register_eu_database_provider", "ob_post_market_monitoring", "ob_report_serious_incidents"
+    ],
+    "mandatory_documentation": "Providers using this exemption must document their reasoning in the technical documentation and notify the relevant market surveillance authority.",
+    "source_article": "Art. 6(3)",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_law_enforcement_biometric_id_exceptions",
+    "label": "Narrow exceptions to the real-time RBI prohibition (Art. 5(1)(h))",
+    "trigger_conditions": [
+      {"fact_id": "ai_system_purpose", "operator": "=", "value": "law_enforcement_real_time_rbi"}
+    ],
+    "effect": "reduced",
+    "description": "Real-time remote biometric identification systems in publicly accessible spaces for law enforcement are prohibited UNLESS strictly necessary for one of three purposes: (1) targeted search for specific missing persons or victims of human trafficking; (2) prevention of a specific, substantial and imminent threat to life or a terrorist attack; (3) identification or localisation of a person suspected of having committed an offence punishable by a custodial sentence of at least 4 years. Each use must be: prior-authorised by judicial or independent administrative authority (except genuine emergencies — authorisation within 48 hours); subject to fundamental rights assessment; proportionate; limited in time and geographic scope.",
+    "obligations_modified": ["ob_no_prohibited_practice"],
+    "source_article": "Art. 5(1)(h); Art. 5(2)-(7)",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_transparency_law_enforcement",
+    "label": "Transparency disclosure exemption for law enforcement systems",
+    "trigger_conditions": [
+      {"fact_id": "system_authorised_for_law_enforcement_detection", "operator": "=", "value": true}
+    ],
+    "effect": "waived",
+    "description": "AI systems authorised by law to detect, prevent, investigate, or prosecute criminal offences are exempt from the Art. 50(1) user disclosure obligation (unless publicly available for crime reporting). They are also exempt from Art. 50(2) synthetic content marking and Art. 50(4) deepfake disclosure obligations.",
+    "obligations_modified": ["ob_disclose_ai_interaction", "ob_mark_synthetic_content", "ob_disclose_deepfake"],
+    "source_article": "Art. 50(1)(3)(4)",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_transparency_obvious_context",
+    "label": "Transparency disclosure not required when AI interaction is obvious from context",
+    "trigger_conditions": [
+      {"fact_id": "ai_interaction_obviously_apparent", "operator": "=", "value": true}
+    ],
+    "effect": "waived",
+    "description": "The Art. 50(1) obligation to disclose AI interaction does not apply where it is obvious from the point of view of a reasonably well-informed natural person that they are interacting with an AI system (e.g., an AI-powered chatbot clearly branded as such).",
+    "obligations_modified": ["ob_disclose_ai_interaction"],
+    "source_article": "Art. 50(1)",
+    "confidence": "high"
+  }
+]

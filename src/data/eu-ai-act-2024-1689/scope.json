@@ -1,0 +1,106 @@
+[
+  {
+    "id": "scope_provider_in_union",
+    "label": "Providers placing AI systems or GPAI models on the market or into service in the Union",
+    "entity_type": "provider",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "provider"},
+      {"fact_id": "market_or_service_in_union", "operator": "=", "value": true}
+    ],
+    "geographic_scope": "European Union",
+    "includes_third_country_providers": true,
+    "source_article": "Art. 2(1)(a)",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_deployer_in_union",
+    "label": "Deployers of AI systems established or located in the Union",
+    "entity_type": "deployer",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "deployer"},
+      {"fact_id": "established_or_located_in_union", "operator": "=", "value": true}
+    ],
+    "geographic_scope": "European Union",
+    "source_article": "Art. 2(1)(b)",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_provider_output_used_in_union",
+    "label": "Providers and deployers established outside the EU where output is used in the Union",
+    "entity_type": "provider_or_deployer",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "in", "value": ["provider", "deployer"]},
+      {"fact_id": "established_or_located_in_union", "operator": "=", "value": false},
+      {"fact_id": "ai_output_used_in_union", "operator": "=", "value": true}
+    ],
+    "geographic_scope": "European Union (output jurisdiction)",
+    "source_article": "Art. 2(1)(c)",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_importer_distributor",
+    "label": "Importers and distributors of AI systems",
+    "entity_type": "importer_or_distributor",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "in", "value": ["importer", "distributor"]}
+    ],
+    "source_article": "Art. 2(1)(d)",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_product_manufacturer",
+    "label": "Product manufacturers placing an AI system on the market together with their product",
+    "entity_type": "product_manufacturer",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "product_manufacturer"},
+      {"fact_id": "ai_system_bundled_with_product", "operator": "=", "value": true}
+    ],
+    "source_article": "Art. 2(1)(e)",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_authorised_representative",
+    "label": "Authorised representatives of non-EU providers",
+    "entity_type": "authorised_representative",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "authorised_representative"}
+    ],
+    "source_article": "Art. 2(1)(f)",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_exclusion_military_national_security",
+    "label": "Exclusion — AI systems used exclusively for military, defence or national security",
+    "entity_type": "any",
+    "effect": "excluded",
+    "conditions": [
+      {"fact_id": "ai_system_purpose", "operator": "in", "value": ["military", "defence", "national_security_exclusive"]}
+    ],
+    "note": "Exclusion applies only when use is exclusive to these purposes. If the same system is later used for other purposes, the regulation applies.",
+    "source_article": "Art. 2(3)",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_exclusion_personal_nonprofessional",
+    "label": "Exclusion — natural persons using AI systems for purely personal non-professional activity",
+    "entity_type": "natural_person",
+    "effect": "excluded",
+    "conditions": [
+      {"fact_id": "use_is_personal_nonprofessional", "operator": "=", "value": true}
+    ],
+    "source_article": "Art. 2(10)",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_exclusion_scientific_research",
+    "label": "Exclusion — AI systems developed and used solely for scientific research and development",
+    "entity_type": "any",
+    "effect": "excluded",
+    "conditions": [
+      {"fact_id": "use_is_scientific_research_only", "operator": "=", "value": true}
+    ],
+    "note": "Testing in real-world conditions (outside laboratory) is not excluded and has specific rules in Art. 57-63.",
+    "source_article": "Art. 2(6)",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "id": "pen_prohibited_practices_violation",
+    "label": "Fine for violation of prohibited AI practices (Art. 5)",
+    "penalty_type": "fine",
+    "trigger": "Non-compliance with any prohibition in Art. 5(1)(a)-(h): placing on market, putting into service, or using a prohibited AI system",
+    "amount_or_description": "Up to €35,000,000 or, if the offender is an undertaking, up to 7% of its total worldwide annual turnover for the preceding financial year, whichever is higher.",
+    "amount_max_eur": 35000000,
+    "amount_max_pct_global_turnover": 7,
+    "higher_of_two": true,
+    "sme_startup_rule": "For SMEs and start-ups, fines are subject to the same maximum percentages, but whichever of the two amounts is LOWER (more favourable to the SME).",
+    "authority": "national_competent_authority",
+    "source_article": "Art. 99(3)",
+    "confidence": "high"
+  },
+  {
+    "id": "pen_high_risk_operator_obligations_violation",
+    "label": "Fine for violation of high-risk AI system obligations (operators, notified bodies)",
+    "penalty_type": "fine",
+    "trigger": "Non-compliance with obligations imposed on operators (providers, deployers, importers, distributors, authorised representatives) under Art. 16, 22, 23, 24, 26, and on notified bodies; or with conditions for placing on market/service or use of high-risk AI systems",
+    "amount_or_description": "Up to €15,000,000 or, if the offender is an undertaking, up to 3% of its total worldwide annual turnover for the preceding financial year, whichever is higher.",
+    "amount_max_eur": 15000000,
+    "amount_max_pct_global_turnover": 3,
+    "higher_of_two": true,
+    "sme_startup_rule": "For SMEs and start-ups, the lower of the two amounts applies.",
+    "authority": "national_competent_authority",
+    "source_article": "Art. 99(4)",
+    "confidence": "high"
+  },
+  {
+    "id": "pen_misleading_information",
+    "label": "Fine for providing incorrect, incomplete or misleading information to authorities",
+    "penalty_type": "fine",
+    "trigger": "Supplying incorrect, incomplete or misleading information to notified bodies or national competent authorities in reply to a request",
+    "amount_or_description": "Up to €7,500,000 or, if the offender is an undertaking, up to 1% of its total worldwide annual turnover for the preceding financial year, whichever is higher.",
+    "amount_max_eur": 7500000,
+    "amount_max_pct_global_turnover": 1,
+    "higher_of_two": true,
+    "sme_startup_rule": "For SMEs and start-ups, the lower of the two amounts applies.",
+    "authority": "national_competent_authority",
+    "source_article": "Art. 99(5)",
+    "confidence": "high"
+  },
+  {
+    "id": "pen_eu_institutions_violation",
+    "label": "Fine for EU institutions, bodies, offices and agencies violating this Regulation",
+    "penalty_type": "fine",
+    "trigger": "Non-compliance with this Regulation by EU institutions, bodies, offices or agencies acting as providers or deployers",
+    "amount_or_description": "Up to €1,500,000. The European Data Protection Supervisor has jurisdiction to impose fines on EU institutions.",
+    "amount_max_eur": 1500000,
+    "authority": "european_data_protection_supervisor",
+    "source_article": "Art. 101",
+    "confidence": "high"
+  },
+  {
+    "id": "pen_gpai_violations",
+    "label": "Fine for violation of GPAI model obligations",
+    "penalty_type": "fine",
+    "trigger": "Non-compliance with obligations for general-purpose AI model providers (Art. 53-55), including failure to maintain documentation, copyright compliance, training data summary, or systemic risk obligations",
+    "amount_or_description": "Up to €15,000,000 or up to 3% of total worldwide annual turnover for the preceding financial year, whichever is higher. Same as Art. 99(4) tier.",
+    "amount_max_eur": 15000000,
+    "amount_max_pct_global_turnover": 3,
+    "higher_of_two": true,
+    "sme_startup_rule": "For SMEs and start-ups, the lower of the two amounts applies.",
+    "authority": "eu_ai_office_and_national_competent_authority",
+    "source_article": "Art. 99(4); Art. 101",
+    "confidence": "medium",
+    "human_review_note": "The exact penalty article for GPAI model violations specifically should be confirmed in the full text of Art. 99. The 3%/€15M tier is the most likely applicable tier based on operator obligations, but Art. 99 references specific article numbers that should be verified."
+  }
+]

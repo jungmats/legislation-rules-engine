@@ -1,0 +1,239 @@
+[
+  {
+    "id": "rule_prohibited_ai_any_operator",
+    "label": "Any operator must not place on market, put into service, or use a prohibited AI system",
+    "conditions": [
+      {"fact_id": "ai_system_risk_category", "operator": "=", "value": "prohibited"}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_no_prohibited_practice", "deadline_policy_id": "dp_prohibited_practices"}
+    ],
+    "applicable_exemptions": ["ex_law_enforcement_biometric_id_exceptions"],
+    "source_article": "Art. 5",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_high_risk_provider_annex_iii",
+    "label": "Provider of Annex III high-risk AI system: full requirements and obligations",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "provider"},
+      {"fact_id": "ai_system_risk_category", "operator": "=", "value": "high_risk"},
+      {"fact_id": "high_risk_classification_basis", "operator": "in", "value": ["annex_iii_use_case", "both"]},
+      {"fact_id": "art6_3_exemption_applies", "operator": "=", "value": false}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_risk_management_system", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_data_governance", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_technical_documentation", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_logging_and_recordkeeping", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_transparency_to_deployers", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_human_oversight_design", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_accuracy_robustness_cybersecurity", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_quality_management_system", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_conformity_assessment", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_eu_declaration_of_conformity", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_ce_marking", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_register_eu_database_provider", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_post_market_monitoring", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_report_serious_incidents", "deadline_policy_id": "dp_serious_incident_report_standard"}
+    ],
+    "applicable_exemptions": ["ex_art6_3_not_high_risk"],
+    "source_article": "Art. 6(2); Art. 8-19; Art. 43-49; Art. 72-73",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_high_risk_provider_annex_i",
+    "label": "Provider of Annex I product with high-risk AI safety component: requirements and obligations",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "provider"},
+      {"fact_id": "ai_system_risk_category", "operator": "=", "value": "high_risk"},
+      {"fact_id": "high_risk_classification_basis", "operator": "in", "value": ["annex_i_product_safety_component", "both"]}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_risk_management_system", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_data_governance", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_technical_documentation", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_logging_and_recordkeeping", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_transparency_to_deployers", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_human_oversight_design", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_accuracy_robustness_cybersecurity", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_quality_management_system", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_conformity_assessment", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_eu_declaration_of_conformity", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_ce_marking", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_register_eu_database_provider", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_post_market_monitoring", "deadline_policy_id": "dp_annex_i_products_high_risk"},
+      {"obligation_id": "ob_report_serious_incidents", "deadline_policy_id": "dp_serious_incident_report_standard"}
+    ],
+    "note": "Conformity assessment must be aligned with the procedure under applicable Annex I product legislation. Where the product legislation already requires 3rd-party conformity assessment, the notified body procedure (Annex VII) applies. The CE marking is affixed once under both regimes.",
+    "source_article": "Art. 6(1); Art. 8-19; Art. 43-49; Art. 72-73",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_high_risk_deployer",
+    "label": "Deployer of any high-risk AI system: core deployment obligations",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "deployer"},
+      {"fact_id": "ai_system_risk_category", "operator": "=", "value": "high_risk"}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_use_per_instructions", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_human_oversight_deployment", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_input_data_quality", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_monitor_and_report_deployer", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_retain_logs_deployer", "deadline_policy_id": "dp_log_retention_deployer"},
+      {"obligation_id": "ob_inform_affected_persons", "deadline_policy_id": "dp_general_application"}
+    ],
+    "applicable_exemptions": [],
+    "source_article": "Art. 26",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_high_risk_deployer_employment",
+    "label": "Deployer using high-risk AI in employment context: additional worker notification obligation",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "deployer"},
+      {"fact_id": "ai_system_risk_category", "operator": "=", "value": "high_risk"},
+      {"fact_id": "deployer_uses_ai_in_employment_context", "operator": "=", "value": true}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_inform_workers", "deadline_policy_id": "dp_general_application"}
+    ],
+    "source_article": "Art. 26(7)",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_high_risk_deployer_public_authority",
+    "label": "Public authority deployer of high-risk AI: registration and FRIA obligations",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "deployer"},
+      {"fact_id": "ai_system_risk_category", "operator": "=", "value": "high_risk"},
+      {"fact_id": "deployer_is_public_authority", "operator": "=", "value": true}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_register_eu_database_deployer", "deadline_policy_id": "dp_general_application"},
+      {"obligation_id": "ob_fundamental_rights_impact_assessment", "deadline_policy_id": "dp_general_application"}
+    ],
+    "source_article": "Art. 26(8); Art. 27",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_importer_high_risk",
+    "label": "Importer of high-risk AI system: verify compliance before placing on market",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "importer"},
+      {"fact_id": "ai_system_risk_category", "operator": "=", "value": "high_risk"}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_importer_verify_compliance", "deadline_policy_id": "dp_general_application"}
+    ],
+    "source_article": "Art. 23",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_distributor_high_risk",
+    "label": "Distributor of high-risk AI system: verify CE marking and documentation",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "distributor"},
+      {"fact_id": "ai_system_risk_category", "operator": "=", "value": "high_risk"}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_distributor_verify_compliance", "deadline_policy_id": "dp_general_application"}
+    ],
+    "source_article": "Art. 24",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_gpai_model_standard_provider",
+    "label": "Provider of GPAI model (standard): documentation, copyright policy, and transparency",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "provider"},
+      {"fact_id": "is_gpai_model", "operator": "=", "value": true}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_gpai_technical_documentation", "deadline_policy_id": "dp_gpai_obligations"},
+      {"obligation_id": "ob_gpai_copyright_policy", "deadline_policy_id": "dp_gpai_obligations"},
+      {"obligation_id": "ob_gpai_training_data_summary", "deadline_policy_id": "dp_gpai_obligations"}
+    ],
+    "applicable_exemptions": ["ex_open_source_gpai_documentation"],
+    "source_article": "Art. 53",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_gpai_model_systemic_risk_provider",
+    "label": "Provider of GPAI model with systemic risk: additional evaluation, risk, incident, and cybersecurity obligations",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "provider"},
+      {"fact_id": "is_gpai_model", "operator": "=", "value": true},
+      {"fact_id": "gpai_systemic_risk", "operator": "=", "value": true}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_gpai_technical_documentation", "deadline_policy_id": "dp_gpai_obligations"},
+      {"obligation_id": "ob_gpai_copyright_policy", "deadline_policy_id": "dp_gpai_obligations"},
+      {"obligation_id": "ob_gpai_training_data_summary", "deadline_policy_id": "dp_gpai_obligations"},
+      {"obligation_id": "ob_gpai_systemic_risk_model_evaluation", "deadline_policy_id": "dp_gpai_obligations"},
+      {"obligation_id": "ob_gpai_systemic_risk_assessment", "deadline_policy_id": "dp_gpai_obligations"},
+      {"obligation_id": "ob_gpai_systemic_risk_incident_reporting", "deadline_policy_id": "dp_gpai_obligations"},
+      {"obligation_id": "ob_gpai_systemic_risk_cybersecurity", "deadline_policy_id": "dp_gpai_obligations"}
+    ],
+    "note": "The ex_open_source_gpai_documentation exemption does NOT apply to GPAI models with systemic risk, even if open-source.",
+    "source_article": "Art. 53; Art. 55",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_transparency_ai_interaction",
+    "label": "Provider of AI system that directly interacts with users: disclose AI interaction",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "provider"},
+      {"fact_id": "ai_system_involves_user_interaction", "operator": "=", "value": true}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_disclose_ai_interaction", "deadline_policy_id": "dp_general_application"}
+    ],
+    "applicable_exemptions": ["ex_transparency_law_enforcement", "ex_transparency_obvious_context"],
+    "source_article": "Art. 50(1)",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_transparency_synthetic_content",
+    "label": "Provider of AI generating synthetic content: machine-readable marking",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "provider"},
+      {"fact_id": "ai_system_generates_synthetic_content", "operator": "=", "value": true}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_mark_synthetic_content", "deadline_policy_id": "dp_general_application"}
+    ],
+    "applicable_exemptions": ["ex_transparency_law_enforcement"],
+    "source_article": "Art. 50(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_transparency_emotion_biometric_deployer",
+    "label": "Deployer of emotion recognition or biometric categorisation: inform exposed persons",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "deployer"},
+      {"fact_id": "ai_system_uses_emotion_recognition_or_biometric_categorisation", "operator": "=", "value": true}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_disclose_emotion_biometric", "deadline_policy_id": "dp_general_application"}
+    ],
+    "applicable_exemptions": ["ex_transparency_law_enforcement"],
+    "source_article": "Art. 50(3)",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_transparency_deepfake_deployer",
+    "label": "Deployer using AI to generate deepfakes or AI-generated public interest text: disclosure",
+    "conditions": [
+      {"fact_id": "entity_role", "operator": "=", "value": "deployer"},
+      {"fact_id": "ai_system_generates_synthetic_content", "operator": "=", "value": true}
+    ],
+    "obligations": [
+      {"obligation_id": "ob_disclose_deepfake", "deadline_policy_id": "dp_general_application"}
+    ],
+    "applicable_exemptions": ["ex_transparency_law_enforcement"],
+    "source_article": "Art. 50(4)",
+    "confidence": "high"
+  }
+]

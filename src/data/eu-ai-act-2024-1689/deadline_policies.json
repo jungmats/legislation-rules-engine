@@ -1,0 +1,94 @@
+[
+  {
+    "id": "dp_prohibited_practices",
+    "label": "Prohibited AI practices (Art. 5) — applicable from 2 February 2025",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2025-02-02",
+    "recurrence": "one_time",
+    "note": "Chapter II (Art. 5) applies 6 months after entry into force (1 August 2024). All prohibited AI systems must be withdrawn from market by this date. GPAI model obligations (Art. 53-56) also apply from this date.",
+    "source_article": "Art. 113(1)(b)",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_gpai_obligations",
+    "label": "GPAI model obligations (Art. 53-56) — applicable from 2 February 2025",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2025-02-02",
+    "recurrence": "one_time",
+    "note": "Art. 53, 54, 55, and 56 (general-purpose AI model obligations, including systemic risk) apply 6 months after entry into force. Providers of existing GPAI models must comply from this date.",
+    "source_article": "Art. 113(1)(b)",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_notifying_authorities_gpai_governance",
+    "label": "Notifying authorities, GPAI governance, Chapter VII — applicable from 2 August 2025",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2025-08-02",
+    "recurrence": "one_time",
+    "note": "Chapter III Section 4 (notifying authorities and notified bodies), Chapter V (governance of GPAI), Chapter VII (national competent authorities and AI governance structures), Chapter XII (final provisions) apply 12 months after entry into force.",
+    "source_article": "Art. 113(1)(c)",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_general_application",
+    "label": "Full application of most provisions — 2 August 2026",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2026-08-02",
+    "recurrence": "one_time",
+    "note": "Most provisions of the Regulation, including: Chapter III (high-risk AI system requirements and obligations — Art. 8-49), Chapter IV (transparency obligations — Art. 50), Chapter VI (AI governance — Art. 57-63), Chapter VIII (post-market monitoring — Art. 72-94), Chapter IX (codes of conduct — Art. 95), Chapter X (penalties — Art. 99-101). This is the primary compliance deadline for providers of Annex III high-risk AI systems.",
+    "source_article": "Art. 113(1)(general)",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_annex_i_products_high_risk",
+    "label": "Art. 6(1) high-risk AI in Annex I products and public authority Annex III deployers — 2 August 2027",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2027-08-02",
+    "recurrence": "one_time",
+    "note": "Art. 6(1) and the corresponding high-risk AI system obligations apply 36 months after entry into force for: (a) AI systems that are safety components of Annex I products (Union harmonisation legislation) requiring 3rd-party conformity assessment; and (b) according to Art. 113, public authority deployers of Annex III systems. This later deadline allows time for alignment with existing product conformity assessment regimes.",
+    "source_article": "Art. 113(1)(d)",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_serious_incident_report_death",
+    "label": "Serious incident reporting — death: within 2 days",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_serious_incident_identified",
+    "offset_days": 2,
+    "recurrence": "one_time",
+    "note": "Where the serious incident involves the death of a person, the provider must report without undue delay and within 2 days of becoming aware.",
+    "source_article": "Art. 73",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_serious_incident_report_health_damage",
+    "label": "Serious incident reporting — death or serious health damage: within 10 days",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_serious_incident_identified",
+    "offset_days": 10,
+    "recurrence": "one_time",
+    "source_article": "Art. 73",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_serious_incident_report_standard",
+    "label": "Serious incident reporting — other serious incidents: within 15 days",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_serious_incident_identified",
+    "offset_days": 15,
+    "recurrence": "one_time",
+    "source_article": "Art. 73",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_log_retention_deployer",
+    "label": "Log retention by deployers — minimum 6 months",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_log_generated",
+    "offset_months": 6,
+    "recurrence": "rolling",
+    "note": "Minimum retention period. Longer retention may be required by EU or national law applicable to the specific sector or use case.",
+    "source_article": "Art. 26(6)",
+    "confidence": "high"
+  }
+]

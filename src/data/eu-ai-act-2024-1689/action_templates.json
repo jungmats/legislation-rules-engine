@@ -1,0 +1,190 @@
+[
+  {
+    "id": "act_classify_ai_system",
+    "label": "Classify the AI system's risk category",
+    "description": "Determine whether the AI system falls under: Art. 5 (prohibited), Art. 6(1) (Annex I product safety component), Art. 6(2) (Annex III use case), Art. 6(3) (Annex III but not high-risk), Art. 50 (limited risk — transparency only), or minimal risk. Document the classification reasoning.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category", "high_risk_classification_basis", "annex_iii_use_case_area", "art6_3_exemption_applies"],
+    "evidence_produced": null,
+    "prerequisites": [],
+    "source_article": "Art. 5; Art. 6",
+    "confidence": "high"
+  },
+  {
+    "id": "act_conduct_risk_management",
+    "label": "Establish and document the risk management system (Art. 9)",
+    "description": "Implement a continuous iterative risk management system covering: identification of known and foreseeable risks; estimation and evaluation of risks; evaluation based on post-market data; risk mitigation measures. Document the system and maintain it throughout the AI system lifecycle.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category"],
+    "evidence_produced": "ev_risk_management_documentation",
+    "prerequisites": ["act_classify_ai_system"],
+    "source_article": "Art. 9",
+    "confidence": "high"
+  },
+  {
+    "id": "act_implement_data_governance",
+    "label": "Implement data governance and management practices (Art. 10)",
+    "description": "Document training, validation, and testing data practices including: data collection justification; bias examination; data gap identification; annotation and labelling procedures; data quality assurance. Ensure data is representative and fit for purpose.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category"],
+    "evidence_produced": "ev_technical_documentation",
+    "prerequisites": ["act_classify_ai_system"],
+    "source_article": "Art. 10",
+    "confidence": "high"
+  },
+  {
+    "id": "act_prepare_technical_documentation",
+    "label": "Draw up technical documentation per Annex IV",
+    "description": "Prepare comprehensive technical documentation in accordance with Annex IV before placing the system on market. Must include: general description; detailed description of elements; monitoring, functioning and control; accuracy and performance metrics; cybersecurity measures; changes to prior versions.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category", "high_risk_classification_basis"],
+    "evidence_produced": "ev_technical_documentation",
+    "prerequisites": ["act_conduct_risk_management", "act_implement_data_governance"],
+    "source_article": "Art. 11; Annex IV",
+    "confidence": "high"
+  },
+  {
+    "id": "act_establish_qms",
+    "label": "Establish and implement a Quality Management System (Art. 17)",
+    "description": "Establish a documented QMS covering: compliance strategy; data examination procedures; validation and testing methodologies; risk management; post-market monitoring plan; serious incident reporting procedures; communication plan; documentation management. For providers who are SMEs, proportionate implementation is permitted.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category"],
+    "evidence_produced": "ev_quality_management_system",
+    "prerequisites": ["act_classify_ai_system"],
+    "source_article": "Art. 17",
+    "confidence": "high"
+  },
+  {
+    "id": "act_conduct_conformity_assessment",
+    "label": "Conduct conformity assessment (Annex VI or VII)",
+    "description": "Perform the relevant conformity assessment procedure: internal control (Annex VI) for most Annex III systems; or third-party assessment by a notified body (Annex VII) for Annex I product safety components and biometric identification systems. Retain conformity assessment documentation for 10 years after last market placement.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category", "high_risk_classification_basis", "conformity_assessment_type"],
+    "evidence_produced": "ev_conformity_assessment_certificate",
+    "prerequisites": ["act_prepare_technical_documentation", "act_establish_qms"],
+    "source_article": "Art. 43; Annex VI; Annex VII",
+    "confidence": "high"
+  },
+  {
+    "id": "act_draw_up_declaration_of_conformity",
+    "label": "Draw up the EU Declaration of Conformity (Annex V)",
+    "description": "Issue a written EU Declaration of Conformity in accordance with Annex V, stating that the high-risk AI system complies with all applicable requirements. Keep it up to date. Make it available to market surveillance authorities on request. Include: system identification, provider identity, standards applied, conformity assessment procedure used.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category"],
+    "evidence_produced": "ev_eu_declaration_of_conformity",
+    "prerequisites": ["act_conduct_conformity_assessment"],
+    "source_article": "Art. 47; Annex V",
+    "confidence": "high"
+  },
+  {
+    "id": "act_affix_ce_marking",
+    "label": "Affix the CE marking to the AI system",
+    "description": "Affix the CE marking to the high-risk AI system (or its packaging/documentation if not possible on the system itself) before placing on market. The CE marking signifies conformity with all applicable requirements of this Regulation and applicable Union harmonisation legislation.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category"],
+    "evidence_produced": "ev_ce_marking",
+    "prerequisites": ["act_draw_up_declaration_of_conformity"],
+    "source_article": "Art. 48",
+    "confidence": "high"
+  },
+  {
+    "id": "act_register_eu_database_provider",
+    "label": "Register provider and AI system in the EU database (Art. 71)",
+    "description": "Register the provider entity and the high-risk AI system in the EU database for AI systems before placing on market or putting into service. Provide all required information per Annex VIII including: provider identity; system name, version, intended purpose; conformity assessment reference; declaration of conformity reference; contact details; Annex III category.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category", "high_risk_classification_basis", "annex_iii_use_case_area"],
+    "evidence_produced": "ev_eu_database_registration",
+    "prerequisites": ["act_draw_up_declaration_of_conformity"],
+    "source_article": "Art. 49(1); Art. 71; Annex VIII",
+    "confidence": "high"
+  },
+  {
+    "id": "act_implement_post_market_monitoring",
+    "label": "Establish and implement post-market monitoring plan",
+    "description": "Establish a documented post-market monitoring plan to systematically collect data and feedback from deployers and users. Analyse data to assess ongoing compliance with requirements. Update technical documentation and corrective actions as needed. Results feed into the risk management system.",
+    "responsible_party": "provider",
+    "required_inputs": ["ai_system_risk_category"],
+    "evidence_produced": "ev_post_market_monitoring_plan",
+    "prerequisites": ["act_register_eu_database_provider"],
+    "source_article": "Art. 72",
+    "confidence": "high"
+  },
+  {
+    "id": "act_report_serious_incident",
+    "label": "Report serious incident to market surveillance authority",
+    "description": "Upon identifying a serious incident: immediately notify the market surveillance authority of the Member State where the incident occurred, within the applicable deadline (2/10/15 days depending on severity). Investigate the incident, identify root cause, adopt corrective measures, and follow up with the authority.",
+    "responsible_party": "provider",
+    "required_inputs": ["serious_incident_occurred"],
+    "evidence_produced": "ev_serious_incident_report",
+    "prerequisites": [],
+    "triggered_by": "serious_incident_occurred = true",
+    "source_article": "Art. 73",
+    "confidence": "high"
+  },
+  {
+    "id": "act_implement_human_oversight_deployer",
+    "label": "Assign and implement human oversight for deployed AI system",
+    "description": "Assign natural persons with appropriate competence, training, and authority to oversee the high-risk AI system. Implement the human oversight measures specified in the provider's instructions for use. Ensure oversight persons can interpret outputs, detect failures, and intervene or interrupt the system.",
+    "responsible_party": "deployer",
+    "required_inputs": ["ai_system_risk_category"],
+    "evidence_produced": null,
+    "prerequisites": [],
+    "source_article": "Art. 26(1)(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "act_conduct_fria",
+    "label": "Conduct Fundamental Rights Impact Assessment (Art. 27)",
+    "description": "Public authority deployers (and certain private deployers of Annex III systems) must conduct a FRIA before deploying the high-risk AI system. The assessment must cover: intended purpose; duration and frequency of use; categories of natural persons affected; specific risks of harm to fundamental rights; human oversight measures; specific measures for affected persons. Notify the market surveillance authority of the results.",
+    "responsible_party": "deployer",
+    "required_inputs": ["deployer_is_public_authority", "annex_iii_use_case_area", "ai_system_risk_category"],
+    "evidence_produced": "ev_fundamental_rights_impact_assessment",
+    "prerequisites": [],
+    "source_article": "Art. 27",
+    "confidence": "high"
+  },
+  {
+    "id": "act_register_eu_database_deployer",
+    "label": "Register as public authority deployer in EU database",
+    "description": "Public authority deployers must register their use of the high-risk AI system in the EU database before putting it into service. Also verify that the system appears in the database as registered by the provider. Provide information per Annex IX.",
+    "responsible_party": "deployer",
+    "required_inputs": ["deployer_is_public_authority", "ai_system_risk_category"],
+    "evidence_produced": "ev_eu_database_registration",
+    "prerequisites": [],
+    "source_article": "Art. 26(8); Art. 49(2)",
+    "confidence": "high"
+  },
+  {
+    "id": "act_prepare_gpai_documentation",
+    "label": "Draw up GPAI model technical documentation (Annex XI + XII)",
+    "description": "Prepare and maintain two documentation sets: (a) Annex XI documentation for the AI Office (technical specifications, training details, evaluation results); (b) Annex XII documentation for downstream AI system integrators (capabilities, limitations, intended and inappropriate uses, performance metrics, applicable safeguards).",
+    "responsible_party": "gpai_model_provider",
+    "required_inputs": ["is_gpai_model", "gpai_systemic_risk", "gpai_open_source"],
+    "evidence_produced": "ev_gpai_technical_documentation",
+    "prerequisites": [],
+    "source_article": "Art. 53(1)(a)(b); Annex XI; Annex XII",
+    "confidence": "high"
+  },
+  {
+    "id": "act_publish_training_data_summary",
+    "label": "Publish summary of training data content for GPAI model",
+    "description": "Prepare and make publicly available a sufficiently detailed summary of the content used for training the GPAI model. The summary must follow the template provided by the AI Office and be updated when the model is substantially modified.",
+    "responsible_party": "gpai_model_provider",
+    "required_inputs": ["is_gpai_model"],
+    "evidence_produced": "ev_gpai_training_data_summary",
+    "prerequisites": [],
+    "source_article": "Art. 53(1)(d)",
+    "confidence": "high"
+  },
+  {
+    "id": "act_conduct_model_evaluation_systemic_risk",
+    "label": "Conduct model evaluation and adversarial testing (GPAI systemic risk)",
+    "description": "Perform model evaluation in accordance with standardised protocols and tools, including documented adversarial testing, to identify and mitigate systemic risks. Follow AI Office guidance on methodologies and protocols. Document results and incorporate findings into risk mitigation measures.",
+    "responsible_party": "gpai_model_provider",
+    "required_inputs": ["gpai_systemic_risk"],
+    "evidence_produced": "ev_gpai_model_evaluation",
+    "prerequisites": ["act_prepare_gpai_documentation"],
+    "source_article": "Art. 55(1)(a)",
+    "confidence": "high"
+  }
+]
