@@ -42,7 +42,9 @@ export interface ScopeEntry {
 export interface Entity {
   id: string;
   label: string;
-  description: string;
+  description?: string;
+  definition?: string;
+  note?: string;
   source_article?: string;
 }
 

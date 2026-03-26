@@ -56,7 +56,8 @@ export default function App() {
         {state.step === 'role_select' && (
           index
             ? <RoleSelector
-                entities={Array.from(index.entities.values())}
+                entities={index.entities}
+                entityRoleFact={index.facts.get('entity_role')}
                 onSelect={(roleId) => dispatch({ type: 'SELECT_ROLE', roleId })}
               />
             : <p className="text-gray-500">Loading regulation…</p>
