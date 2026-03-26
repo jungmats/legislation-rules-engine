@@ -31,12 +31,20 @@ export default function App() {
             Legislation Rules Engine
           </h1>
           {state.step !== 'regulation_pick' && (
-            <button
-              onClick={() => dispatch({ type: 'RESTART' })}
-              className="text-sm text-gray-500 hover:text-gray-800 underline"
-            >
-              ← Start over
-            </button>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => dispatch({ type: 'BACK' })}
+                className="text-sm text-gray-500 hover:text-gray-800"
+              >
+                ← Back
+              </button>
+              <button
+                onClick={() => dispatch({ type: 'RESTART' })}
+                className="text-sm text-gray-400 hover:text-gray-600"
+              >
+                Start over
+              </button>
+            </div>
           )}
         </div>
       </header>

@@ -33,5 +33,6 @@ Status legend: `[ ]` todo · `[x]` done · `[-]` skipped
 
 ## Phase 4 — Integration & Deploy
 
+- [x] 4.0 Auto-discover regulations from assets/legislation/ + back button
 - [ ] 4.1 End-to-end test with EU AI Act
 - [ ] 4.2 Deploy to GitHub Pages

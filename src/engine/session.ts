@@ -41,6 +41,7 @@ export type SessionAction =
   | { type: 'ANSWER_FACT'; factId: string; value: unknown }
   | { type: 'SKIP_FACT'; factId: string }
   | { type: 'FINISH_EARLY' }
+  | { type: 'BACK' }
   | { type: 'RESTART' };
 
 export function sessionReducer(
@@ -75,6 +76,21 @@ export function sessionReducer(
 
     case 'FINISH_EARLY':
       return { ...state, step: 'complete' };
+
+    case 'BACK':
+      if (state.step === 'role_select' || state.step === 'questioning' || state.step === 'complete') {
+        // questioning/complete → role_select: clear fact answers but keep slug
+        if (state.step === 'questioning' || state.step === 'complete') {
+          return {
+            ...initialState(),
+            step: 'role_select',
+            regulationSlug: state.regulationSlug,
+          };
+        }
+        // role_select → regulation_pick
+        return initialState();
+      }
+      return state;
 
     case 'RESTART':
       return initialState();

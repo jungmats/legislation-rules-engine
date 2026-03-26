@@ -20,15 +20,24 @@ export interface RegulationIndex {
   roleChangeWarnings: RoleChangeWarning[];
 }
 
-/** Each bundled regulation exports a loader function of this shape */
-export type RegulationLoader = () => Promise<RegulationIndex>;
-
 function toMap<T extends { id: string }>(arr: T[]): Map<string, T> {
   return new Map(arr.map((item) => [item.id, item]));
 }
 
+// Auto-discover all regulation slugs from assets/legislation/*/regulation.json
+const regulationMeta = import.meta.glob('../../assets/legislation/*/regulation.json', { eager: true });
+
+export const BUNDLED_REGULATIONS: { slug: string; label: string }[] = Object.keys(regulationMeta)
+  .map((path) => {
+    // path looks like: ../../assets/legislation/eu-ai-act-2024-1689/regulation.json
+    const parts = path.split('/');
+    const slug = parts[parts.length - 2] ?? '';
+    const reg = (regulationMeta[path] as { default: Regulation }).default;
+    return { slug, label: reg.title ?? slug };
+  })
+  .sort((a, b) => a.label.localeCompare(b.label));
+
 export async function loadRegulation(slug: string): Promise<RegulationIndex> {
-  // Dynamic imports — Vite will bundle each regulation's JSON at build time
   const [
     regulation,
     scope,
@@ -44,22 +53,22 @@ export async function loadRegulation(slug: string): Promise<RegulationIndex> {
     interactionProvisions,
     roleChangeWarnings,
   ] = await Promise.all([
-    import(`../data/${slug}/regulation.json`).then((m) => m.default as Regulation),
-    import(`../data/${slug}/scope.json`).then((m) => m.default as ScopeEntry[]),
-    import(`../data/${slug}/entities.json`).then((m) => m.default as Entity[]),
-    import(`../data/${slug}/facts.json`).then((m) => m.default as Fact[]),
-    import(`../data/${slug}/obligations.json`).then((m) => m.default as Obligation[]),
-    import(`../data/${slug}/deadline_policies.json`).then((m) => m.default as DeadlinePolicy[]),
-    import(`../data/${slug}/exemptions.json`).then((m) => m.default as Exemption[]),
-    import(`../data/${slug}/rules.json`).then((m) => m.default as Rule[]),
-    import(`../data/${slug}/action_templates.json`).then((m) => m.default as ActionTemplate[]),
-    import(`../data/${slug}/compliance_evidence.json`).then((m) => m.default as ComplianceEvidence[]),
-    import(`../data/${slug}/penalties.json`).then((m) => m.default as Penalty[]),
-    // Optional files — gracefully absent for regulations extracted with skill v1.0
-    import(`../data/${slug}/interaction_provisions.json`)
+    import(`../../assets/legislation/${slug}/regulation.json`).then((m) => m.default as Regulation),
+    import(`../../assets/legislation/${slug}/scope.json`).then((m) => m.default as ScopeEntry[]),
+    import(`../../assets/legislation/${slug}/entities.json`).then((m) => m.default as Entity[]),
+    import(`../../assets/legislation/${slug}/facts.json`).then((m) => m.default as Fact[]),
+    import(`../../assets/legislation/${slug}/obligations.json`).then((m) => m.default as Obligation[]),
+    import(`../../assets/legislation/${slug}/deadline_policies.json`).then((m) => m.default as DeadlinePolicy[]),
+    import(`../../assets/legislation/${slug}/exemptions.json`).then((m) => m.default as Exemption[]),
+    import(`../../assets/legislation/${slug}/rules.json`).then((m) => m.default as Rule[]),
+    import(`../../assets/legislation/${slug}/action_templates.json`).then((m) => m.default as ActionTemplate[]),
+    import(`../../assets/legislation/${slug}/compliance_evidence.json`).then((m) => m.default as ComplianceEvidence[]),
+    import(`../../assets/legislation/${slug}/penalties.json`).then((m) => m.default as Penalty[]),
+    // Optional — gracefully absent for skill v1.0 output
+    import(`../../assets/legislation/${slug}/interaction_provisions.json`)
       .then((m) => m.default as InteractionProvision[])
       .catch(() => [] as InteractionProvision[]),
-    import(`../data/${slug}/role_change_warnings.json`)
+    import(`../../assets/legislation/${slug}/role_change_warnings.json`)
       .then((m) => m.default as RoleChangeWarning[])
       .catch(() => [] as RoleChangeWarning[]),
   ]);
@@ -80,8 +89,3 @@ export async function loadRegulation(slug: string): Promise<RegulationIndex> {
     roleChangeWarnings,
   };
 }
-
-/** Registry of available bundled regulations */
-export const BUNDLED_REGULATIONS: { slug: string; label: string }[] = [
-  { slug: 'eu-ai-act-2024-1689', label: 'EU AI Act (Regulation 2024/1689)' },
-];
