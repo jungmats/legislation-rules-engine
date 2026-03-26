@@ -56,6 +56,7 @@ export interface Fact {
   type: FactType;
   unit?: string;
   allowed_values?: string[];
+  value_descriptions?: Record<string, string>;
   source?: string;
   source_article?: string;
   confidence: Confidence;

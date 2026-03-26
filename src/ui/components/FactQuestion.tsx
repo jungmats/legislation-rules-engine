@@ -26,20 +26,20 @@ export default function FactQuestion({ fact, onAnswer, onSkip, questionNumber, w
       {fact.source && (
         <p className="text-sm text-gray-500 mb-4">{fact.source}</p>
       )}
+      {fact.source_article && (
+        <p className="text-xs text-gray-400 mb-4">Reference: {fact.source_article}</p>
+      )}
 
       <div className="mb-5">
         {fact.type === 'boolean' && (
           <div className="flex gap-3">
-            {['true', 'false'].map((v) => (
+            {[true, false].map((v) => (
               <button
-                key={v}
-                onClick={() => onAnswer(v === 'true')}
-                className={`px-5 py-2 rounded-lg border text-sm font-medium transition-all
-                  ${v === 'true'
-                    ? 'border-blue-500 bg-blue-50 text-blue-700 hover:bg-blue-100'
-                    : 'border-gray-300 hover:border-gray-400'}`}
+                key={String(v)}
+                onClick={() => onAnswer(v)}
+                className="text-left px-5 py-2 rounded-lg border border-gray-200 hover:border-blue-500 hover:bg-blue-50 text-sm font-medium transition-all"
               >
-                {v === 'true' ? 'Yes' : 'No'}
+                {v ? 'Yes' : 'No'}
               </button>
             ))}
           </div>
@@ -47,15 +47,21 @@ export default function FactQuestion({ fact, onAnswer, onSkip, questionNumber, w
 
         {fact.type === 'enum' && fact.allowed_values && (
           <div className="flex flex-col gap-2">
-            {fact.allowed_values.map((v) => (
-              <button
-                key={v}
-                onClick={() => onAnswer(v)}
-                className="text-left px-4 py-2 rounded-lg border border-gray-200 hover:border-blue-500 hover:bg-blue-50 text-sm transition-all"
-              >
-                {v}
-              </button>
-            ))}
+            {fact.allowed_values.map((v) => {
+              const description = fact.value_descriptions?.[v];
+              return (
+                <button
+                  key={v}
+                  onClick={() => onAnswer(v)}
+                  className="text-left px-4 py-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:bg-blue-50 text-sm transition-all"
+                >
+                  <div className="font-medium">{v}</div>
+                  {description && (
+                    <div className="text-xs text-gray-500 mt-1">{description}</div>
+                  )}
+                </button>
+              );
+            })}
           </div>
         )}
 
