@@ -14,6 +14,7 @@ export interface SessionState {
   regulationSlug: string | null;
   selectedRole: string | null;         // entity id from entities.json
   factMap: FactMap;
+  factHistory: string[];               // ordered list of fact ids answered (excluding entity_role)
   evaluatedRules: EvaluatedRule[];
   confirmed: ResolvedObligation[];
   possible: PossibleObligation[];
@@ -27,6 +28,7 @@ export function initialState(): SessionState {
     regulationSlug: null,
     selectedRole: null,
     factMap: new Map(),
+    factHistory: [],
     evaluatedRules: [],
     confirmed: [],
     possible: [],
@@ -64,33 +66,53 @@ export function sessionReducer(
       if (!index) return state;
       const factMap = new Map(state.factMap);
       factMap.set(action.factId, action.value);
-      return advance({ ...state, factMap, totalQuestionsAsked: state.totalQuestionsAsked + 1 }, index);
+      return advance({
+        ...state,
+        factMap,
+        factHistory: [...state.factHistory, action.factId],
+        totalQuestionsAsked: state.totalQuestionsAsked + 1,
+      }, index);
     }
 
     case 'SKIP_FACT': {
       if (!index) return state;
       const factMap = new Map(state.factMap);
       factMap.set(action.factId, null); // null = skipped
-      return advance({ ...state, factMap, totalQuestionsAsked: state.totalQuestionsAsked + 1 }, index);
+      return advance({
+        ...state,
+        factMap,
+        factHistory: [...state.factHistory, action.factId],
+        totalQuestionsAsked: state.totalQuestionsAsked + 1,
+      }, index);
     }
 
     case 'FINISH_EARLY':
       return { ...state, step: 'complete' };
 
-    case 'BACK':
-      if (state.step === 'role_select' || state.step === 'questioning' || state.step === 'complete') {
-        // questioning/complete → role_select: clear fact answers but keep slug
-        if (state.step === 'questioning' || state.step === 'complete') {
-          return {
-            ...initialState(),
-            step: 'role_select',
-            regulationSlug: state.regulationSlug,
-          };
-        }
-        // role_select → regulation_pick
+    case 'BACK': {
+      if (state.step === 'role_select') {
         return initialState();
       }
+      if ((state.step === 'questioning' || state.step === 'complete') && index) {
+        if (state.factHistory.length === 0) {
+          // No facts answered yet beyond role — go back to role selection
+          return { ...initialState(), step: 'role_select', regulationSlug: state.regulationSlug };
+        }
+        // Undo the last answered fact
+        const factHistory = state.factHistory.slice(0, -1);
+        const lastFactId = state.factHistory[state.factHistory.length - 1];
+        const factMap = new Map(state.factMap);
+        factMap.delete(lastFactId);
+        return advance({
+          ...state,
+          step: 'questioning',
+          factMap,
+          factHistory,
+          totalQuestionsAsked: state.totalQuestionsAsked - 1,
+        }, index);
+      }
       return state;
+    }
 
     case 'RESTART':
       return initialState();
