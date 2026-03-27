@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npx playwright:*)",
+      "Bash(npm test:*)",
+      "Bash(cat test-results/smoke-EU-AI-Act-*-provider-*/error-context.md)"
     ]
   }
 }
