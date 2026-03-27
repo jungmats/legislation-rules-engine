@@ -23,13 +23,38 @@
   {
     "id": "activity_type",
     "label": "Type d'activité tertiaire exercée",
-    "description": "Nature de l'activité tertiaire marchande ou non marchande hébergée dans le bâtiment. Les catégories précises sont définies par arrêté ministériel.",
-    "type": "string",
-    "allowed_values": "Catégories définies par arrêté (bureaux, hôtellerie, commerce, enseignement, santé, logistique, data centers, sport, etc.)",
-    "source": "Déclaration sur OPERAT",
+    "description": "Nature de l'activité tertiaire marchande ou non marchande hébergée dans le bâtiment. Les catégories sont définies par arrêté ministériel et correspondent aux sous-destinations OPERAT.",
+    "type": "enum",
+    "allowed_values": [
+      "bureaux",
+      "hotellerie_restauration",
+      "commerce_distribution",
+      "enseignement_formation",
+      "sante_action_sociale",
+      "logistique_entreposage",
+      "data_centers",
+      "sport_loisirs",
+      "culture_spectacle",
+      "transport_voyageurs",
+      "autres_activites_tertiaires"
+    ],
+    "value_descriptions": {
+      "bureaux": "Locaux à usage de bureaux, d'administration, de services financiers ou de back-office (sièges sociaux, open spaces, cabinets, etc.).",
+      "hotellerie_restauration": "Hôtels, résidences de tourisme, auberges, restaurants, cafés et autres établissements d'hébergement ou de restauration.",
+      "commerce_distribution": "Surfaces de vente au détail, centres commerciaux, grandes surfaces alimentaires et spécialisées, showrooms.",
+      "enseignement_formation": "Établissements scolaires, universités, centres de formation professionnelle, crèches et structures d'accueil de la petite enfance.",
+      "sante_action_sociale": "Hôpitaux, cliniques, cabinets médicaux, EHPAD, centres sociaux et structures médico-sociales.",
+      "logistique_entreposage": "Entrepôts, plateformes logistiques, locaux de stockage liés à une activité tertiaire.",
+      "data_centers": "Centres de traitement et d'hébergement de données informatiques.",
+      "sport_loisirs": "Gymnases, piscines, salles de sport, patinoires, parcs de loisirs et équipements sportifs couverts.",
+      "culture_spectacle": "Musées, théâtres, cinémas, salles de concert, bibliothèques, médiathèques et équipements culturels.",
+      "transport_voyageurs": "Gares ferroviaires, routières ou aéroportuaires, stations de métro et autres infrastructures d'accueil de voyageurs.",
+      "autres_activites_tertiaires": "Toute activité tertiaire ne relevant pas des catégories ci-dessus. Sélectionner si aucune autre catégorie ne correspond."
+    },
+    "source": "Déclaration sur OPERAT ; catégories issues de l'arrêté du 10 avril 2020 et de la nomenclature OPERAT",
     "source_article": "Art. R. 131-38, I ; Art. R. 131-41, 1°",
     "confidence": "medium",
-    "human_review_note": "L'énumération exacte des catégories d'activités est définie par arrêté ministériel (arrêté valeurs absolues, non fetché). La plateforme OPERAT recense plus de 20 sous-catégories. Cette liste doit être intégrée pour compléter le modèle."
+    "human_review_note": "Les catégories listées correspondent aux principales sous-destinations OPERAT. L'arrêté ministériel (non fetché) recense plus de 20 sous-catégories détaillées. Cette liste simplifiée doit être affinée à partir de l'Annexe I de l'Arrêté du 1er août 2025."
   },
   {
     "id": "reference_year",
@@ -93,6 +118,21 @@
       "froid_urbain",
       "autre"
     ],
+    "value_descriptions": {
+      "electricite": "Électricité consommée sur site (réseau ou production locale).",
+      "gaz_naturel": "Gaz naturel distribué par réseau.",
+      "fioul_lourd": "Fuel-oil lourd utilisé en chaufferie.",
+      "fioul_domestique": "Fioul domestique (fuel-oil léger) utilisé en chaudière.",
+      "gpl": "Gaz de pétrole liquéfié (propane, butane) en citerne ou bouteille.",
+      "charbon": "Charbon ou coke utilisé comme combustible.",
+      "bois_et_biomasse_solide": "Bois bûche, granulés, plaquettes forestières ou autre biomasse solide.",
+      "biogaz": "Biogaz (méthane d'origine biologique) injecté ou utilisé sur site.",
+      "biocarburants": "Biocarburants liquides (biodiesel, bioéthanol) utilisés en chaudière.",
+      "gaz_naturel_liquefie_gnl": "Gaz naturel liquéfié (GNL) approvisionné par camion-citerne.",
+      "chaleur_urbaine": "Chaleur fournie par un réseau de chaleur urbain.",
+      "froid_urbain": "Froid fourni par un réseau de froid urbain.",
+      "autre": "Tout autre vecteur énergétique ne relevant pas des catégories ci-dessus."
+    },
     "ghg_factors_kg_co2eq_per_kwh": {
       "note": "Facteurs définis à l'Annexe VII de l'arrêté du 10 avril 2020 (consolidé). GNL ajouté par l'arrêté du 1er août 2025 (Art. 5, II).",
       "gaz_naturel_liquefie_gnl": 0.238
@@ -168,6 +208,17 @@
       "contrainte_plu_aspect_exterieur",
       "aucun"
     ],
+    "value_descriptions": {
+      "monument_historique_classe": "Bâtiment classé monument historique au titre du Code du patrimoine — protection maximale, toute modification extérieure ou intérieure est soumise à autorisation de l'ABF.",
+      "monument_historique_inscrit": "Bâtiment inscrit à l'inventaire supplémentaire des monuments historiques — protection intermédiaire, travaux soumis à avis de l'ABF.",
+      "site_patrimonial_remarquable": "Bâtiment situé dans un Site Patrimonial Remarquable (SPR, ex-ZPPAUP/AVAP) — travaux sur façades et toitures soumis à autorisation spéciale.",
+      "abord_monument_historique": "Bâtiment situé dans le périmètre de protection des abords d'un monument historique (500 m ou périmètre délimité) — travaux visibles depuis le monument soumis à avis de l'ABF.",
+      "site_inscrit": "Bâtiment dans un site inscrit au titre du Code de l'environnement — travaux modifiant l'aspect extérieur soumis à déclaration préalable avec avis de l'ABF.",
+      "site_classe": "Bâtiment dans un site classé — toute modification de l'état ou de l'aspect est interdite sauf autorisation ministérielle.",
+      "label_L650-1_patrimoine": "Bâtiment labellisé au titre de l'article L. 650-1 du Code du patrimoine (label Fondation du Patrimoine) — contraintes contractuelles sur l'aspect extérieur.",
+      "contrainte_plu_aspect_exterieur": "Bâtiment soumis à des règles du PLU/PLUi limitant les modifications de l'aspect extérieur sans classement patrimonial national.",
+      "aucun": "Aucune contrainte patrimoniale identifiée — les actions de réduction énergétique ne sont pas limitées par ce motif."
+    },
     "source": "Registres patrimoniaux ; documents d'urbanisme (PLU)",
     "source_article": "Art. R. 131-40, I, 2°",
     "confidence": "high"

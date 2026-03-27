@@ -17,7 +17,7 @@ export default function RoleSelector({ entities, entityRoleFact, onSelect }: Pro
     <div className="max-w-lg">
       <h2 className="text-2xl font-semibold mb-2">What is your role?</h2>
       <p className="text-gray-500 mb-6">
-        Select the role that best describes your relationship to the AI system or product.
+        Select the role that best describes your relationship to the subject of this regulation.
         Each session covers one role — you can restart to explore a different one.
       </p>
       <ul className="space-y-3">
