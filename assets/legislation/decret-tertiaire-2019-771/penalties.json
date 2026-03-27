@@ -1,0 +1,72 @@
+[
+  {
+    "id": "pen_name_shame_reporting_default",
+    "label": "Publication 'name and shame' — défaut de transmission OPERAT non justifié",
+    "penalty_type": "publication",
+    "trigger": "Absence non justifiée de transmission des informations OPERAT dans le délai de 3 mois suivant la mise en demeure préfectorale",
+    "amount_or_description": "Publication sur site internet des services de l'État du document retraçant les mises en demeure restées sans effet",
+    "authority": "prefet",
+    "process_steps": [
+      "1. Absence non justifiée de transmission OPERAT dans les délais réglementaires",
+      "2. Mise en demeure par le préfet compétent (délai : 3 mois)",
+      "3. Absence toujours non justifiée à l'issue du délai → Publication sur site internet des services de l'État"
+    ],
+    "source_article": "Art. R. 131-44, I",
+    "confidence": "high"
+  },
+  {
+    "id": "pen_name_shame_objective_default",
+    "label": "Publication 'name and shame' — défaut de programme d'actions pour non-respect des objectifs",
+    "penalty_type": "publication",
+    "trigger": "Défaut de dépôt d'un programme d'actions suite à la 2ème mise en demeure individuelle du préfet",
+    "amount_or_description": "Publication sur site internet des services de l'État du document retraçant les mises en demeure restées sans effet",
+    "authority": "prefet",
+    "process_steps": [
+      "1. Non-respect non justifié d'un objectif de réduction (CRELAT ou CABS)",
+      "2. 1ère mise en demeure : établir un programme d'actions conjoint (délai : 6 mois)",
+      "3. Absence de programme conjoint → 2ème mise en demeure individuelle (délai : 3 mois) + notification de publication",
+      "4. Absence de programme individuel → Publication des mises en demeure restées sans effet"
+    ],
+    "source_article": "Art. R. 131-44, II",
+    "confidence": "high"
+  },
+  {
+    "id": "pen_fine_no_action_program",
+    "label": "Amende administrative — absence de programme d'actions après 2ème mise en demeure",
+    "penalty_type": "fine",
+    "trigger": "Absence non justifiée de dépôt d'un programme d'actions auprès du préfet à la suite de la 2ème mise en demeure individuelle",
+    "amount_or_description": "Amende administrative proportionnée : au plus égale à 1 500 € pour les personnes physiques et 7 500 € pour les personnes morales. Recouvrée comme en matière de créances étrangères à l'impôt et au domaine.",
+    "amount_natural_person_max_eur": 1500,
+    "amount_legal_entity_max_eur": 7500,
+    "authority": "prefet",
+    "source_article": "Art. R. 131-44, II, alinéa 3",
+    "confidence": "high"
+  },
+  {
+    "id": "pen_carence_publication",
+    "label": "Constat de carence et publication — non-conformité au programme d'actions approuvé",
+    "penalty_type": "publication",
+    "trigger": "Non-conformité de l'assujetti au programme d'actions approuvé par le préfet",
+    "amount_or_description": "Arrêté motivé du préfet prononçant la carence de l'assujetti, publié sur site internet des services de l'État",
+    "authority": "prefet",
+    "process_steps": [
+      "1. Non-conformité au programme d'actions approuvé",
+      "2. Procédure contradictoire engagée par le préfet",
+      "3. Constat de carence établi → Arrêté motivé du préfet publié sur site internet des services de l'État"
+    ],
+    "source_article": "Art. R. 131-44, III",
+    "confidence": "high"
+  },
+  {
+    "id": "pen_fine_carence",
+    "label": "Amende administrative — carence constatée par le préfet",
+    "penalty_type": "fine",
+    "trigger": "Carence de l'assujetti prononcée par arrêté motivé du préfet suite à non-conformité au programme d'actions approuvé",
+    "amount_or_description": "Amende administrative proportionnée à la gravité des manquements constatés : au plus égale à 1 500 € pour les personnes physiques et 7 500 € pour les personnes morales. Recouvrée comme en matière de créances étrangères à l'impôt et au domaine.",
+    "amount_natural_person_max_eur": 1500,
+    "amount_legal_entity_max_eur": 7500,
+    "authority": "prefet",
+    "source_article": "Art. R. 131-44, III, alinéa 2",
+    "confidence": "high"
+  }
+]

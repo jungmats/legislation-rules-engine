@@ -1,0 +1,318 @@
+[
+  {
+    "id": "entity_role",
+    "label": "Entity Role",
+    "type": "enum",
+    "allowed_values": ["essential_entity", "important_entity", "member_state", "competent_authority", "csirt", "single_point_of_contact", "cyber_crisis_management_authority", "enisa", "tld_name_registry", "dns_service_provider", "domain_name_registration_service_provider", "trust_service_provider", "representative_in_union"],
+    "source": "Determined by applying Article 3 classification criteria (size, sector, specific entity type) to the entity's profile. Member States establish and maintain official lists under Article 3(3).",
+    "source_article": "Article 3"
+  },
+  {
+    "id": "sector",
+    "label": "Sector",
+    "type": "enum",
+    "allowed_values": [
+      "energy_electricity", "energy_district_heating_cooling", "energy_oil", "energy_gas", "energy_hydrogen",
+      "transport_air", "transport_rail", "transport_water", "transport_road",
+      "banking",
+      "financial_market_infrastructures",
+      "health",
+      "drinking_water",
+      "waste_water",
+      "digital_infrastructure",
+      "ict_service_management_b2b",
+      "public_administration_central",
+      "public_administration_regional",
+      "space",
+      "postal_and_courier",
+      "waste_management",
+      "manufacture_chemicals",
+      "food_production_processing_distribution",
+      "manufacture_medical_devices",
+      "manufacture_computer_electronic_optical",
+      "manufacture_electrical_equipment",
+      "manufacture_machinery",
+      "manufacture_motor_vehicles",
+      "manufacture_other_transport_equipment",
+      "digital_providers_online_marketplace",
+      "digital_providers_online_search_engine",
+      "digital_providers_social_networking",
+      "research_organisations"
+    ],
+    "value_descriptions": {
+      "energy_electricity": "Entities operating in the electricity sector including electricity undertakings, distribution/transmission system operators, producers, nominated electricity market operators, market participants providing aggregation/demand response/storage services, and operators of recharging points. Defined by reference to Directive (EU) 2019/944 and Regulation (EU) 2019/943. Annex I, sector 1(a).",
+      "energy_district_heating_cooling": "Operators of district heating or district cooling systems as defined in Article 2(19) of Directive (EU) 2018/2001. Annex I, sector 1(b).",
+      "energy_oil": "Operators of oil transmission pipelines; operators of oil production, refining and treatment facilities, storage and transmission; central stockholding entities under Council Directive 2009/119/EC. Annex I, sector 1(c).",
+      "energy_gas": "Supply undertakings, distribution/transmission system operators, storage/LNG system operators, natural gas undertakings, and operators of natural gas refining and treatment facilities under Directive 2009/73/EC. Annex I, sector 1(d).",
+      "energy_hydrogen": "Operators of hydrogen production, storage and transmission. Annex I, sector 1(e).",
+      "transport_air": "Air carriers for commercial purposes, airport managing bodies, traffic management control operators providing ATC services, and entities operating ancillary airport installations. Annex I, sector 2(a).",
+      "transport_rail": "Infrastructure managers and railway undertakings (including operators of service facilities) under Directive 2012/34/EU. Annex I, sector 2(b).",
+      "transport_water": "Inland, sea and coastal water transport companies; managing bodies of ports including port facilities; operators of vessel traffic services. Excludes individual vessels operated by companies. Annex I, sector 2(c).",
+      "transport_road": "Road authorities responsible for traffic management control (excluding public entities for which this is non-essential) and operators of Intelligent Transport Systems. Annex I, sector 2(d).",
+      "banking": "Credit institutions as defined in Article 4(1) of Regulation (EU) No 575/2013. Annex I, sector 3.",
+      "financial_market_infrastructures": "Operators of trading venues and central counterparties (CCPs). Annex I, sector 4.",
+      "health": "Healthcare providers; EU reference laboratories; entities conducting medicinal product R&D; manufacturers of basic pharmaceutical products and pharmaceutical preparations; manufacturers of critical medical devices (public health emergency critical devices list). Annex I, sector 5.",
+      "drinking_water": "Suppliers and distributors of water intended for human consumption under Directive (EU) 2020/2184, excluding distributors for whom distribution is non-essential to their general activity. Annex I, sector 6.",
+      "waste_water": "Undertakings collecting, disposing of or treating urban, domestic or industrial waste water under Council Directive 91/271/EEC, excluding those for whom waste water is non-essential. Annex I, sector 7.",
+      "digital_infrastructure": "Internet Exchange Point (IXP) providers; DNS service providers (excluding root name servers); TLD name registries; cloud computing service providers; data centre service providers; content delivery network providers; trust service providers; providers of public electronic communications networks; providers of publicly available electronic communications services. Annex I, sector 8.",
+      "ict_service_management_b2b": "Managed service providers and managed security service providers offering services to other businesses. Annex I, sector 9.",
+      "public_administration_central": "Public administration entities of central governments as defined by Member States in accordance with national law. Annex I, sector 10.",
+      "public_administration_regional": "Public administration entities at regional level as defined by a Member State where, following a risk-based assessment, disruption could have a significant impact on critical societal or economic activities. Annex I, sector 10.",
+      "space": "Operators of ground-based infrastructure, owned/managed/operated by Member States or private parties, that support the provision of space-based services, excluding providers of public electronic communications networks. Annex I, sector 11.",
+      "postal_and_courier": "Postal service providers including providers of courier services as defined in Directive 97/67/EC. Annex II, sector 1.",
+      "waste_management": "Undertakings carrying out waste management under Directive 2008/98/EC, excluding those for whom waste management is not their principal economic activity. Annex II, sector 2.",
+      "manufacture_chemicals": "Undertakings manufacturing/distributing substances and mixtures or producing articles from substances/mixtures, as referred to in Regulation (EC) No 1907/2006 (REACH). Annex II, sector 3.",
+      "food_production_processing_distribution": "Food businesses engaged in wholesale distribution and industrial production and processing, as defined in Regulation (EC) No 178/2002. Annex II, sector 4.",
+      "manufacture_medical_devices": "Entities manufacturing medical devices (Regulation (EU) 2017/745) and in vitro diagnostic medical devices (Regulation (EU) 2017/746), except critical medical devices already captured in health sector. Annex II, sector 5(a).",
+      "manufacture_computer_electronic_optical": "Undertakings carrying out economic activities in section C division 26 of NACE Rev. 2. Annex II, sector 5(b).",
+      "manufacture_electrical_equipment": "Undertakings carrying out economic activities in section C division 27 of NACE Rev. 2. Annex II, sector 5(c).",
+      "manufacture_machinery": "Undertakings carrying out economic activities in section C division 28 of NACE Rev. 2. Annex II, sector 5(d).",
+      "manufacture_motor_vehicles": "Undertakings carrying out economic activities in section C division 29 of NACE Rev. 2. Annex II, sector 5(e).",
+      "manufacture_other_transport_equipment": "Undertakings carrying out economic activities in section C division 30 of NACE Rev. 2. Annex II, sector 5(f).",
+      "digital_providers_online_marketplace": "Providers of online marketplaces as defined in Article 2(n) of Directive 2005/29/EC. Annex II, sector 6.",
+      "digital_providers_online_search_engine": "Providers of online search engines as defined in Article 2(5) of Regulation (EU) 2019/1150. Annex II, sector 6.",
+      "digital_providers_social_networking": "Providers of social networking services platforms enabling end-users to connect, share, discover and communicate across multiple devices via chats, posts, videos and recommendations. Annex II, sector 6.",
+      "research_organisations": "Research organisations whose primary goal is to conduct applied research or experimental development with a view to exploiting results for commercial purposes. Does not include educational institutions. Annex II, sector 7."
+    },
+    "source": "Self-declared by entity and verified by competent authority against Annex I and Annex II sector definitions.",
+    "source_article": "Articles 2(1), 2(2), Annexes I and II"
+  },
+  {
+    "id": "employee_count",
+    "label": "Number of Employees",
+    "type": "number",
+    "unit": "employees (headcount)",
+    "source": "Entity's own records; determined per Article 5 of the Annex to Recommendation 2003/361/EC (excluding Article 3(4) enterprise linkage calculations per Article 2(1) NIS2).",
+    "source_article": "Article 2(1), Recommendation 2003/361/EC Annex Article 2"
+  },
+  {
+    "id": "annual_turnover_eur",
+    "label": "Annual Turnover (EUR)",
+    "type": "number",
+    "unit": "EUR",
+    "source": "Last approved annual accounts of the entity.",
+    "source_article": "Article 2(1), Recommendation 2003/361/EC Annex Article 2(1)"
+  },
+  {
+    "id": "balance_sheet_total_eur",
+    "label": "Annual Balance Sheet Total (EUR)",
+    "type": "number",
+    "unit": "EUR",
+    "source": "Last approved annual accounts of the entity.",
+    "source_article": "Article 2(1), Recommendation 2003/361/EC Annex Article 2(1)"
+  },
+  {
+    "id": "is_sole_provider_in_member_state",
+    "label": "Sole Provider of Essential Service in Member State",
+    "type": "boolean",
+    "source": "Determination by Member State competent authority under Article 2(2)(b).",
+    "source_article": "Article 2(2)(b)"
+  },
+  {
+    "id": "disruption_would_impact_public_safety_or_health",
+    "label": "Disruption Would Significantly Impact Public Safety, Security or Health",
+    "type": "boolean",
+    "source": "Risk assessment by Member State competent authority under Article 2(2)(c).",
+    "source_article": "Article 2(2)(c)"
+  },
+  {
+    "id": "disruption_would_cause_systemic_risk",
+    "label": "Disruption Would Induce Significant Systemic Risk",
+    "type": "boolean",
+    "source": "Risk assessment by Member State competent authority under Article 2(2)(d).",
+    "source_article": "Article 2(2)(d)"
+  },
+  {
+    "id": "is_critical_at_national_or_regional_level",
+    "label": "Critical at National or Regional Level",
+    "type": "boolean",
+    "source": "Assessment by Member State competent authority under Article 2(2)(e).",
+    "source_article": "Article 2(2)(e)"
+  },
+  {
+    "id": "is_critical_entity_under_cre_directive",
+    "label": "Identified as Critical Entity under Directive (EU) 2022/2557",
+    "type": "boolean",
+    "source": "Official identification by Member State under Directive (EU) 2022/2557 (CRE Directive) — applies regardless of size.",
+    "source_article": "Article 2(3)"
+  },
+  {
+    "id": "is_public_electronic_communications_provider",
+    "label": "Provider of Public Electronic Communications Networks or Services",
+    "type": "boolean",
+    "source": "Declaration by entity; verified against Directive (EU) 2018/1972 definitions. These entities fall under jurisdiction of the Member State where they provide services (not where established).",
+    "source_article": "Articles 2(2)(a)(i), 26(1)(a)"
+  },
+  {
+    "id": "is_qualified_trust_service_provider",
+    "label": "Qualified Trust Service Provider",
+    "type": "boolean",
+    "source": "Listed on national Trusted List published by Member State supervisory body under Regulation (EU) No 910/2014 (eIDAS).",
+    "source_article": "Article 3(1)(b)"
+  },
+  {
+    "id": "is_tld_name_registry",
+    "label": "TLD Name Registry",
+    "type": "boolean",
+    "source": "Delegation by IANA; verified by competent authority.",
+    "source_article": "Articles 3(1)(b), 6(21)"
+  },
+  {
+    "id": "is_dns_service_provider",
+    "label": "DNS Service Provider (excluding root name servers)",
+    "type": "boolean",
+    "source": "Self-declared; verified by competent authority. Covers publicly available recursive resolution services and authoritative resolution services for third-party use.",
+    "source_article": "Articles 3(1)(b), 6(20)"
+  },
+  {
+    "id": "main_establishment_member_state",
+    "label": "Member State of Main Establishment",
+    "type": "string",
+    "source": "Determined per Article 26(2): the Member State where decisions related to cybersecurity risk-management are predominantly taken; or where cybersecurity operations are carried out; or where the entity has the highest number of employees. For entities not established in the Union: the Member State where the designated representative is established.",
+    "source_article": "Articles 26(1)(b), 26(2), 26(3)"
+  },
+  {
+    "id": "has_representative_in_union",
+    "label": "Has Designated Representative in the Union",
+    "type": "boolean",
+    "source": "Written mandate by the entity; representative must be established in a Member State where services are offered.",
+    "source_article": "Article 26(3)"
+  },
+  {
+    "id": "management_body_has_approved_cybersecurity_measures",
+    "label": "Management Body Has Approved Cybersecurity Risk-Management Measures",
+    "type": "boolean",
+    "source": "Board resolution or equivalent governance decision; documented in entity's governance records.",
+    "source_article": "Article 20(1)"
+  },
+  {
+    "id": "management_body_training_completed",
+    "label": "Management Body Members Have Completed Cybersecurity Training",
+    "type": "boolean",
+    "source": "Training records; management body members must follow training to gain sufficient knowledge and skills to identify cybersecurity risks and assess practices.",
+    "source_article": "Article 20(2)"
+  },
+  {
+    "id": "cybersecurity_risk_management_measures_in_place",
+    "label": "Cybersecurity Risk-Management Measures Implemented",
+    "type": "boolean",
+    "source": "Internal documentation and external audit results; covers all 10 measure categories in Article 21(2).",
+    "source_article": "Article 21(1), 21(2)"
+  },
+  {
+    "id": "incident_occurred",
+    "label": "Incident Has Occurred",
+    "type": "boolean",
+    "source": "Detection by the entity's incident monitoring and detection systems.",
+    "source_article": "Article 6(6)"
+  },
+  {
+    "id": "incident_is_significant",
+    "label": "Incident Qualifies as Significant",
+    "type": "boolean",
+    "source": "Entity assessment based on Article 23(3) criteria: (a) caused or capable of causing severe operational disruption or financial loss; (b) affected or capable of affecting other natural or legal persons by causing considerable material or non-material damage.",
+    "source_article": "Article 23(3)"
+  },
+  {
+    "id": "incident_has_cross_border_impact",
+    "label": "Incident Has Cross-Border Impact",
+    "type": "boolean",
+    "source": "Entity assessment; must be reported to enable CSIRT to determine cross-border impact under Article 23(1).",
+    "source_article": "Article 23(1)"
+  },
+  {
+    "id": "date_became_aware_of_significant_incident",
+    "label": "Date Entity Became Aware of Significant Incident",
+    "type": "date",
+    "source": "Entity's incident log; triggers the 24-hour early warning and 72-hour notification deadlines.",
+    "source_article": "Article 23(4)"
+  },
+  {
+    "id": "date_incident_notification_submitted",
+    "label": "Date Incident Notification (72h) Was Submitted",
+    "type": "date",
+    "source": "Submission timestamp recorded by CSIRT or competent authority.",
+    "source_article": "Article 23(4)(b)"
+  },
+  {
+    "id": "incident_is_suspected_unlawful_or_malicious",
+    "label": "Incident Suspected to Be Caused by Unlawful or Malicious Acts",
+    "type": "boolean",
+    "source": "Entity assessment as part of early warning; must be indicated in the early warning if suspected.",
+    "source_article": "Article 23(4)(a)"
+  },
+  {
+    "id": "significant_cyber_threat_exists",
+    "label": "Significant Cyber Threat Identified Affecting Services",
+    "type": "boolean",
+    "source": "Entity's threat intelligence and monitoring systems.",
+    "source_article": "Article 23(2)"
+  },
+  {
+    "id": "entity_registered_with_competent_authority",
+    "label": "Entity Has Registered with Competent Authority",
+    "type": "boolean",
+    "source": "Submission of registration information under Article 3(4) (for entities under Art 2(1)) or Article 27(2) (for DNS/TLD/cloud/data centre/CDN/managed service/MSSSP/online marketplace/search engine/social network entities). Member States may establish national self-registration mechanisms.",
+    "source_article": "Articles 3(3), 3(4), 27(2)"
+  },
+  {
+    "id": "domain_registration_database_maintained",
+    "label": "Accurate Domain Name Registration Database Maintained",
+    "type": "boolean",
+    "source": "Audit of database records by competent authority; policies and procedures publicly available under Article 28(3).",
+    "source_article": "Article 28(1), 28(2)"
+  },
+  {
+    "id": "participates_in_information_sharing_arrangement",
+    "label": "Participates in Cybersecurity Information-Sharing Arrangement",
+    "type": "boolean",
+    "source": "Voluntary notification to competent authority under Article 29(4).",
+    "source_article": "Article 29"
+  },
+  {
+    "id": "supply_chain_security_assessed",
+    "label": "Supply Chain Security of Direct Suppliers/Service Providers Assessed",
+    "type": "boolean",
+    "source": "Documented supply chain security assessment covering overall quality, resilience, and cybersecurity practices of suppliers; must take into account coordinated supply chain risk assessment results under Article 22(1).",
+    "source_article": "Article 21(2)(d), 21(3)"
+  },
+  {
+    "id": "date_registration_information_changed",
+    "label": "Date Registration Information Changed",
+    "type": "date",
+    "source": "Entity's own records; triggers the 2-week notification deadline for updating competent authority registration.",
+    "source_article": "Article 3(4)",
+    "confidence": "medium",
+    "human_review_note": "Auto-added: referenced as fact_relative anchor for dl_registration_changes_2weeks. Verify label and description."
+  },
+  {
+    "id": "date_domain_registration_data_request_received",
+    "label": "Date Lawful Domain Registration Data Request Received",
+    "type": "date",
+    "source": "Timestamp of receipt of a duly justified request from a legitimate access seeker; triggers the 72-hour access-granting deadline under Article 28(5).",
+    "source_article": "Article 28(5)",
+    "confidence": "medium",
+    "human_review_note": "Auto-added: referenced as fact_relative anchor for dl_domain_data_access_72h. Verify label and description."
+  },
+  {
+    "id": "activities_in_national_security_or_defence",
+    "label": "Entity Carries Out Activities in National Security, Public Security, Defence or Law Enforcement",
+    "type": "boolean",
+    "source": "Determination by Member State under Article 2(7); public administration entities must self-identify and seek confirmation from competent authority.",
+    "source_article": "Article 2(7)"
+  },
+  {
+    "id": "is_excluded_under_dora_article_2_4",
+    "label": "Entity Is Excluded from DORA Scope Under Article 2(4) of Regulation (EU) 2022/2554",
+    "type": "boolean",
+    "source": "Determination by competent authority based on Article 2(4) of Regulation (EU) 2022/2554 (DORA), which excludes specific financial entities such as micro-enterprises and small non-interconnected investment firms.",
+    "source_article": "Article 2(10)"
+  },
+  {
+    "id": "was_identified_as_oes_under_nis1",
+    "label": "Was Identified as Operator of Essential Services Under NIS1 Directive",
+    "type": "boolean",
+    "source": "Historical determination by Member State under Directive (EU) 2016/1148 (NIS1); entities on national OES lists maintained prior to 18 October 2024 qualify automatically as essential entities under NIS2 Article 3(1)(h).",
+    "source_article": "Article 3(1)(h)"
+  }
+]

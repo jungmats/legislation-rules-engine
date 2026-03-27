@@ -1,0 +1,125 @@
+[
+  {
+    "id": "scope_annex_i_medium_large",
+    "label": "Annex I entities qualifying as medium-sized or large enterprises",
+    "description": "Entities of a type listed in Annex I (sectors of high criticality) that qualify as medium-sized enterprises (≥50 employees AND ≤€50M turnover or ≤€43M balance sheet) or exceed the ceilings for medium-sized enterprises (≥250 employees OR >€50M turnover OR >€43M balance sheet), and which provide services or carry out activities within the Union. Article 3(4) of Annex to Recommendation 2003/361/EC (linked/partner enterprise calculations) does not apply.",
+    "conditions": [
+      { "fact_id": "sector", "operator": "in", "value": ["energy_electricity", "energy_district_heating_cooling", "energy_oil", "energy_gas", "energy_hydrogen", "transport_air", "transport_rail", "transport_water", "transport_road", "banking", "financial_market_infrastructures", "health", "drinking_water", "waste_water", "digital_infrastructure", "ict_service_management_b2b", "public_administration_central", "public_administration_regional", "space"] },
+      { "fact_id": "employee_count", "operator": ">=", "value": 50 }
+    ],
+    "explicit_exclusions": [
+      "Public administration entities carrying out activities in areas of national security, public security, defence or law enforcement (Article 2(7))",
+      "Entities exempted from Regulation (EU) 2022/2554 scope under Article 2(4) of that Regulation (Article 2(10))",
+      "Diplomatic and consular missions of Member States in third countries and their network and information systems located on mission premises or operated for users in a third country"
+    ],
+    "source_article": "Article 2(1)"
+  },
+  {
+    "id": "scope_annex_ii_medium_large",
+    "label": "Annex II entities qualifying as medium-sized or large enterprises",
+    "description": "Entities of a type listed in Annex II (other critical sectors) qualifying as medium-sized or large enterprises, providing services or carrying out activities within the Union.",
+    "conditions": [
+      { "fact_id": "sector", "operator": "in", "value": ["postal_and_courier", "waste_management", "manufacture_chemicals", "food_production_processing_distribution", "manufacture_medical_devices", "manufacture_computer_electronic_optical", "manufacture_electrical_equipment", "manufacture_machinery", "manufacture_motor_vehicles", "manufacture_other_transport_equipment", "digital_providers_online_marketplace", "digital_providers_online_search_engine", "digital_providers_social_networking", "research_organisations"] },
+      { "fact_id": "employee_count", "operator": ">=", "value": 50 }
+    ],
+    "explicit_exclusions": [
+      "Public administration entities carrying out activities in areas of national security, public security, defence or law enforcement (Article 2(7))",
+      "Entities exempted under DORA (Regulation (EU) 2022/2554) Article 2(4)"
+    ],
+    "source_article": "Article 2(1)"
+  },
+  {
+    "id": "scope_public_electronic_comms_regardless_of_size",
+    "label": "Public electronic communications providers — regardless of size",
+    "description": "Providers of public electronic communications networks or of publicly available electronic communications services that qualify as medium-sized enterprises — in scope regardless of size threshold. Jurisdiction: Member State where services are provided.",
+    "conditions": [
+      { "fact_id": "is_public_electronic_communications_provider", "operator": "=", "value": true }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 2(2)(a)(i)"
+  },
+  {
+    "id": "scope_trust_service_providers_regardless_of_size",
+    "label": "Trust service providers — regardless of size",
+    "description": "Trust service providers falling within the scope of Regulation (EU) No 910/2014 — in scope regardless of size.",
+    "conditions": [
+      { "fact_id": "sector", "operator": "=", "value": "digital_infrastructure" }
+    ],
+    "explicit_exclusions": [
+      "Trust services provided exclusively within closed systems resulting from national law or from agreements between a defined set of participants (recital 11)"
+    ],
+    "confidence": "medium",
+    "human_review_note": "Trust service providers are a subset of the digital_infrastructure sector. A dedicated fact 'is_trust_service_provider' would be cleaner but has been merged into the sector-level scope for simplicity. Reviewer should confirm the entity type classification.",
+    "source_article": "Article 2(2)(a)(ii)"
+  },
+  {
+    "id": "scope_tld_and_dns_regardless_of_size",
+    "label": "TLD name registries and DNS service providers — regardless of size",
+    "description": "Top-level domain name registries and DNS service providers — in scope regardless of size.",
+    "conditions": [
+      { "fact_id": "is_tld_name_registry", "operator": "=", "value": true }
+    ],
+    "explicit_exclusions": ["Root name servers are excluded from the definition of DNS service providers (Article 6(20)(b))"],
+    "source_article": "Article 2(2)(a)(iii), 3(1)(b)"
+  },
+  {
+    "id": "scope_dns_service_providers_regardless_of_size",
+    "label": "DNS service providers — regardless of size",
+    "description": "DNS service providers — in scope regardless of size.",
+    "conditions": [
+      { "fact_id": "is_dns_service_provider", "operator": "=", "value": true }
+    ],
+    "explicit_exclusions": ["Root name servers excluded"],
+    "source_article": "Article 2(2)(a)(iii), 3(1)(b)"
+  },
+  {
+    "id": "scope_sole_provider",
+    "label": "Sole provider of essential service — regardless of size",
+    "description": "An entity that is the sole provider in a Member State of a service which is essential for the maintenance of critical societal or economic activities — in scope regardless of size.",
+    "conditions": [
+      { "fact_id": "is_sole_provider_in_member_state", "operator": "=", "value": true }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 2(2)(b)"
+  },
+  {
+    "id": "scope_public_safety_impact",
+    "label": "Public safety/security/health impact — regardless of size",
+    "description": "Entities whose disruption could have a significant impact on public safety, public security or public health — in scope regardless of size.",
+    "conditions": [
+      { "fact_id": "disruption_would_impact_public_safety_or_health", "operator": "=", "value": true }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 2(2)(c)"
+  },
+  {
+    "id": "scope_systemic_risk",
+    "label": "Systemic risk impact — regardless of size",
+    "description": "Entities whose disruption could induce significant systemic risk, in particular for sectors where such disruption could have a cross-border impact — in scope regardless of size.",
+    "conditions": [
+      { "fact_id": "disruption_would_cause_systemic_risk", "operator": "=", "value": true }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 2(2)(d)"
+  },
+  {
+    "id": "scope_critical_entity_under_cre",
+    "label": "Critical entities under Directive (EU) 2022/2557 — regardless of size",
+    "description": "Entities identified as critical entities under the CRE Directive (Directive (EU) 2022/2557) — in scope regardless of size.",
+    "conditions": [
+      { "fact_id": "is_critical_entity_under_cre_directive", "operator": "=", "value": true }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 2(3)"
+  },
+  {
+    "id": "scope_domain_name_registration",
+    "label": "Domain name registration service providers — regardless of size",
+    "description": "Entities providing domain name registration services (registrars and agents acting on behalf of registrars) — in scope regardless of size.",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "domain_name_registration_service_provider" }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 2(4)"
+  }
+]

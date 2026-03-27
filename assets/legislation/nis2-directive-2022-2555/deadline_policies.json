@@ -1,0 +1,70 @@
+[
+  {
+    "id": "dl_incident_early_warning_24h",
+    "label": "Early Warning: 24 Hours from Awareness",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_became_aware_of_significant_incident",
+    "offset_hours": 24,
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 23(4)(a)"
+  },
+  {
+    "id": "dl_incident_notification_72h",
+    "label": "Incident Notification: 72 Hours from Awareness",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_became_aware_of_significant_incident",
+    "offset_hours": 72,
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 23(4)(b)"
+  },
+  {
+    "id": "dl_incident_final_report_1month",
+    "label": "Final Incident Report: 1 Month from Notification Submission",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_incident_notification_submitted",
+    "offset_months": 1,
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 23(4)(d)"
+  },
+  {
+    "id": "dl_registration_changes_2weeks",
+    "label": "Notify Registration Changes: 2 Weeks from Change",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_registration_information_changed",
+    "offset_weeks": 2,
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 3(4)"
+  },
+  {
+    "id": "dl_domain_data_access_72h",
+    "label": "Domain Registration Data Access: 72 Hours from Lawful Request",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_domain_registration_data_request_received",
+    "offset_hours": 72,
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 28(5)"
+  },
+  {
+    "id": "dl_transposition_deadline",
+    "label": "Member State Transposition Deadline: 17 October 2024",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2024-10-17",
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 41(1)"
+  },
+  {
+    "id": "dl_application_date",
+    "label": "Application Date: 18 October 2024",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2024-10-18",
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 41(2)"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "ev_operat_registration",
+    "label": "Enregistrement sur la plateforme OPERAT",
+    "description": "Compte créé sur OPERAT et bâtiment(s) enregistré(s) avec activités tertiaires et surfaces de plancher",
+    "platform": "OPERAT (ademe.fr)",
+    "required_fields": ["activity_type", "floor_area_m2"],
+    "frequency": "one_time",
+    "deadline_policy_id": null,
+    "source_article": "Art. R. 131-41",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_reference_year_declaration",
+    "label": "Déclaration de l'année et de la consommation de référence sur OPERAT",
+    "description": "Déclaration de l'année de référence choisie et des consommations énergétiques correspondantes par type d'énergie, avec justificatifs (factures, relevés). La plateforme calcule l'ajustement climatique.",
+    "platform": "OPERAT",
+    "required_fields": [
+      "reference_year",
+      "reference_energy_consumption_kwh",
+      "energy_type",
+      "justificatifs_consommation_reference"
+    ],
+    "frequency": "one_time",
+    "deadline_policy_id": null,
+    "source_article": "Art. R. 131-41, 4°",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_annual_operat_declaration",
+    "label": "Attestation numérique annuelle OPERAT",
+    "description": "Déclaration annuelle des consommations d'énergie par type d'énergie, des indicateurs d'intensité d'usage et des modulations éventuelles. OPERAT génère automatiquement : (1) la modulation par volume d'activité, (2) les consommations ajustées climatiquement, (3) les émissions GES, (4) l'attestation numérique annuelle.",
+    "platform": "OPERAT",
+    "required_fields": [
+      "annual_energy_consumption_kwh",
+      "energy_type",
+      "usage_intensity_indicator",
+      "modulations_eventuelles",
+      "ev_recharge_energy_kwh"
+    ],
+    "frequency": "annual",
+    "deadline_policy_id": "dp_annual_reporting",
+    "source_article": "Art. R. 131-41 ; Art. R. 131-41-2",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_modulation_dossier",
+    "label": "Dossier technique de modulation",
+    "description": "Dossier établi sous la responsabilité du propriétaire (et le cas échéant du preneur à bail) justifiant les modulations d'objectif. Tenu à la disposition des agents chargés des contrôles. Non requis pour la modulation automatique par volume d'activité.",
+    "platform": "À disposition du préfet et des agents de contrôle ; peut être déposé sur OPERAT",
+    "required_fields": [
+      "type_de_modulation",
+      "identification_batiment_et_proprietaire",
+      "description_actions_considerees",
+      "justification_contrainte_technique_ou_reglementaire",
+      "cout_actions_htc",
+      "aides_financieres_deduites",
+      "cout_net",
+      "economies_energetiques_attendues_kwh_an",
+      "duree_retour_sur_investissement_calculee",
+      "plans_coupes_et_photos_si_applicable",
+      "pieces_justificatives_reglementaires_si_patrimoine"
+    ],
+    "note": "Contenu défini par l'Annexe IV de l'arrêté du 10 avril 2020 (consolidé). Le dossier est établi sous la responsabilité du propriétaire (et du preneur à bail le cas échéant), tenu à la disposition des agents de contrôle, et peut être déposé sur OPERAT. Non requis pour la modulation automatique par volume d'activité (IIU).",
+    "frequency": "on_demand",
+    "deadline_policy_id": "dp_modulation_declaration_2030",
+    "source_article": "Art. R. 131-40, IV ; Art. R. 131-42 ; Annexe IV arrêté 10 avril 2020",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_energy_display",
+    "label": "Affichage ou publication des consommations d'énergie et objectifs",
+    "description": "Publication basée sur l'attestation numérique annuelle OPERAT, complétée d'une évaluation des émissions GES en kg CO2 éq/m². Par voie d'affichage visible et facilement accessible, ou tout autre moyen pertinent selon l'activité.",
+    "platform": "Affichage physique sur site ou moyen numérique pertinent",
+    "required_fields": [
+      "annual_energy_consumption_climate_adjusted_kwh",
+      "ghg_emissions_kg_co2_m2",
+      "objectif_reduction_applicable"
+    ],
+    "frequency": "annual",
+    "deadline_policy_id": "dp_annual_publication",
+    "source_article": "Art. R. 131-43",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_action_program_submitted",
+    "label": "Programme d'actions soumis et approuvé par le préfet",
+    "description": "Programme d'actions (conjoint ou individuel selon le stade de la procédure) mentionnant les actions dont chaque partie est responsable, l'échéancier prévisionnel de réalisation et le plan de financement. Soumis au préfet pour approbation.",
+    "platform": "Préfecture compétente au regard de la localisation du bâtiment",
+    "required_fields": [
+      "actions_prevues_par_partie",
+      "echeancier_previsionnel",
+      "plan_de_financement",
+      "responsabilites_proprietaire_et_preneur_a_bail"
+    ],
+    "frequency": "on_demand",
+    "deadline_policy_id": null,
+    "triggered_by": "mise_en_demeure_prefecture_non_respect_objectifs",
+    "source_article": "Art. R. 131-44, II",
+    "confidence": "high"
+  }
+]

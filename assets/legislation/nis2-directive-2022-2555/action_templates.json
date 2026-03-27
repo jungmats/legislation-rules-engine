@@ -1,0 +1,122 @@
+[
+  {
+    "id": "act_conduct_cybersecurity_risk_assessment",
+    "label": "Conduct Cybersecurity Risk Assessment",
+    "description": "Perform an all-hazards risk assessment of network and information systems, covering threats to availability, integrity, authenticity and confidentiality. Document the assessment and feed results into risk-management measure selection.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_implement_cybersecurity_risk_management",
+    "required_inputs": ["sector", "entity_role", "cybersecurity_risk_management_measures_in_place"],
+    "evidence_produced": "ev_cybersecurity_risk_management_policy",
+    "prerequisites": [],
+    "confidence": "high",
+    "source_article": "Article 21(1), 21(2)(a)"
+  },
+  {
+    "id": "act_adopt_incident_handling_policy",
+    "label": "Adopt Incident Handling Policy and Procedures",
+    "description": "Establish policies and procedures for incident detection, analysis, containment, response and recovery, aligned with Article 21(2)(b) requirements.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_implement_cybersecurity_risk_management",
+    "required_inputs": ["cybersecurity_risk_management_measures_in_place"],
+    "evidence_produced": "ev_cybersecurity_risk_management_policy",
+    "prerequisites": ["act_conduct_cybersecurity_risk_assessment"],
+    "confidence": "high",
+    "source_article": "Article 21(2)(b)"
+  },
+  {
+    "id": "act_management_body_approve_cybersecurity",
+    "label": "Management Body Formally Approves Cybersecurity Measures",
+    "description": "The management body formally reviews and approves the cybersecurity risk-management measures by board resolution or equivalent governance decision.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_management_body_approve_measures",
+    "required_inputs": ["cybersecurity_risk_management_measures_in_place"],
+    "evidence_produced": "ev_management_body_approval",
+    "prerequisites": ["act_conduct_cybersecurity_risk_assessment"],
+    "confidence": "high",
+    "source_article": "Article 20(1)"
+  },
+  {
+    "id": "act_complete_management_cybersecurity_training",
+    "label": "Management Body Members Complete Cybersecurity Training",
+    "description": "Ensure all management body members attend cybersecurity training covering risk identification and assessment of cybersecurity practices. Record completion.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_management_body_training",
+    "required_inputs": ["management_body_training_completed"],
+    "evidence_produced": "ev_management_body_training_records",
+    "prerequisites": [],
+    "confidence": "high",
+    "source_article": "Article 20(2)"
+  },
+  {
+    "id": "act_submit_incident_early_warning",
+    "label": "Submit Early Warning to CSIRT Within 24 Hours",
+    "description": "As soon as the entity becomes aware of a significant incident, notify the designated CSIRT or competent authority by any available means. Indicate whether the incident is suspected to be caused by unlawful or malicious acts and whether it could have a cross-border impact.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_incident_early_warning_24h",
+    "required_inputs": ["date_became_aware_of_significant_incident", "incident_is_suspected_unlawful_or_malicious", "incident_has_cross_border_impact"],
+    "evidence_produced": "ev_incident_early_warning",
+    "prerequisites": [],
+    "confidence": "high",
+    "source_article": "Article 23(4)(a)"
+  },
+  {
+    "id": "act_submit_incident_notification",
+    "label": "Submit Incident Notification to CSIRT Within 72 Hours",
+    "description": "Submit a structured incident notification updating the early warning with initial assessment including severity, impact, and indicators of compromise where available.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_incident_notification_72h",
+    "required_inputs": ["date_became_aware_of_significant_incident", "incident_is_significant", "incident_has_cross_border_impact"],
+    "evidence_produced": "ev_incident_notification",
+    "prerequisites": ["act_submit_incident_early_warning"],
+    "confidence": "high",
+    "source_article": "Article 23(4)(b)"
+  },
+  {
+    "id": "act_submit_incident_final_report",
+    "label": "Submit Final Incident Report Within One Month",
+    "description": "Submit a final report to the CSIRT or competent authority covering: detailed description, root cause/threat type, mitigation measures applied, and cross-border impact.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_incident_final_report_1month",
+    "required_inputs": ["date_incident_notification_submitted"],
+    "evidence_produced": "ev_incident_final_report",
+    "prerequisites": ["act_submit_incident_notification"],
+    "confidence": "high",
+    "source_article": "Article 23(4)(d)"
+  },
+  {
+    "id": "act_register_with_competent_authority",
+    "label": "Register with Competent Authority",
+    "description": "Submit registration information to the competent authority of the Member State of main establishment, including name, address, contact details, email, IP ranges, sector and subsector.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_register_with_competent_authority",
+    "required_inputs": ["main_establishment_member_state", "sector", "entity_role"],
+    "evidence_produced": "ev_competent_authority_registration",
+    "prerequisites": [],
+    "confidence": "high",
+    "source_article": "Articles 3(3), 3(4)"
+  },
+  {
+    "id": "act_submit_enisa_registry",
+    "label": "Submit Registration Information to ENISA Registry",
+    "description": "Submit required information to the ENISA registry for DNS/TLD/cloud/data centre/CDN/managed service/MSSSP/online marketplace/search engine/social networking entities.",
+    "responsible_party": "essential_entity",
+    "triggered_by": "ob_submit_to_enisa_registry",
+    "required_inputs": ["main_establishment_member_state", "sector"],
+    "evidence_produced": "ev_enisa_registry_submission",
+    "prerequisites": [],
+    "confidence": "high",
+    "source_article": "Article 27(2)"
+  },
+  {
+    "id": "act_maintain_domain_whois_database",
+    "label": "Establish and Maintain Accurate Domain Name Registration Database",
+    "description": "Collect and maintain a domain name registration database with accurate registrant data (name, contact details) for all domain names under the TLD or handled by the registrar. Implement due diligence policies.",
+    "responsible_party": "tld_name_registry",
+    "triggered_by": "ob_maintain_domain_registration_database",
+    "required_inputs": ["domain_registration_database_maintained"],
+    "evidence_produced": "ev_domain_registration_database",
+    "prerequisites": [],
+    "confidence": "high",
+    "source_article": "Article 28(1), 28(2)"
+  }
+]

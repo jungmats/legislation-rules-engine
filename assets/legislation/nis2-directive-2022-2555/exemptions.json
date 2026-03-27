@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ex_trust_service_provider_24h_reporting",
+    "label": "Trust Service Providers — 24-Hour Incident Reporting Instead of 72-Hour",
+    "description": "Trust service providers must notify significant incidents within 24 hours (not the standard 72 hours). This is a stricter requirement, not a relaxation — it modifies the incident notification deadline.",
+    "condition": [
+      { "fact_id": "entity_role", "operator": "=", "value": "trust_service_provider" }
+    ],
+    "obligation_id": "ob_incident_notification_72h",
+    "effect": "deferred",
+    "deadline_policy_id": "dl_incident_early_warning_24h",
+    "confidence": "high",
+    "human_review_note": "Art 23(4) provides that trust service providers must submit the notification under (b) within 24 hours. This replaces the 72h deadline only for trust service providers.",
+    "source_article": "Article 23(4)"
+  },
+  {
+    "id": "ex_national_security_exclusion",
+    "label": "National Security / Defence / Law Enforcement Exclusion",
+    "description": "Public administration entities carrying out activities in the areas of national security, public security, defence or law enforcement are excluded from the scope of this Directive.",
+    "condition": [
+      { "fact_id": "activities_in_national_security_or_defence", "operator": "=", "value": true }
+    ],
+    "obligation_id": null,
+    "effect": "waived",
+    "applies_to_scope_id": "scope_annex_i_medium_large",
+    "confidence": "high",
+    "source_article": "Article 2(7)"
+  },
+  {
+    "id": "ex_dora_exclusion",
+    "label": "DORA Exclusion — Financial Entities Covered by Regulation (EU) 2022/2554",
+    "description": "Entities that are excluded from the scope of Regulation (EU) 2022/2554 (DORA) under Article 2(4) of that Regulation are also excluded from NIS2.",
+    "condition": [
+      { "fact_id": "is_excluded_under_dora_article_2_4", "operator": "=", "value": true }
+    ],
+    "obligation_id": null,
+    "effect": "waived",
+    "applies_to_scope_id": "scope_annex_i_medium_large",
+    "confidence": "high",
+    "source_article": "Article 2(10)"
+  },
+  {
+    "id": "ex_proportionality_sme",
+    "label": "Proportionate Application for Small and Micro Enterprises",
+    "description": "This Directive does not apply to entities qualifying as small or micro enterprises (fewer than 50 employees and annual turnover or balance sheet total not exceeding €10M), except where they fall under one of the special categories in Article 2(2).",
+    "condition": [
+      { "fact_id": "employee_count", "operator": "<", "value": 50 }
+    ],
+    "obligation_id": null,
+    "effect": "waived",
+    "confidence": "high",
+    "source_article": "Article 2(1), Recommendation 2003/361/EC"
+  }
+]

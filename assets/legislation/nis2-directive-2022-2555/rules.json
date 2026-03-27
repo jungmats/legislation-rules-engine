@@ -1,0 +1,138 @@
+[
+  {
+    "id": "rule_essential_entity_core_obligations",
+    "label": "Essential entities must implement cybersecurity measures and governance",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "essential_entity" }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_implement_cybersecurity_risk_management", "deadline_policy_id": "dl_application_date" },
+      { "obligation_id": "ob_management_body_approve_measures", "deadline_policy_id": "dl_application_date" },
+      { "obligation_id": "ob_management_body_training", "deadline_policy_id": "dl_application_date" },
+      { "obligation_id": "ob_register_with_competent_authority", "deadline_policy_id": "dl_application_date" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Articles 3(1), 20, 21"
+  },
+  {
+    "id": "rule_important_entity_core_obligations",
+    "label": "Important entities must implement cybersecurity measures and governance",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "important_entity" }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_implement_cybersecurity_risk_management", "deadline_policy_id": "dl_application_date" },
+      { "obligation_id": "ob_management_body_approve_measures", "deadline_policy_id": "dl_application_date" },
+      { "obligation_id": "ob_management_body_training", "deadline_policy_id": "dl_application_date" },
+      { "obligation_id": "ob_register_with_competent_authority", "deadline_policy_id": "dl_application_date" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Articles 3(2), 20, 21"
+  },
+  {
+    "id": "rule_significant_incident_reporting_essential",
+    "label": "Essential entities must report significant incidents",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "essential_entity" },
+      { "fact_id": "incident_occurred", "operator": "=", "value": true },
+      { "fact_id": "incident_is_significant", "operator": "=", "value": true }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_incident_early_warning_24h", "deadline_policy_id": "dl_incident_early_warning_24h" },
+      { "obligation_id": "ob_incident_notification_72h", "deadline_policy_id": "dl_incident_notification_72h" },
+      { "obligation_id": "ob_incident_final_report_1month", "deadline_policy_id": "dl_incident_final_report_1month" }
+    ],
+    "applicable_exemptions": ["ex_trust_service_provider_24h_reporting"],
+    "confidence": "high",
+    "source_article": "Article 23(4)"
+  },
+  {
+    "id": "rule_significant_incident_reporting_important",
+    "label": "Important entities must report significant incidents",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "important_entity" },
+      { "fact_id": "incident_occurred", "operator": "=", "value": true },
+      { "fact_id": "incident_is_significant", "operator": "=", "value": true }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_incident_early_warning_24h", "deadline_policy_id": "dl_incident_early_warning_24h" },
+      { "obligation_id": "ob_incident_notification_72h", "deadline_policy_id": "dl_incident_notification_72h" },
+      { "obligation_id": "ob_incident_final_report_1month", "deadline_policy_id": "dl_incident_final_report_1month" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 23(4)"
+  },
+  {
+    "id": "rule_cyber_threat_notification",
+    "label": "Entities must notify service recipients of significant cyber threats",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "in", "value": ["essential_entity", "important_entity"] },
+      { "fact_id": "significant_cyber_threat_exists", "operator": "=", "value": true }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_notify_recipients_of_significant_cyber_threat", "deadline_policy_id": "dl_application_date" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 23(2)"
+  },
+  {
+    "id": "rule_enisa_registry_dns_tld",
+    "label": "DNS/TLD/cloud/CDN/managed service providers must submit to ENISA registry",
+    "conditions": [
+      { "fact_id": "sector", "operator": "in", "value": ["digital_infrastructure", "ict_service_management_b2b", "digital_providers_online_marketplace", "digital_providers_online_search_engine", "digital_providers_social_networking"] }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_submit_to_enisa_registry", "deadline_policy_id": "dl_application_date" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 27(2)"
+  },
+  {
+    "id": "rule_domain_registration_database_tld",
+    "label": "TLD name registries must maintain domain registration database and provide access",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "tld_name_registry" }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_maintain_domain_registration_database", "deadline_policy_id": "dl_application_date" },
+      { "obligation_id": "ob_provide_domain_registration_access", "deadline_policy_id": "dl_domain_data_access_72h" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 28"
+  },
+  {
+    "id": "rule_domain_registration_database_registrar",
+    "label": "Domain name registration service providers must maintain database and provide access",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "domain_name_registration_service_provider" }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_maintain_domain_registration_database", "deadline_policy_id": "dl_application_date" },
+      { "obligation_id": "ob_provide_domain_registration_access", "deadline_policy_id": "dl_domain_data_access_72h" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 28"
+  },
+  {
+    "id": "rule_representative_in_union_required",
+    "label": "Non-EU entities offering services in the Union must designate a representative",
+    "conditions": [
+      { "fact_id": "sector", "operator": "in", "value": ["digital_infrastructure", "ict_service_management_b2b", "digital_providers_online_marketplace", "digital_providers_online_search_engine", "digital_providers_social_networking"] },
+      { "fact_id": "has_representative_in_union", "operator": "=", "value": false }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_designate_representative_in_union", "deadline_policy_id": "dl_application_date" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "medium",
+    "human_review_note": "Article 26(3) requires non-EU entities in these sectors to designate a representative. The condition 'not established in the Union' needs a dedicated fact — this rule uses has_representative_in_union=false as a proxy, but a fact 'is_established_in_union' would be cleaner.",
+    "source_article": "Article 26(3)"
+  }
+]

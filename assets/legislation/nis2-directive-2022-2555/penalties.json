@@ -1,0 +1,60 @@
+[
+  {
+    "id": "pen_essential_entity_administrative_fine_higher",
+    "label": "Administrative Fine for Essential Entities — Higher Tier",
+    "description": "Maximum administrative fine of at least €10,000,000 or at least 2% of total worldwide annual turnover in the preceding financial year (whichever is higher) for essential entities infringing Articles 21 or 23.",
+    "penalty_type": "fine",
+    "amount_or_description": "At least €10,000,000 or 2% of total worldwide annual turnover (whichever is higher)",
+    "applies_to_entity_type": "essential_entity",
+    "triggering_obligations": ["ob_implement_cybersecurity_risk_management", "ob_management_body_approve_measures", "ob_management_body_training", "ob_incident_early_warning_24h", "ob_incident_notification_72h", "ob_incident_final_report_1month"],
+    "authority": "competent_authority",
+    "confidence": "high",
+    "source_article": "Article 34(2)"
+  },
+  {
+    "id": "pen_important_entity_administrative_fine_lower",
+    "label": "Administrative Fine for Important Entities — Lower Tier",
+    "description": "Maximum administrative fine of at least €7,000,000 or at least 1.4% of total worldwide annual turnover in the preceding financial year (whichever is higher) for important entities infringing Articles 21 or 23.",
+    "penalty_type": "fine",
+    "amount_or_description": "At least €7,000,000 or 1.4% of total worldwide annual turnover (whichever is higher)",
+    "applies_to_entity_type": "important_entity",
+    "triggering_obligations": ["ob_implement_cybersecurity_risk_management", "ob_management_body_approve_measures", "ob_management_body_training", "ob_incident_early_warning_24h", "ob_incident_notification_72h", "ob_incident_final_report_1month"],
+    "authority": "competent_authority",
+    "confidence": "high",
+    "source_article": "Article 34(3)"
+  },
+  {
+    "id": "pen_management_body_personal_liability",
+    "label": "Personal Liability of Management Body Members",
+    "description": "Member States shall ensure that natural persons who are members of the management body of essential or important entities can be held personally liable for infringements. Where an essential entity infringes Articles 21 or 23, Member States shall ensure measures including temporary prohibition from exercising managerial functions can be applied to natural persons responsible for the infringement.",
+    "penalty_type": "injunction",
+    "amount_or_description": "Temporary prohibition from exercising managerial functions at essential entities; personal liability for infringements",
+    "applies_to_entity_type": "essential_entity",
+    "triggering_obligations": ["ob_implement_cybersecurity_risk_management", "ob_incident_notification_72h"],
+    "authority": "competent_authority",
+    "confidence": "high",
+    "source_article": "Article 20(4), Article 34(6)"
+  },
+  {
+    "id": "pen_public_disclosure",
+    "label": "Publication of Non-Compliance",
+    "description": "Competent authorities may publicly disclose that an entity is not complying with its obligations under this Directive, where this is considered necessary and proportionate.",
+    "penalty_type": "publication",
+    "amount_or_description": "Public disclosure of non-compliance; identification of entity and nature of infringement",
+    "applies_to_entity_type": "essential_entity",
+    "authority": "competent_authority",
+    "confidence": "high",
+    "source_article": "Article 32(4)(i), Article 33(4)(d)"
+  },
+  {
+    "id": "pen_compliance_order",
+    "label": "Compliance Order",
+    "description": "Competent authority may order the entity to bring its behaviour into compliance within a specified period.",
+    "penalty_type": "injunction",
+    "amount_or_description": "Order to implement required measures within a defined timeframe",
+    "applies_to_entity_type": "essential_entity",
+    "authority": "competent_authority",
+    "confidence": "high",
+    "source_article": "Article 32(4)(d), Article 33(4)(a)"
+  }
+]

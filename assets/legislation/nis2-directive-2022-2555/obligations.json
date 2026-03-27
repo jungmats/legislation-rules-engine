@@ -1,0 +1,106 @@
+[
+  {
+    "id": "ob_implement_cybersecurity_risk_management",
+    "label": "Implement Cybersecurity Risk-Management Measures",
+    "description": "Take appropriate and proportionate technical, operational and organisational measures to manage the risks posed to the security of network and information systems used for the provision of services, and to prevent or minimise the impact of incidents on recipients and other services. Measures must be based on an all-hazards approach and cover at least: (a) policies on risk analysis and information system security; (b) incident handling; (c) business continuity (backup management, disaster recovery, crisis management); (d) supply chain security including security aspects of relationships with direct suppliers; (e) security in network and information systems acquisition, development and maintenance; (f) policies and procedures to assess effectiveness of cybersecurity risk-management measures; (g) basic cyber hygiene practices and cybersecurity training; (h) policies and procedures for cryptography and encryption; (i) human resources security, access control policies and asset management; (j) use of multi-factor authentication, secured voice/video/text communications, and secured emergency communications.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 21(1), 21(2)"
+  },
+  {
+    "id": "ob_management_body_approve_measures",
+    "label": "Management Body Must Approve Cybersecurity Risk-Management Measures",
+    "description": "The management body of the entity must approve the cybersecurity risk-management measures taken pursuant to Article 21, and oversee implementation. Management body members are personally liable for infringements by the entity.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 20(1)"
+  },
+  {
+    "id": "ob_management_body_training",
+    "label": "Management Body Members Must Complete Cybersecurity Training",
+    "description": "Members of the management body must follow training and shall encourage the entities they manage to offer similar training on a regular basis to all employees, so as to gain sufficient knowledge and skills to identify risks and assess cybersecurity risk-management practices and their impact on the entity's services.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 20(2)"
+  },
+  {
+    "id": "ob_incident_early_warning_24h",
+    "label": "Submit Early Warning Within 24 Hours of Significant Incident",
+    "description": "Without undue delay, and in any event within 24 hours of becoming aware of a significant incident, notify the CSIRT or competent authority with an early warning indicating whether the incident is suspected to be caused by unlawful or malicious acts and whether it could have a cross-border impact.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 23(4)(a)"
+  },
+  {
+    "id": "ob_incident_notification_72h",
+    "label": "Submit Incident Notification Within 72 Hours",
+    "description": "Without undue delay and in any event within 72 hours of becoming aware of the significant incident, submit an incident notification to the CSIRT or competent authority, updating the early warning information and providing an initial assessment of the significant incident (including its severity and impact) and, where available, indicators of compromise.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 23(4)(b)"
+  },
+  {
+    "id": "ob_incident_final_report_1month",
+    "label": "Submit Final Incident Report Within One Month",
+    "description": "No later than one month after the submission of the incident notification, submit a final report to the CSIRT or competent authority including: (i) a detailed description of the incident (severity and impact); (ii) the type of threat or root cause likely to have triggered the incident; (iii) applied and ongoing mitigation measures; (iv) the cross-border impact of the incident where applicable.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 23(4)(d)"
+  },
+  {
+    "id": "ob_incident_progress_report_on_request",
+    "label": "Submit Intermediate Incident Progress Report on Request",
+    "description": "Upon request by a CSIRT or competent authority, submit an intermediate progress report on relevant status updates after submitting the incident notification.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 23(4)(c)"
+  },
+  {
+    "id": "ob_notify_recipients_of_significant_cyber_threat",
+    "label": "Notify Service Recipients of Significant Cyber Threat",
+    "description": "Where a significant cyber threat is identified that could adversely affect the provision of services, inform recipients who may be affected by that threat of any measures or remedies they can take in response. Where appropriate, also notify the CSIRT or competent authority of the threat.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 23(2)"
+  },
+  {
+    "id": "ob_register_with_competent_authority",
+    "label": "Register with Competent Authority",
+    "description": "Essential and important entities must register with the competent authority by submitting at minimum: name, address and contact details including email, IP ranges, and sector and subsector. Notify any changes within 2 weeks. Member States may set up national registration mechanisms.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Articles 3(3), 3(4)"
+  },
+  {
+    "id": "ob_submit_to_enisa_registry",
+    "label": "Submit Registration Information to ENISA Registry",
+    "description": "DNS service providers, TLD name registries, cloud computing service providers, data centre service providers, content delivery network providers, managed service providers, managed security service providers, and providers of online marketplaces, online search engines and social networking services platforms must submit registration information to ENISA including: name, address, contact details, IP ranges, sector and subsector, relevant Member States, and the Member State of main establishment.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 27(2)"
+  },
+  {
+    "id": "ob_maintain_domain_registration_database",
+    "label": "Maintain Accurate Domain Name Registration Database",
+    "description": "TLD name registries and domain name registration service providers must collect and maintain accurate and complete domain name registration data in a dedicated database (WHOIS equivalent) with due diligence. The database must include data necessary to identify and contact registrants and points of contact managing domain names, including: name, email address, phone number of registrant and registrant's contact point.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 28(1), 28(2)"
+  },
+  {
+    "id": "ob_provide_domain_registration_access",
+    "label": "Provide Access to Domain Registration Data Within 72 Hours",
+    "description": "TLD name registries and domain name registration service providers must make non-personal domain registration data publicly available without undue delay. Upon receiving a lawful and duly justified request from a legitimate access seeker, grant access to specific domain name registration data without undue delay and in any event within 72 hours.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 28(3), 28(4), 28(5)"
+  },
+  {
+    "id": "ob_designate_representative_in_union",
+    "label": "Designate a Representative in the Union",
+    "description": "Entities referred to in Article 26(1)(b) that are not established in the Union but offer services within the Union (DNS service providers, TLD registries, cloud, data centre, CDN, managed service, MSSSP, online marketplace, search engine, social networking platforms) must designate in writing a representative established in the Union. The representative may be held liable for non-compliance.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 26(3)"
+  }
+]

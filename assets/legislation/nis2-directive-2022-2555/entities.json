@@ -1,0 +1,93 @@
+[
+  {
+    "id": "essential_entity",
+    "label": "Essential Entity",
+    "definition": "An entity classified as essential under Article 3(1). Includes: (a) Annex I entities exceeding medium-enterprise ceilings (≥250 employees or >€50M turnover or >€43M balance sheet); (b) qualified trust service providers and TLD name registries, regardless of size; (c) DNS service providers regardless of size; (d) providers of public electronic communications networks or services qualifying as medium-sized; (e) public administration entities of central government; (f) any other Annex I/II entity identified by a Member State under Art 2(2)(b)–(e); (g) entities identified as critical under Directive (EU) 2022/2557; (h) entities identified as operators of essential services under the previous NIS1 Directive.",
+    "responsibilities": "Must implement cybersecurity risk-management measures (Art 21), ensure management body governance (Art 20), report significant incidents to CSIRT or competent authority (Art 23), register with competent authority (Art 3(4)), and submit information to ENISA registry where applicable (Art 27). Subject to ex ante and ex post supervision by competent authorities (Art 32).",
+    "source_article": "Article 3(1)"
+  },
+  {
+    "id": "important_entity",
+    "label": "Important Entity",
+    "definition": "An entity in Annex I or II that does not qualify as an essential entity under Article 3(1), including entities of a type referred to in Annex I or II which qualify as medium-sized enterprises (50–249 employees AND ≤€50M turnover or ≤€43M balance sheet) but do not meet essential entity criteria, as well as entities identified by Member States under Art 2(2)(b)–(e).",
+    "responsibilities": "Must implement cybersecurity risk-management measures (Art 21), ensure management body governance (Art 20), report significant incidents (Art 23), and register with competent authority (Art 3(4)). Subject to ex post supervision only — competent authority acts on evidence of non-compliance (Art 33).",
+    "source_article": "Article 3(2)"
+  },
+  {
+    "id": "member_state",
+    "label": "Member State",
+    "definition": "An EU Member State bound by this Directive. Must transpose obligations into national law by 17 October 2024 and apply them from 18 October 2024.",
+    "responsibilities": "Must designate competent authorities, CSIRTs, single points of contact, and cyber crisis management authorities; adopt national cybersecurity strategies; establish entity lists; transpose Directive obligations into national law.",
+    "source_article": "Articles 7–9, 41"
+  },
+  {
+    "id": "competent_authority",
+    "label": "Competent Authority",
+    "definition": "A national authority designated by a Member State responsible for cybersecurity supervision under this Directive (Article 8). One or more per Member State.",
+    "responsibilities": "Supervise and enforce compliance by essential and important entities; receive incident notifications; carry out on-site inspections, security audits, and scans; impose administrative fines; cooperate with other Member States' competent authorities.",
+    "source_article": "Article 8"
+  },
+  {
+    "id": "csirt",
+    "label": "Computer Security Incident Response Team (CSIRT)",
+    "definition": "A national CSIRT designated or established by a Member State under Article 10, responsible for incident handling in accordance with a well-defined process.",
+    "responsibilities": "Monitor and analyse cyber threats; provide early warnings to essential and important entities; respond to incidents; collect and analyse forensic data; act as coordinator for coordinated vulnerability disclosure; participate in the CSIRTs network.",
+    "source_article": "Articles 10, 11"
+  },
+  {
+    "id": "single_point_of_contact",
+    "label": "Single Point of Contact",
+    "definition": "A liaison body designated by each Member State (Article 8(3)) to ensure cross-border cooperation and cross-sectoral coordination on cybersecurity matters.",
+    "responsibilities": "Forward incident notifications to single points of contact of other affected Member States; submit quarterly anonymised summary reports to ENISA; exercise liaison function between national competent authorities and relevant authorities in other Member States and with ENISA.",
+    "source_article": "Article 8(3), 8(4), 23(9)"
+  },
+  {
+    "id": "cyber_crisis_management_authority",
+    "label": "Cyber Crisis Management Authority",
+    "definition": "An authority designated by each Member State under Article 9 to manage large-scale cybersecurity incidents and crises.",
+    "responsibilities": "Manage large-scale cybersecurity incidents and crises; participate in EU-CyCLONe; adopt national large-scale incident and crisis response plans.",
+    "source_article": "Article 9"
+  },
+  {
+    "id": "enisa",
+    "label": "ENISA (EU Agency for Cybersecurity)",
+    "definition": "The European Union Agency for Cybersecurity established by Regulation (EU) 2019/881.",
+    "responsibilities": "Maintain European vulnerability database; create and maintain registry of DNS/TLD/cloud/data centre/CDN/managed service/MSSSP/online marketplace/search engine/social networking entities; provide biennial cybersecurity state report; support Member States in developing CSIRTs; provide secretariat for CSIRTs network and EU-CyCLONe.",
+    "source_article": "Articles 12(2), 18, 27"
+  },
+  {
+    "id": "tld_name_registry",
+    "label": "TLD Name Registry",
+    "definition": "An entity which has been delegated a specific TLD and is responsible for administering the TLD, including the operation of its name servers (Article 6(21)).",
+    "responsibilities": "Maintain accurate and complete domain name registration database (Art 28); make non-personal data publicly available; provide access to specific domain name registration data to legitimate access seekers within 72 hours; submit registration information to ENISA registry (Art 27); implement cybersecurity risk-management measures.",
+    "source_article": "Articles 6(21), 27, 28"
+  },
+  {
+    "id": "dns_service_provider",
+    "label": "DNS Service Provider",
+    "definition": "An entity that provides publicly available recursive domain name resolution services for internet end-users or authoritative domain name resolution services for third-party use, excluding root name servers (Article 6(20)).",
+    "responsibilities": "Implement cybersecurity risk-management measures (Art 21); report significant incidents (Art 23); register with competent authority; submit to ENISA registry.",
+    "source_article": "Articles 6(20), 3(1)(b)"
+  },
+  {
+    "id": "domain_name_registration_service_provider",
+    "label": "Domain Name Registration Service Provider",
+    "definition": "A registrar or agent acting on behalf of registrars, such as a privacy or proxy registration service provider or reseller (Article 6(22)).",
+    "responsibilities": "Maintain accurate and complete domain name registration database (Art 28); make non-personal data publicly available; provide access to registration data on request within 72 hours; implement cybersecurity risk-management measures.",
+    "source_article": "Articles 6(22), 28"
+  },
+  {
+    "id": "trust_service_provider",
+    "label": "Trust Service Provider",
+    "definition": "A trust service provider as defined in Article 3(19) of Regulation (EU) No 910/2014.",
+    "responsibilities": "Implement cybersecurity risk-management measures; report significant incidents within 24 hours of becoming aware (derogation from standard 72h rule per Art 23(4)); register with competent authority.",
+    "source_article": "Articles 3(1)(b), 23(4)"
+  },
+  {
+    "id": "representative_in_union",
+    "label": "EU Representative",
+    "definition": "A natural or legal person established in the Union explicitly designated to act on behalf of a non-EU entity that offers services within the Union (Article 6(34)), covering DNS service providers, TLD name registries, cloud computing providers, data centre providers, CDN providers, managed service providers, MSSPs, online marketplace providers, online search engine providers, and social networking platforms.",
+    "responsibilities": "Act on behalf of the entity for regulatory purposes including incident reporting; be addressable by competent authorities and CSIRTs.",
+    "source_article": "Articles 6(34), 26(3)"
+  }
+]

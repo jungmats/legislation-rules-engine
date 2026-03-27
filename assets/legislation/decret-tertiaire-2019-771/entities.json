@@ -1,0 +1,80 @@
+[
+  {
+    "id": "proprietaire",
+    "label": "Propriétaire",
+    "description": "Propriétaire du bâtiment, partie de bâtiment ou ensemble de bâtiments à usage tertiaire assujetti",
+    "responsibilities": [
+      "Déclaration sur plateforme OPERAT : activités, surfaces, consommations annuelles, année de référence, indicateurs d'intensité d'usage, modulations",
+      "Atteinte des objectifs de réduction de consommation d'énergie finale (-40%/2030, -50%/2040, -60%/2050)",
+      "Établissement du dossier technique de modulation (sauf modulation par volume d'activité)",
+      "Établissement conjoint du programme d'actions avec le(s) preneur(s) à bail en cas de mise en demeure",
+      "Communication des consommations annuelles réelles au preneur à bail",
+      "Publication ou affichage des consommations et objectifs"
+    ],
+    "source_article": "Art. R. 131-38, II ; Art. R. 131-41 ; Art. R. 131-41-1 ; Art. R. 131-44",
+    "confidence": "high"
+  },
+  {
+    "id": "preneur_a_bail",
+    "label": "Preneur à bail (locataire)",
+    "description": "Locataire occupant des surfaces tertiaires dans le bâtiment assujetti",
+    "responsibilities": [
+      "Co-déclaration sur OPERAT selon dispositions contractuelles et droits d'accès sur la plateforme",
+      "Atteinte des objectifs de réduction de consommation d'énergie finale (en parallèle avec le propriétaire)",
+      "Communication des consommations annuelles réelles au propriétaire",
+      "Établissement conjoint du programme d'actions avec le propriétaire en cas de mise en demeure",
+      "Peut déléguer la transmission des données au propriétaire ou à un prestataire"
+    ],
+    "source_article": "Art. R. 131-38, II ; Art. R. 131-41 ; Art. R. 131-41-1 ; Art. R. 131-44",
+    "confidence": "high"
+  },
+  {
+    "id": "gestionnaire_plateforme",
+    "label": "Gestionnaire de la plateforme numérique OPERAT",
+    "description": "Opérateur désigné par arrêté ministériel pour gérer la plateforme OPERAT. En pratique : l'ADEME (Agence de la Transition Écologique).",
+    "responsibilities": [
+      "Mise en place et gestion de la plateforme numérique OPERAT",
+      "Vérification annuelle des objectifs atteints (au plus tard les 31 décembre 2031, 2041 et 2051)",
+      "Génération automatique des attestations numériques annuelles par bâtiment",
+      "Calcul automatique de la modulation par volume d'activité et des ajustements climatiques",
+      "Exploitation et consolidation annuelle des données de l'ensemble des assujettis"
+    ],
+    "source_article": "Art. R. 131-41 ; Art. R. 131-41-2 ; Art. R. 131-42",
+    "confidence": "high"
+  },
+  {
+    "id": "prefet",
+    "label": "Préfet",
+    "description": "Autorité administrative compétente au regard de la localisation des bâtiments assujettis",
+    "responsibilities": [
+      "Mise en demeure en cas d'absence non justifiée de transmission OPERAT (délai 3 mois)",
+      "Mise en demeure en cas de non-respect des objectifs (délai 6 mois pour programme conjoint, puis 3 mois individuel)",
+      "Approbation des programmes d'actions soumis",
+      "Prononciation des amendes administratives",
+      "Établissement des constats de carence",
+      "Publication sur site internet des services de l'État des mises en demeure restées sans effet et des constats de carence"
+    ],
+    "source_article": "Art. R. 131-44",
+    "confidence": "high"
+  },
+  {
+    "id": "prestataire_delegue",
+    "label": "Prestataire délégué",
+    "description": "Tiers (bureau d'études, société d'exploitation, gestionnaire immobilier) à qui le propriétaire ou preneur à bail peut déléguer la transmission des consommations sur OPERAT",
+    "responsibilities": [
+      "Transmission déléguée des données de consommation sur OPERAT pour le compte du mandant"
+    ],
+    "source_article": "Art. R. 131-41-1",
+    "confidence": "high"
+  },
+  {
+    "id": "gestionnaire_reseau_distribution",
+    "label": "Gestionnaire de réseau de distribution d'énergie",
+    "description": "Opérateur de réseau d'énergie pouvant recevoir délégation pour la transmission des données, sous réserve de capacité technique",
+    "responsibilities": [
+      "Transmission déléguée des données de consommation sur OPERAT (sous réserve de capacité technique)"
+    ],
+    "source_article": "Art. R. 131-41-1",
+    "confidence": "high"
+  }
+]

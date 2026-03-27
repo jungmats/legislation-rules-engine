@@ -1,0 +1,73 @@
+[
+  {
+    "id": "ip_member_state_entity_registration",
+    "label": "Member States must establish and maintain lists of essential and important entities",
+    "source_article": "Article 3(3)",
+    "entities_involved": ["member_state", "competent_authority", "essential_entity", "important_entity"],
+    "nature": "upstream-supplies-document",
+    "description": "Competent authorities must establish and maintain a list of essential and important entities and notify ENISA by 17 April 2025, and every two years thereafter. Entity registration data flows from entities to competent authority; competent authority transmits to ENISA. The list determines which entities are subject to supervision.",
+    "obligation_ids_at_stake": ["ob_register_with_competent_authority"],
+    "confidence": "high"
+  },
+  {
+    "id": "ip_csirt_entity_incident_coordination",
+    "label": "CSIRT receives incident reports and coordinates cross-border notification",
+    "source_article": "Articles 11, 23",
+    "entities_involved": ["csirt", "essential_entity", "important_entity", "single_point_of_contact"],
+    "nature": "upstream-supplies-document",
+    "description": "Entities submit incident notifications to the CSIRT or competent authority. Where an incident has cross-border impact, the CSIRT informs the single point of contact, who forwards to CSIRTs and single points of contact in other affected Member States. The CSIRT provides guidance and support, and may trigger coordinated response.",
+    "obligation_ids_at_stake": ["ob_incident_early_warning_24h", "ob_incident_notification_72h", "ob_incident_final_report_1month"],
+    "confidence": "high"
+  },
+  {
+    "id": "ip_dora_financial_entities_supervision",
+    "label": "Financial entities subject to DORA are supervised under DORA, not NIS2",
+    "source_article": "Article 2(10)",
+    "entities_involved": ["competent_authority", "essential_entity", "important_entity"],
+    "nature": "obligation-passthrough",
+    "description": "Financial entities in the banking and financial market infrastructures sectors that are subject to Regulation (EU) 2022/2554 (DORA) comply with cybersecurity obligations under DORA. NIS2 competent authorities must cooperate with DORA supervisory authorities to avoid duplication. Entities excluded from DORA under Article 2(4) remain subject to NIS2.",
+    "obligation_ids_at_stake": ["ob_implement_cybersecurity_risk_management", "ob_incident_notification_72h"],
+    "confidence": "high"
+  },
+  {
+    "id": "ip_supply_chain_security_assessment",
+    "label": "Entities must assess security of direct suppliers and service providers",
+    "source_article": "Article 21(2)(d), Article 22",
+    "entities_involved": ["essential_entity", "important_entity"],
+    "nature": "upstream-supplies-document",
+    "description": "Entities must assess the overall quality, resilience and security practices of their direct suppliers and service providers, taking into account the results of coordinated supply chain risk assessments carried out by the Cooperation Group under Article 22(1). Security requirements may be passed down the supply chain contractually.",
+    "obligation_ids_at_stake": ["ob_implement_cybersecurity_risk_management"],
+    "confidence": "high"
+  },
+  {
+    "id": "ip_representative_in_union_addressability",
+    "label": "Non-EU entities must designate a Union representative addressable by competent authorities",
+    "source_article": "Article 26(3)",
+    "entities_involved": ["essential_entity", "important_entity", "representative_in_union", "competent_authority", "csirt"],
+    "nature": "upstream-supplies-document",
+    "description": "Non-EU entities offering services within the Union in designated sectors must designate a representative in the Union. The representative is the legal point of contact for competent authorities and CSIRTs in incident reporting and enforcement. Failure to designate a representative does not exempt the entity from NIS2 obligations.",
+    "obligation_ids_at_stake": ["ob_designate_representative_in_union", "ob_incident_early_warning_24h", "ob_incident_notification_72h"],
+    "confidence": "high"
+  },
+  {
+    "id": "ip_domain_registration_data_access",
+    "label": "TLD registries and registrars must provide domain registration data to legitimate requesters",
+    "source_article": "Article 28",
+    "entities_involved": ["tld_name_registry", "domain_name_registration_service_provider", "competent_authority"],
+    "nature": "upstream-supplies-document",
+    "description": "TLD name registries and domain name registration service providers must respond to lawful, duly justified requests from legitimate access seekers (including competent authorities, CSIRTs, law enforcement) within 72 hours. Non-personal data is publicly available without restriction; personal registrant data is subject to GDPR protections. Failure to respond triggers enforcement.",
+    "obligation_ids_at_stake": ["ob_maintain_domain_registration_database", "ob_provide_domain_registration_access"],
+    "confidence": "high"
+  },
+  {
+    "id": "ip_coordinated_vulnerability_disclosure",
+    "label": "CSIRT acts as coordinator for coordinated vulnerability disclosure",
+    "source_article": "Article 12(1)",
+    "entities_involved": ["csirt", "essential_entity", "important_entity"],
+    "nature": "upstream-supplies-document",
+    "description": "CSIRTs act as trusted intermediaries for coordinated vulnerability disclosure between vulnerability-discovering persons and ICT product/service manufacturers or providers. Entities subject to NIS2 may participate in vulnerability disclosure programmes and interact with CSIRTs as part of their cybersecurity risk management practices.",
+    "obligation_ids_at_stake": ["ob_implement_cybersecurity_risk_management"],
+    "confidence": "medium",
+    "human_review_note": "Article 12(1) establishes coordinated vulnerability disclosure with CSIRT as coordinator. The link to Article 21 obligations is structural rather than a direct compliance requirement — reviewer should confirm whether participation is expected or merely voluntary."
+  }
+]

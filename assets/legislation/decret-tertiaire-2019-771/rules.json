@@ -1,0 +1,167 @@
+[
+  {
+    "id": "rule_tertiary_building_ge_1000",
+    "label": "Bâtiment exclusivement tertiaire avec surface >= 1000 m² : toutes obligations applicables",
+    "conditions": [
+      {"fact_id": "floor_area_m2", "operator": ">=", "value": 1000},
+      {"fact_id": "activity_type", "operator": "!=", "value": null}
+    ],
+    "scope_id": "scope_tertiary_building_ge_1000",
+    "obligations": [
+      {"obligation_id": "ob_reduce_relative_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_absolute_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_relative_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_absolute_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_relative_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_reduce_absolute_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_annual_reporting_operat", "deadline_policy_id": "dp_annual_reporting"},
+      {"obligation_id": "ob_energy_display_publication", "deadline_policy_id": "dp_annual_publication"}
+    ],
+    "applicable_exemptions": [
+      "ex_modulation_structural_risk",
+      "ex_modulation_heritage",
+      "ex_modulation_other_servitudes",
+      "ex_modulation_activity_volume",
+      "ex_modulation_disproportionate_costs",
+      "ex_patrimony_mutualization",
+      "ex_ev_recharge_separate_accounting"
+    ],
+    "excludes_if_any": [
+      "ex_waived_permis_precaire",
+      "ex_waived_culte",
+      "ex_waived_defense"
+    ],
+    "source_article": "Art. R. 131-38, II, 1° ; Art. R. 131-39 ; Art. R. 131-40 ; Art. R. 131-41 ; Art. R. 131-43",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_mixed_building_tertiary_ge_1000",
+    "label": "Parties tertiaires d'un bâtiment mixte avec surface cumulée >= 1000 m²",
+    "conditions": [
+      {"fact_id": "floor_area_m2", "operator": ">=", "value": 1000},
+      {"fact_id": "activity_type", "operator": "!=", "value": null}
+    ],
+    "scope_id": "scope_mixed_building_tertiary_ge_1000",
+    "obligations": [
+      {"obligation_id": "ob_reduce_relative_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_absolute_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_relative_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_absolute_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_relative_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_reduce_absolute_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_annual_reporting_operat", "deadline_policy_id": "dp_annual_reporting"},
+      {"obligation_id": "ob_energy_display_publication", "deadline_policy_id": "dp_annual_publication"}
+    ],
+    "applicable_exemptions": [
+      "ex_modulation_structural_risk",
+      "ex_modulation_heritage",
+      "ex_modulation_other_servitudes",
+      "ex_modulation_activity_volume",
+      "ex_modulation_disproportionate_costs",
+      "ex_patrimony_mutualization",
+      "ex_ev_recharge_separate_accounting"
+    ],
+    "excludes_if_any": [
+      "ex_waived_permis_precaire",
+      "ex_waived_culte",
+      "ex_waived_defense"
+    ],
+    "source_article": "Art. R. 131-38, II, 2°",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_ensemble_batiments_same_site_ge_1000",
+    "label": "Ensemble de bâtiments sur même unité foncière/site avec surface cumulée >= 1000 m²",
+    "conditions": [
+      {"fact_id": "floor_area_m2", "operator": ">=", "value": 1000},
+      {"fact_id": "activity_type", "operator": "!=", "value": null}
+    ],
+    "scope_id": "scope_ensemble_batiments_same_site_ge_1000",
+    "obligations": [
+      {"obligation_id": "ob_reduce_relative_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_absolute_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_relative_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_absolute_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_relative_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_reduce_absolute_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_annual_reporting_operat", "deadline_policy_id": "dp_annual_reporting"},
+      {"obligation_id": "ob_energy_display_publication", "deadline_policy_id": "dp_annual_publication"}
+    ],
+    "applicable_exemptions": [
+      "ex_modulation_structural_risk",
+      "ex_modulation_heritage",
+      "ex_modulation_other_servitudes",
+      "ex_modulation_activity_volume",
+      "ex_modulation_disproportionate_costs",
+      "ex_patrimony_mutualization",
+      "ex_ev_recharge_separate_accounting"
+    ],
+    "excludes_if_any": [
+      "ex_waived_permis_precaire",
+      "ex_waived_culte",
+      "ex_waived_defense"
+    ],
+    "source_article": "Art. R. 131-38, II, 3°",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_post_cessation_persistence",
+    "label": "Bâtiment préalablement assujetti dont les surfaces tertiaires sont passées sous 1000 m² après cessation partielle",
+    "conditions": [
+      {"fact_id": "floor_area_m2", "operator": "<", "value": 1000},
+      {"fact_id": "activity_type", "operator": "!=", "value": null}
+    ],
+    "special_condition": "batiment_precedemment_assujetti_avec_cessation_partielle_activite",
+    "scope_id": "scope_post_cessation_persistence",
+    "obligations": [
+      {"obligation_id": "ob_reduce_relative_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_absolute_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_relative_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_absolute_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_relative_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_reduce_absolute_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_annual_reporting_operat", "deadline_policy_id": "dp_annual_reporting"},
+      {"obligation_id": "ob_energy_display_publication", "deadline_policy_id": "dp_annual_publication"}
+    ],
+    "applicable_exemptions": [
+      "ex_modulation_structural_risk",
+      "ex_modulation_heritage",
+      "ex_modulation_other_servitudes",
+      "ex_modulation_activity_volume",
+      "ex_modulation_disproportionate_costs",
+      "ex_patrimony_mutualization"
+    ],
+    "source_article": "Art. R. 131-38, II, alinéa 4",
+    "confidence": "medium",
+    "human_review_note": "Cette règle nécessite de connaître le statut d'assujettissement historique du bâtiment — un fait temporel non encodable comme condition de fait simple. Un moteur de conformité doit tracer l'historique. La règle capture aussi les nouveaux preneurs à bail entrant dans un bâtiment préalablement assujetti."
+  },
+  {
+    "id": "rule_energy_type_change_ghg_constraint",
+    "label": "En cas de changement de type d'énergie : contrainte de non-dégradation GES",
+    "conditions": [],
+    "trigger_event": "changement_type_energie_declare_sur_operat",
+    "obligations": [
+      {"obligation_id": "ob_no_ghg_degradation_on_energy_switch", "deadline_policy_id": null}
+    ],
+    "source_article": "Art. R. 131-39-2",
+    "confidence": "high"
+  },
+  {
+    "id": "rule_activity_change_new_objectives",
+    "label": "En cas de changement de nature d'activité tertiaire : recalcul des objectifs",
+    "conditions": [],
+    "trigger_event": "changement_nature_activite_tertiaire",
+    "effect": "Les objectifs CRELAT et CABS sont recalculés selon les formules de l'Art. R. 131-39-1 : nouvel objectif CRELAT = CREF_initial × (CABS_nouvelle_activité / CABS_ancienne_activité) ; nouvel objectif CABS = CABS_nouvelle_activité",
+    "obligations": [
+      {"obligation_id": "ob_reduce_relative_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_absolute_2030", "deadline_policy_id": "dp_2030"},
+      {"obligation_id": "ob_reduce_relative_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_absolute_2040", "deadline_policy_id": "dp_2040"},
+      {"obligation_id": "ob_reduce_relative_2050", "deadline_policy_id": "dp_2050"},
+      {"obligation_id": "ob_reduce_absolute_2050", "deadline_policy_id": "dp_2050"}
+    ],
+    "source_article": "Art. R. 131-39-1",
+    "confidence": "medium",
+    "human_review_note": "La formule de recalcul de l'objectif relatif après changement d'activité dépend des valeurs absolues CABS par catégorie (définies par arrêtés non fetched). Le moteur de conformité ne peut pas calculer le nouvel objectif sans ces valeurs."
+  }
+]

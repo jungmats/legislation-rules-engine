@@ -1,0 +1,49 @@
+{
+  "id": "decret-2019-771",
+  "title": "Décret n° 2019-771 du 23 juillet 2019 relatif aux obligations d'actions de réduction de la consommation d'énergie finale dans des bâtiments à usage tertiaire",
+  "short_name": "Décret Tertiaire",
+  "number": "2019-771",
+  "nor": "LOGL1909871D",
+  "jorf": "n°0171 du 25 juillet 2019, Texte n°53",
+  "publication_date": "2019-07-25",
+  "effective_date": "2019-10-01",
+  "jurisdiction": "France",
+  "source_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000038812251",
+  "eli": "https://www.legifrance.gouv.fr/eli/decret/2019/7/23/LOGL1909871D/jo/texte",
+  "enabling_legislation": [
+    "Article 175 de la loi n° 2018-1021 du 23 novembre 2018 portant évolution du logement, de l'aménagement et du numérique (Loi ELAN)",
+    "Article L. 111-10-3 du code de la construction et de l'habitation"
+  ],
+  "issuing_body": "Premier ministre, République française",
+  "language": "fr",
+  "article_count": 3,
+  "regulatory_articles_created": [
+    "Art. R. 131-38",
+    "Art. R. 131-39",
+    "Art. R. 131-39-1",
+    "Art. R. 131-39-2",
+    "Art. R. 131-40",
+    "Art. R. 131-41",
+    "Art. R. 131-41-1",
+    "Art. R. 131-41-2",
+    "Art. R. 131-41-3",
+    "Art. R. 131-42",
+    "Art. R. 131-43",
+    "Art. R. 131-44"
+  ],
+  "amendment_chain": [],
+  "implementing_arrete": {
+    "title": "Arrêté du 10 avril 2020 relatif aux obligations d'actions de réduction de la consommation d'énergie finale dans des bâtiments à usage tertiaire",
+    "nor": "LOGL2008000A",
+    "publication_date": "2020-04-24",
+    "consolidated_version_date": "2025-08-01",
+    "note": "Arrêté d'application du décret. Version consolidée incluant toutes les modifications jusqu'à l'arrêté du 1er août 2025 (NOR: ATDL2430864A, JORF n°0207 du 6 septembre 2025) qui remplace l'Annexe II (valeurs Cabs) par une nouvelle Annexe I publiée uniquement au Bulletin Officiel du ministère. 14 articles + 4 annexes (Annexe I: types d'énergie, Annexe II: IIU par activité [partiellement], Annexe III: surfaces de consommations énergétiques, Annexe IV: contenu dossier de modulation)."
+  },
+  "cch_article_renumbering": {
+    "note": "ATTENTION : le CCH a été renuméroté entre 2019 et 2025. L'arrêté du 1er août 2025 référence désormais les articles R. 174-22 à R. 174-32 du CCH au lieu des articles R. 131-38 à R. 131-44 créés par le décret 2019-771. Tous les source_article de ce modèle utilisent la numérotation originale R. 131-xx. Une mise à jour vers R. 174-xx est nécessaire pour aligner avec la numérotation CCH en vigueur.",
+    "original_articles": "R. 131-38 à R. 131-44",
+    "current_articles_2025": "R. 174-22 à R. 174-32",
+    "human_review_required": true
+  },
+  "note": "This decree inserts Section 8 into Chapter I, Title III, Book I of the regulatory part of the Code de la construction et de l'habitation (CCH). Reduction targets (-40%/2030, -50%/2040, -60%/2050) are set in Art. L. 111-10-3 CCH, which this decree implements."
+}

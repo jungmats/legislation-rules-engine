@@ -1,0 +1,122 @@
+[
+  {
+    "id": "act_register_operat",
+    "label": "Créer un compte et enregistrer le bâtiment sur OPERAT",
+    "description": "Création du compte sur la plateforme numérique OPERAT et enregistrement du ou des bâtiments/parties de bâtiments assujettis avec leurs activités et surfaces",
+    "responsible_party": "proprietaire",
+    "required_inputs": ["floor_area_m2", "activity_type"],
+    "evidence_produced": "ev_operat_registration",
+    "prerequisites": [],
+    "source_article": "Art. R. 131-41",
+    "confidence": "high"
+  },
+  {
+    "id": "act_declare_reference_year",
+    "label": "Identifier et déclarer l'année de référence et la consommation de référence sur OPERAT",
+    "description": "Sélection de l'année de référence dans la fenêtre réglementaire (2010-2022), collecte des factures et données de consommation pour cette année, et déclaration sur OPERAT avec justificatifs. La plateforme calcule l'ajustement climatique.",
+    "responsible_party": "proprietaire",
+    "required_inputs": ["reference_year", "reference_energy_consumption_kwh", "energy_type"],
+    "evidence_produced": "ev_reference_year_declaration",
+    "prerequisites": ["act_register_operat"],
+    "source_article": "Art. R. 131-39, I, 1° ; Art. R. 131-41, 4°",
+    "confidence": "high"
+  },
+  {
+    "id": "act_annual_energy_declaration",
+    "label": "Déclarer les consommations annuelles sur OPERAT avant le 30 septembre",
+    "description": "Déclaration annuelle au plus tard le 30 septembre des consommations d'énergie de l'année précédente par type d'énergie, des indicateurs d'intensité d'usage, des modulations éventuelles, et le cas échéant des consommations de recharge VE. La plateforme génère automatiquement l'attestation numérique annuelle.",
+    "responsible_party": "proprietaire_ou_preneur_a_bail",
+    "required_inputs": [
+      "annual_energy_consumption_kwh",
+      "energy_type",
+      "usage_intensity_indicator",
+      "ev_recharge_energy_kwh"
+    ],
+    "evidence_produced": "ev_annual_operat_declaration",
+    "prerequisites": ["act_register_operat", "act_declare_reference_year"],
+    "source_article": "Art. R. 131-41 ; Art. R. 131-41-1 ; Art. R. 131-41-2",
+    "confidence": "high"
+  },
+  {
+    "id": "act_share_consumption_data",
+    "label": "Communiquer mutuellement les consommations annuelles entre propriétaire et preneur à bail",
+    "description": "Le propriétaire et le preneur à bail se communiquent mutuellement les consommations annuelles énergétiques réelles de l'ensemble des équipements et systèmes dont ils assurent respectivement l'exploitation",
+    "responsible_party": "proprietaire_et_preneur_a_bail",
+    "required_inputs": ["annual_energy_consumption_kwh", "energy_type"],
+    "evidence_produced": null,
+    "prerequisites": [],
+    "source_article": "Art. R. 131-41-1",
+    "confidence": "high"
+  },
+  {
+    "id": "act_implement_energy_reduction_actions",
+    "label": "Mettre en œuvre les actions de réduction de la consommation d'énergie finale",
+    "description": "Actions portant notamment sur : (1) la performance énergétique des bâtiments, (2) l'installation d'équipements performants et dispositifs de contrôle/gestion active, (3) les modalités d'exploitation des équipements, (4) l'adaptation des locaux à un usage économe et le comportement des occupants",
+    "responsible_party": "proprietaire_ou_preneur_a_bail",
+    "required_inputs": [
+      "annual_energy_consumption_climate_adjusted_kwh",
+      "reference_energy_consumption_kwh",
+      "absolute_target_kwh_m2_year"
+    ],
+    "evidence_produced": "ev_annual_operat_declaration",
+    "prerequisites": ["act_declare_reference_year"],
+    "source_article": "Art. R. 131-39, II",
+    "confidence": "high"
+  },
+  {
+    "id": "act_prepare_modulation_dossier",
+    "label": "Établir le dossier technique de modulation",
+    "description": "Rédaction du dossier technique justifiant la modulation d'objectif (contraintes patrimoniales, risque de pathologie du bâti, coûts disproportionnés, autres servitudes). Non requis pour la modulation par volume d'activité (automatique via OPERAT). Contenu précisé par arrêté ministériel.",
+    "responsible_party": "proprietaire",
+    "required_inputs": [
+      "modulation_dossier_exists",
+      "building_heritage_status",
+      "action_causes_structural_risk",
+      "action_roi_exceeds_threshold"
+    ],
+    "evidence_produced": "ev_modulation_dossier",
+    "prerequisites": ["act_declare_reference_year"],
+    "source_article": "Art. R. 131-40, IV",
+    "confidence": "high"
+  },
+  {
+    "id": "act_publish_energy_consumption",
+    "label": "Publier ou afficher les consommations d'énergie et les objectifs",
+    "description": "Publication de l'attestation numérique annuelle générée par OPERAT, complétée par l'évaluation GES en kgCO2éq/m². Par voie d'affichage à un endroit visible et facilement accessible, ou par tout autre moyen pertinent au regard de l'activité et des personnels.",
+    "responsible_party": "proprietaire_ou_preneur_a_bail",
+    "required_inputs": [
+      "annual_energy_consumption_climate_adjusted_kwh",
+      "ghg_emissions_kg_co2_m2"
+    ],
+    "evidence_produced": "ev_energy_display",
+    "prerequisites": ["act_annual_energy_declaration"],
+    "source_article": "Art. R. 131-43",
+    "confidence": "high"
+  },
+  {
+    "id": "act_establish_joint_action_program",
+    "label": "Établir et soumettre un programme d'actions conjoint au préfet (suite à mise en demeure)",
+    "description": "En cas de mise en demeure pour non-respect des objectifs : établissement conjoint par le propriétaire et le(s) preneur(s) à bail d'un programme d'actions mentionnant les responsabilités de chaque partie, un échéancier prévisionnel et un plan de financement. Soumis au préfet pour approbation dans un délai de 6 mois.",
+    "responsible_party": "proprietaire_et_preneur_a_bail",
+    "required_inputs": [],
+    "evidence_produced": "ev_action_program_submitted",
+    "prerequisites": [],
+    "triggered_by": "mise_en_demeure_prefecture_non_respect_objectifs",
+    "deadline_policy_id": "dp_action_program_6_months",
+    "source_article": "Art. R. 131-44, II",
+    "confidence": "high"
+  },
+  {
+    "id": "act_establish_individual_action_program",
+    "label": "Établir et soumettre un programme d'actions individuel au préfet (suite à 2ème mise en demeure)",
+    "description": "Si le programme conjoint n'est pas soumis dans les 6 mois : le préfet met en demeure individuellement le propriétaire et/ou le preneur à bail d'établir chacun leur programme d'actions dans un délai de 3 mois.",
+    "responsible_party": "proprietaire_ou_preneur_a_bail",
+    "required_inputs": [],
+    "evidence_produced": "ev_action_program_submitted",
+    "prerequisites": [],
+    "triggered_by": "seconde_mise_en_demeure_prefecture_individuelle",
+    "deadline_policy_id": "dp_individual_action_program_3_months",
+    "source_article": "Art. R. 131-44, II",
+    "confidence": "high"
+  }
+]

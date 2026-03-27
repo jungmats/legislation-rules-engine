@@ -1,0 +1,180 @@
+[
+  {
+    "id": "ex_waived_permis_precaire",
+    "label": "Exclusion totale — permis de construire à titre précaire",
+    "trigger_conditions": [],
+    "effect": "waived",
+    "description": "Bâtiments ayant obtenu un permis de construire à titre précaire (Art. R.*433-1 CU) : toutes les obligations sont levées",
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050",
+      "ob_annual_reporting_operat", "ob_energy_display_publication"
+    ],
+    "source_article": "Art. R. 131-38, III, 1°",
+    "confidence": "high",
+    "note": "trigger_conditions vide car c'est une exclusion de scope, non une modulation. À vérifier lors de la qualification initiale du bâtiment, avant d'appliquer toute règle."
+  },
+  {
+    "id": "ex_waived_culte",
+    "label": "Exclusion totale — bâtiments destinés au culte",
+    "trigger_conditions": [],
+    "effect": "waived",
+    "description": "Bâtiments, parties de bâtiments ou ensembles de bâtiments destinés au culte : toutes les obligations sont levées",
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050",
+      "ob_annual_reporting_operat", "ob_energy_display_publication"
+    ],
+    "source_article": "Art. R. 131-38, III, 2°",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_waived_defense",
+    "label": "Exclusion totale — bâtiments de défense, sécurité civile ou sûreté",
+    "trigger_conditions": [],
+    "effect": "waived",
+    "description": "Bâtiments dans lesquels est exercée une activité opérationnelle à des fins de défense, de sécurité civile ou de sûreté intérieure du territoire : toutes les obligations sont levées",
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050",
+      "ob_annual_reporting_operat", "ob_energy_display_publication"
+    ],
+    "source_article": "Art. R. 131-38, III, 3°",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_modulation_structural_risk",
+    "label": "Modulation — risque de pathologie du bâti",
+    "trigger_conditions": [
+      {"fact_id": "action_causes_structural_risk", "operator": "=", "value": true}
+    ],
+    "effect": "reduced",
+    "reduction_pct": null,
+    "description": "L'objectif de réduction est modulé (réduit) lorsque les actions susceptibles de contribuer à l'atteinte de l'objectif font courir un risque de pathologie du bâti, affectant notamment les structures ou le clos couvert",
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050"
+    ],
+    "evidence_required": "ev_modulation_dossier",
+    "source_article": "Art. R. 131-40, I, 1°",
+    "confidence": "high",
+    "human_review_note": "Le degré de modulation (pourcentage de réduction de l'objectif) est précisé par arrêté ministériel (non fetché). reduction_pct laissé null en attente."
+  },
+  {
+    "id": "ex_modulation_heritage",
+    "label": "Modulation — contraintes patrimoniales ou architecturales",
+    "trigger_conditions": [
+      {"fact_id": "building_heritage_status", "operator": "!=", "value": "aucun"}
+    ],
+    "effect": "reduced",
+    "reduction_pct": null,
+    "description": "L'objectif est modulé lorsque les actions nécessaires entraîneraient des modifications importantes contraires aux règles et prescriptions applicables aux monuments historiques classés/inscrits, sites patrimoniaux remarquables, abords de monuments historiques, sites inscrits/classés, constructions soumises au PLU, ou bâtiments labellisés L. 650-1 code du patrimoine",
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050"
+    ],
+    "evidence_required": "ev_modulation_dossier",
+    "source_article": "Art. R. 131-40, I, 2°",
+    "confidence": "high",
+    "human_review_note": "Degré de modulation défini par arrêté (non fetché). Cette exemption couvre également les contraintes du code de l'urbanisme (Art. L. 151-18, L. 151-19) relatives à l'aspect extérieur, qui pourraient être modélisées séparément."
+  },
+  {
+    "id": "ex_modulation_other_servitudes",
+    "label": "Modulation — autres servitudes (droit des sols, propriété, sécurité, façades)",
+    "trigger_conditions": [],
+    "effect": "reduced",
+    "reduction_pct": null,
+    "description": "L'objectif est modulé lorsque les actions ne sont pas conformes à d'autres servitudes relatives au droit des sols, droit de propriété, sécurité des biens et des personnes, ou à l'aspect des façades et leur implantation",
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050"
+    ],
+    "evidence_required": "ev_modulation_dossier",
+    "source_article": "Art. R. 131-40, I, 3°",
+    "confidence": "medium",
+    "human_review_note": "trigger_conditions vide car 'autres servitudes' est une catégorie résiduelle nécessitant une analyse juridique au cas par cas. Les faits nécessaires pour l'évaluer computationnellement ne sont pas énumérables depuis ce décret seul."
+  },
+  {
+    "id": "ex_modulation_activity_volume",
+    "label": "Modulation automatique — volume d'activité (IIU)",
+    "trigger_conditions": [
+      {"fact_id": "usage_intensity_indicator", "operator": "!=", "value": null}
+    ],
+    "effect": "reduced",
+    "reduction_pct": null,
+    "automatic": true,
+    "description": "L'objectif CABS (valeur absolue) est automatiquement modulé par la plateforme OPERAT en fonction des indicateurs d'intensité d'usage (IIU) spécifiques à l'activité. Cette modulation ne nécessite pas de dossier technique.",
+    "obligations_modified": [
+      "ob_reduce_absolute_2030", "ob_reduce_absolute_2040", "ob_reduce_absolute_2050"
+    ],
+    "evidence_required": null,
+    "source_article": "Art. R. 131-40, II ; Art. R. 131-41, 6° ; Art. R. 131-41-2, 1°",
+    "confidence": "medium",
+    "human_review_note": "Les indicateurs d'intensité d'usage et leurs formules de modulation sont définis par arrêté (non fetché). Cette modulation est automatique via OPERAT pour l'objectif absolu (CABS). Son application à l'objectif relatif (CRELAT) n'est pas aussi explicite dans le décret."
+  },
+  {
+    "id": "ex_modulation_disproportionate_costs",
+    "label": "Modulation — coûts manifestement disproportionnés",
+    "trigger_conditions": [
+      {"fact_id": "action_roi_exceeds_threshold", "operator": "=", "value": true}
+    ],
+    "effect": "reduced",
+    "reduction_pct": null,
+    "description": "L'objectif est modulé lorsque les coûts des actions nécessaires, déduction faite des aides financières, sont manifestement disproportionnés. Les seuils de temps de retour sur investissement (TRI) définis par Art. 11 de l'arrêté du 10 avril 2020 : > 30 ans pour les actions sur l'enveloppe du bâtiment ; > 15 ans pour les équipements et systèmes énergétiques ; > 10 ans pour les systèmes de contrôle, régulation et optimisation.",
+    "roi_thresholds_by_action_type": {
+      "enveloppe_batiment_years": 30,
+      "equipements_et_systemes_energetiques_years": 15,
+      "systemes_controle_regulation_optimisation_years": 10
+    },
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050"
+    ],
+    "evidence_required": "ev_modulation_dossier",
+    "source_article": "Art. R. 131-40, III ; Art. 11 arrêté 10 avril 2020",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_patrimony_mutualization",
+    "label": "Mutualisation des résultats à l'échelle du patrimoine (groupe de structures)",
+    "trigger_conditions": [],
+    "effect": "reduced",
+    "description": "Pour la vérification du respect des objectifs, les assujettis peuvent mutualiser les résultats à l'échelle de tout ou partie de leur patrimoine soumis à l'obligation (Art. R. 131-42). Art. 14 de l'arrêté précise le mécanisme de 'groupe de structures' : (1) l'assujetti déclare sur OPERAT les bâtiments formant le groupe ; (2) OPERAT calcule la consommation cumulée et la compare à l'objectif cumulé du groupe ; (3) un bâtiment sous-performant est compensé par la sur-performance d'un autre bâtiment du même groupe. La mutualisation est optionnelle et opérée par l'assujetti dans OPERAT.",
+    "groupe_de_structures_conditions": {
+      "same_entity_required": true,
+      "declaration_platform": "OPERAT",
+      "scope": "tout ou partie du patrimoine assujetti de la même entité"
+    },
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050"
+    ],
+    "source_article": "Art. R. 131-42 ; Art. 14 arrêté 10 avril 2020",
+    "confidence": "high"
+  },
+  {
+    "id": "ex_ev_recharge_separate_accounting",
+    "label": "Comptabilisation séparée des consommations de recharge VE",
+    "trigger_conditions": [
+      {"fact_id": "ev_recharge_energy_kwh", "operator": ">", "value": 0}
+    ],
+    "effect": "reduced",
+    "description": "Les consommations d'énergie finale liées à la recharge de véhicules électriques ou hybrides rechargeables peuvent être comptabilisées séparément sur OPERAT",
+    "obligations_modified": [
+      "ob_reduce_relative_2030", "ob_reduce_absolute_2030",
+      "ob_reduce_relative_2040", "ob_reduce_absolute_2040",
+      "ob_reduce_relative_2050", "ob_reduce_absolute_2050"
+    ],
+    "source_article": "Art. R. 131-41, 7°",
+    "confidence": "medium",
+    "human_review_note": "Le décret permet de déclarer séparément les consommations VE sur OPERAT mais n'indique pas explicitement si elles sont exclues du calcul de la réduction ou simplement tracées à part. La guidance ADEME/OPERAT doit confirmer le traitement exact dans le calcul de conformité."
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "floor_area_m2",
+    "label": "Surface de plancher des activités tertiaires",
+    "description": "Surface de plancher au sens de l'Art. R. 111-22 du code de l'urbanisme, consacrée aux activités tertiaires. Pour les ensembles de bâtiments sur un même site, la surface se cumule.",
+    "type": "number",
+    "unit": "m²",
+    "source": "Déclaration sur OPERAT ; définie par Art. R. 111-22 code de l'urbanisme",
+    "source_article": "Art. R. 131-38, II ; Art. R. 131-41, 2°",
+    "confidence": "high"
+  },
+  {
+    "id": "energy_surface_m2",
+    "label": "Surface de consommations énergétiques",
+    "description": "Surface utilisée pour le calcul des consommations d'énergie au sens de l'arrêté, exprimée en m². Distincte de la surface de plancher (Art. R. 111-22 CU) : inclut les surfaces de stationnement couvert, les locaux techniques, et autres surfaces non comptabilisées dans la surface de plancher mais consommant de l'énergie. C'est cette surface qui sert au calcul des ratios kWh/m²/an pour la vérification des objectifs.",
+    "type": "number",
+    "unit": "m²",
+    "source": "Déclaration sur OPERAT selon méthode définie à l'Annexe III de l'arrêté du 10 avril 2020",
+    "source_article": "Annexe III arrêté 10 avril 2020 ; Art. R. 131-39, I, 2°",
+    "confidence": "high",
+    "note": "À ne pas confondre avec floor_area_m2 (surface de plancher Art. R. 111-22 CU) qui sert au seuil d'assujettissement (≥ 1000 m²). La surface de consommations énergétiques sert uniquement au calcul des objectifs de performance."
+  },
+  {
+    "id": "activity_type",
+    "label": "Type d'activité tertiaire exercée",
+    "description": "Nature de l'activité tertiaire marchande ou non marchande hébergée dans le bâtiment. Les catégories précises sont définies par arrêté ministériel.",
+    "type": "string",
+    "allowed_values": "Catégories définies par arrêté (bureaux, hôtellerie, commerce, enseignement, santé, logistique, data centers, sport, etc.)",
+    "source": "Déclaration sur OPERAT",
+    "source_article": "Art. R. 131-38, I ; Art. R. 131-41, 1°",
+    "confidence": "medium",
+    "human_review_note": "L'énumération exacte des catégories d'activités est définie par arrêté ministériel (arrêté valeurs absolues, non fetché). La plateforme OPERAT recense plus de 20 sous-catégories. Cette liste doit être intégrée pour compléter le modèle."
+  },
+  {
+    "id": "reference_year",
+    "label": "Année de référence de consommation",
+    "description": "Année pleine d'exploitation choisie par l'assujetti comme base de calcul de l'objectif relatif (CRELAT). Doit être une année pleine d'exploitation, comprise dans la fenêtre réglementaire.",
+    "type": "number",
+    "unit": "année (YYYY)",
+    "allowed_values": "entier entre 2010 et 2022 (fenêtre confirmée par arrêté du 10 avril 2020 et textes ultérieurs)",
+    "source": "Choix de l'assujetti, déclaré sur OPERAT avec justificatifs",
+    "source_article": "Art. R. 131-39, I, 1° ; Art. R. 131-41, 4°",
+    "confidence": "high",
+    "note": "Fenêtre 2010–2022 confirmée par l'Art. 3 de l'arrêté du 10 avril 2020 (consolidé). Pour les bâtiments sans données avant 2022, l'année de référence est la première année pleine d'exploitation déclarée sur OPERAT. A défaut de renseignement avant le 30 septembre 2027, OPERAT retient la première année pleine déclarée."
+  },
+  {
+    "id": "reference_energy_consumption_kwh",
+    "label": "Consommation énergétique de référence (CREF)",
+    "description": "Consommation d'énergie finale pour l'année de référence, constatée pour une année pleine d'exploitation et ajustée en fonction des variations climatiques selon méthode définie par arrêté",
+    "type": "number",
+    "unit": "kWh/an",
+    "source": "Déclaration sur OPERAT avec justificatifs ; ajustement climatique calculé par la plateforme selon méthode arrêté",
+    "source_article": "Art. R. 131-39, I, 1° ; Art. R. 131-41, 4°",
+    "confidence": "high"
+  },
+  {
+    "id": "annual_energy_consumption_kwh",
+    "label": "Consommation annuelle d'énergie finale déclarée",
+    "description": "Consommation d'énergie finale annuelle déclarée sur OPERAT, par type d'énergie, pour l'année précédente",
+    "type": "number",
+    "unit": "kWh/an",
+    "source": "Déclaration annuelle sur OPERAT par propriétaire ou preneur à bail, au plus tard le 30 septembre",
+    "source_article": "Art. R. 131-41, 3°",
+    "confidence": "high"
+  },
+  {
+    "id": "annual_energy_consumption_climate_adjusted_kwh",
+    "label": "Consommation annuelle ajustée aux variations climatiques",
+    "description": "Consommation annuelle corrigée automatiquement par la plateforme OPERAT en fonction des variations climatiques. C'est cette valeur qui est utilisée pour la vérification du respect des objectifs.",
+    "type": "number",
+    "unit": "kWh/an",
+    "source": "Calcul automatique par plateforme OPERAT (Art. R. 131-41-2, 2°)",
+    "source_article": "Art. R. 131-41-2, 2° ; Art. R. 131-42",
+    "confidence": "high"
+  },
+  {
+    "id": "energy_type",
+    "label": "Type d'énergie utilisée",
+    "description": "Nature de l'énergie consommée, déclarée par type sur OPERAT. Un changement de type d'énergie ne doit pas dégrader les émissions GES (Art. R. 131-39-2).",
+    "type": "enum",
+    "allowed_values": [
+      "electricite",
+      "gaz_naturel",
+      "fioul_lourd",
+      "fioul_domestique",
+      "gpl",
+      "charbon",
+      "bois_et_biomasse_solide",
+      "biogaz",
+      "biocarburants",
+      "gaz_naturel_liquefie_gnl",
+      "chaleur_urbaine",
+      "froid_urbain",
+      "autre"
+    ],
+    "ghg_factors_kg_co2eq_per_kwh": {
+      "note": "Facteurs définis à l'Annexe VII de l'arrêté du 10 avril 2020 (consolidé). GNL ajouté par l'arrêté du 1er août 2025 (Art. 5, II).",
+      "gaz_naturel_liquefie_gnl": 0.238
+    },
+    "source": "Déclaration sur OPERAT ; liste définie par Annexe I de l'arrêté du 10 avril 2020 (consolidé) ; GNL ajouté par Arrêté 1er août 2025 Art. 5",
+    "source_article": "Art. R. 131-41, 3° ; Art. R. 131-39-2 ; Annexe I et VII arrêté 10 avril 2020 ; Art. 5 arrêté 1er août 2025",
+    "confidence": "high"
+  },
+  {
+    "id": "absolute_target_kwh_m2_year",
+    "label": "Objectif de consommation en valeur absolue (CABS) par catégorie d'activité",
+    "description": "Niveau de consommation d'énergie finale fixé en valeur absolue (kWh/m²/an) par catégorie d'activité et par échéance (2030/2040/2050), déterminé par arrêté ministériel sur la base d'indicateurs d'intensité d'usage de référence ajustés aux conditions climatiques",
+    "type": "number",
+    "unit": "kWh/m²/an",
+    "source": "Annexe I de l'Arrêté du 1er août 2025 (NOR: ATDL2430864A), publié au Bulletin Officiel du ministère chargé du développement durable. Cet arrêté abroge et remplace l'Annexe II de l'arrêté du 10 avril 2020 (qui n'était pas publiée au Journal officiel).",
+    "source_article": "Art. R. 131-39, I, 2° ; Arrêté 1er août 2025 Annexe I",
+    "confidence": "low",
+    "human_review_note": "Les valeurs numériques (kWh/m²/an) par catégorie d'activité et par échéance sont définies dans l'Annexe I de l'Arrêté du 1er août 2025 (NOR: ATDL2430864A), disponible uniquement au Bulletin Officiel (https://www.bulletin-officiel.developpement-durable.gouv.fr/notice?id=Bulletinofficiel-0034142). Ce document n'a pas été fetché. Les valeurs doivent être intégrées manuellement pour compléter les obligations ob_reduce_absolute_*."
+  },
+  {
+    "id": "usage_intensity_indicator",
+    "label": "Indicateur d'intensité d'usage (IIU)",
+    "description": "Indicateur spécifique à chaque catégorie d'activité utilisé pour calculer et moduler l'objectif en valeur absolue. Ex : heures d'ouverture, nombre d'occupants, nuitées, etc. La modulation par volume d'activité est automatique via OPERAT.",
+    "type": "number",
+    "unit": "variable selon catégorie d'activité",
+    "source": "Déclaration sur OPERAT ; modulation automatique par la plateforme",
+    "source_article": "Art. R. 131-39, I, 2° ; Art. R. 131-40, II ; Art. R. 131-41, 5° ; Art. R. 131-41-2, 1°",
+    "confidence": "low",
+    "human_review_note": "Les indicateurs spécifiques par catégorie d'activité sont définis par arrêté (non fetché). L'arrêté du 10 avril 2020 et ses modifications définissent les IIU par secteur. Sans ces valeurs, la modulation automatique par volume d'activité ne peut pas être modélisée numériquement."
+  },
+  {
+    "id": "ghg_emissions_kg_co2_m2",
+    "label": "Émissions de gaz à effet de serre",
+    "description": "Évaluation des émissions GES correspondant aux consommations énergétiques annuelles, calculée automatiquement par OPERAT et exprimée en kg CO2 équivalent par mètre carré",
+    "type": "number",
+    "unit": "kg CO2 éq/m²/an",
+    "source": "Calcul automatique par plateforme OPERAT",
+    "source_article": "Art. R. 131-41-2, 3° ; Art. R. 131-43",
+    "confidence": "high"
+  },
+  {
+    "id": "modulation_dossier_exists",
+    "label": "Dossier technique de modulation établi",
+    "description": "Indique si un dossier technique de modulation a été établi sous la responsabilité du propriétaire. Requis pour toutes les modulations sauf la modulation automatique par volume d'activité.",
+    "type": "boolean",
+    "source": "Établi par propriétaire/preneur à bail ; tenu à disposition des agents de contrôle",
+    "source_article": "Art. R. 131-40, IV ; Art. R. 131-42",
+    "confidence": "high"
+  },
+  {
+    "id": "ev_recharge_energy_kwh",
+    "label": "Consommation d'énergie liée à la recharge de véhicules électriques ou hybrides",
+    "description": "Consommation d'énergie finale liée à la recharge de véhicules électriques ou hybrides rechargeables, pouvant être comptabilisée séparément sur OPERAT",
+    "type": "number",
+    "unit": "kWh/an",
+    "source": "Déclaration optionnelle sur OPERAT",
+    "source_article": "Art. R. 131-41, 7°",
+    "confidence": "high"
+  },
+  {
+    "id": "building_heritage_status",
+    "label": "Statut patrimonial du bâtiment",
+    "description": "Indique si le bâtiment est soumis à des contraintes patrimoniales empêchant certaines actions de réduction énergétique",
+    "type": "enum",
+    "allowed_values": [
+      "monument_historique_classe",
+      "monument_historique_inscrit",
+      "site_patrimonial_remarquable",
+      "abord_monument_historique",
+      "site_inscrit",
+      "site_classe",
+      "label_L650-1_patrimoine",
+      "contrainte_plu_aspect_exterieur",
+      "aucun"
+    ],
+    "source": "Registres patrimoniaux ; documents d'urbanisme (PLU)",
+    "source_article": "Art. R. 131-40, I, 2°",
+    "confidence": "high"
+  },
+  {
+    "id": "action_causes_structural_risk",
+    "label": "Les actions envisagées font courir un risque de pathologie du bâti",
+    "description": "Indique si les actions de réduction énergétique envisagées font courir un risque de pathologie du bâti, affectant notamment les structures ou le clos couvert du bâtiment",
+    "type": "boolean",
+    "source": "Expertise technique dans dossier de modulation",
+    "source_article": "Art. R. 131-40, I, 1°",
+    "confidence": "high"
+  },
+  {
+    "id": "action_roi_exceeds_threshold",
+    "label": "Les coûts des actions sont manifestement disproportionnés (retour sur investissement > seuil arrêté)",
+    "description": "Indique si la durée de retour sur investissement des actions nécessaires, déduction faite des aides financières, dépasse les seuils définis par Art. 11 de l'arrêté du 10 avril 2020 : > 30 ans pour les actions sur l'enveloppe du bâtiment ; > 15 ans pour les équipements et systèmes énergétiques ; > 10 ans pour les systèmes de contrôle, régulation et optimisation.",
+    "type": "boolean",
+    "roi_thresholds_by_action_type": {
+      "enveloppe_batiment_years": 30,
+      "equipements_et_systemes_energetiques_years": 15,
+      "systemes_controle_regulation_optimisation_years": 10
+    },
+    "source": "Argumentation technique et financière dans dossier de modulation ; seuils définis par Art. 11 de l'arrêté du 10 avril 2020 (consolidé)",
+    "source_article": "Art. R. 131-40, III ; Art. 11 arrêté 10 avril 2020",
+    "confidence": "high"
+  }
+]

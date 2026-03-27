@@ -1,0 +1,75 @@
+[
+  {
+    "id": "scope_tertiary_building_ge_1000",
+    "description": "Tout bâtiment hébergeant exclusivement des activités tertiaires sur une surface de plancher >= 1000 m²",
+    "entity_type": ["proprietaire", "preneur_a_bail"],
+    "min_floor_area_m2": 1000,
+    "sector": "tertiaire_marchand_ou_non_marchand",
+    "coverage_type": "batiment_exclusivement_tertiaire",
+    "geographic_scope": "France",
+    "note": "Les surfaces consacrées à des activités non tertiaires accessoires aux activités tertiaires sont prises en compte pour le calcul du seuil de 1000 m²",
+    "source_article": "Art. R. 131-38, II, 1°",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_mixed_building_tertiary_ge_1000",
+    "description": "Toutes parties d'un bâtiment à usage mixte hébergeant des activités tertiaires sur une surface de plancher cumulée >= 1000 m²",
+    "entity_type": ["proprietaire", "preneur_a_bail"],
+    "min_floor_area_m2": 1000,
+    "sector": "tertiaire_marchand_ou_non_marchand",
+    "coverage_type": "parties_batiment_mixte",
+    "geographic_scope": "France",
+    "source_article": "Art. R. 131-38, II, 2°",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_ensemble_batiments_same_site_ge_1000",
+    "description": "Tout ensemble de bâtiments situés sur une même unité foncière ou sur un même site hébergeant des activités tertiaires sur une surface de plancher cumulée >= 1000 m²",
+    "entity_type": ["proprietaire", "preneur_a_bail"],
+    "min_floor_area_m2": 1000,
+    "sector": "tertiaire_marchand_ou_non_marchand",
+    "coverage_type": "ensemble_batiments_meme_site",
+    "geographic_scope": "France",
+    "note": "La surface se cumule à l'échelle du site ou de l'unité foncière, même si les bâtiments individuels sont en dessous du seuil",
+    "source_article": "Art. R. 131-38, II, 3°",
+    "confidence": "high"
+  },
+  {
+    "id": "scope_post_cessation_persistence",
+    "description": "Bâtiment préalablement assujetti dont les surfaces tertiaires deviennent < 1000 m² après cessation partielle d'activité : les occupants restants (et nouveaux entrants) restent assujettis",
+    "entity_type": ["proprietaire", "preneur_a_bail"],
+    "min_floor_area_m2": null,
+    "sector": "tertiaire_marchand_ou_non_marchand",
+    "coverage_type": "persistence_apres_cessation_partielle",
+    "geographic_scope": "France",
+    "source_article": "Art. R. 131-38, II, alinéa 4",
+    "confidence": "medium",
+    "human_review_note": "La règle de persistance crée des cas limites complexes : les nouveaux preneurs à bail entrant dans un bâtiment préalablement assujetti mais dont les surfaces tertiaires sont maintenant < 1000 m² héritent de l'obligation. Un moteur de conformité doit donc tracer l'historique du statut d'assujettissement du bâtiment, pas seulement sa surface actuelle."
+  },
+  {
+    "id": "explicit_exclusions",
+    "description": "Catégories expressément exclues du champ d'application",
+    "exclusions": [
+      {
+        "id": "exclusion_permis_precaire",
+        "description": "Constructions ayant donné lieu à un permis de construire à titre précaire au sens de l'Art. R.*433-1 du code de l'urbanisme",
+        "source_article": "Art. R. 131-38, III, 1°",
+        "confidence": "high"
+      },
+      {
+        "id": "exclusion_culte",
+        "description": "Bâtiments, parties de bâtiments ou ensembles de bâtiments destinés au culte",
+        "source_article": "Art. R. 131-38, III, 2°",
+        "confidence": "high"
+      },
+      {
+        "id": "exclusion_defense_securite",
+        "description": "Bâtiments dans lesquels est exercée une activité opérationnelle à des fins de défense, de sécurité civile ou de sûreté intérieure du territoire",
+        "source_article": "Art. R. 131-38, III, 3°",
+        "confidence": "high"
+      }
+    ],
+    "source_article": "Art. R. 131-38, III",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "id": "ev_cybersecurity_risk_management_policy",
+    "label": "Cybersecurity Risk-Management Policies and Documentation",
+    "description": "Documentation covering all 10 Article 21(2) measure categories: risk analysis policy, incident handling procedures, business continuity/backup/disaster recovery plans, supply chain security assessment, NIS acquisition/development/maintenance security policies, effectiveness assessment procedures, cyber hygiene and training programme, cryptography/encryption policy, HR security and access control policy, MFA implementation records.",
+    "platform": "Internal governance records; available to competent authority on request or during supervision",
+    "required_fields": [
+      "risk_analysis_and_information_system_security_policy",
+      "incident_handling_procedures",
+      "business_continuity_and_backup_plan",
+      "supply_chain_security_assessment_records",
+      "nis_acquisition_development_security_policy",
+      "effectiveness_assessment_procedures",
+      "cyber_hygiene_training_records",
+      "cryptography_encryption_policy",
+      "hr_security_access_control_policy",
+      "mfa_implementation_evidence"
+    ],
+    "frequency": "Maintained continuously; reviewed at least annually or when significant changes occur",
+    "obligation_id": "ob_implement_cybersecurity_risk_management",
+    "confidence": "high",
+    "source_article": "Article 21"
+  },
+  {
+    "id": "ev_management_body_approval",
+    "label": "Management Body Approval of Cybersecurity Measures",
+    "description": "Board resolution, minutes, or equivalent governance record confirming formal approval of cybersecurity risk-management measures by the management body.",
+    "platform": "Internal governance records; available to competent authority on request",
+    "required_fields": [
+      "board_resolution_or_minutes",
+      "date_of_approval",
+      "measures_approved_reference"
+    ],
+    "frequency": "One-time; updated whenever measures are significantly revised",
+    "obligation_id": "ob_management_body_approve_measures",
+    "confidence": "high",
+    "source_article": "Article 20(1)"
+  },
+  {
+    "id": "ev_management_body_training_records",
+    "label": "Management Body Cybersecurity Training Completion Records",
+    "description": "Training completion certificates, attendance records, or equivalent documentation showing each member of the management body has completed cybersecurity training.",
+    "platform": "Internal HR/training records; available to competent authority on request",
+    "required_fields": [
+      "training_programme_description",
+      "attendee_names_and_roles",
+      "training_dates",
+      "training_provider"
+    ],
+    "frequency": "At least once; regular ongoing training encouraged",
+    "obligation_id": "ob_management_body_training",
+    "confidence": "high",
+    "source_article": "Article 20(2)"
+  },
+  {
+    "id": "ev_incident_early_warning",
+    "label": "Early Warning Notification to CSIRT",
+    "description": "Transmitted early warning record (email, portal submission, or equivalent) sent to the CSIRT or competent authority within 24 hours of becoming aware of a significant incident.",
+    "platform": "National CSIRT or competent authority reporting portal / direct communication",
+    "required_fields": [
+      "date_and_time_of_submission",
+      "incident_description_initial",
+      "suspected_malicious_or_unlawful_cause_flag",
+      "cross_border_impact_flag"
+    ],
+    "frequency": "Per significant incident",
+    "deadline_policy_id": "dl_incident_early_warning_24h",
+    "obligation_id": "ob_incident_early_warning_24h",
+    "confidence": "high",
+    "source_article": "Article 23(4)(a)"
+  },
+  {
+    "id": "ev_incident_notification",
+    "label": "Incident Notification to CSIRT (72-Hour)",
+    "description": "Incident notification submitted to the CSIRT or competent authority within 72 hours, containing initial assessment of severity, impact, and available indicators of compromise.",
+    "platform": "National CSIRT or competent authority reporting portal",
+    "required_fields": [
+      "date_and_time_of_submission",
+      "incident_description_updated",
+      "severity_assessment",
+      "estimated_impact",
+      "indicators_of_compromise",
+      "cross_border_impact_assessment"
+    ],
+    "frequency": "Per significant incident",
+    "deadline_policy_id": "dl_incident_notification_72h",
+    "obligation_id": "ob_incident_notification_72h",
+    "confidence": "high",
+    "source_article": "Article 23(4)(b)"
+  },
+  {
+    "id": "ev_incident_final_report",
+    "label": "Final Incident Report (1 Month)",
+    "description": "Final report submitted to CSIRT or competent authority within one month of the incident notification, containing full description, root cause analysis, mitigation measures, and cross-border impact.",
+    "platform": "National CSIRT or competent authority reporting portal",
+    "required_fields": [
+      "date_of_submission",
+      "detailed_incident_description",
+      "root_cause_or_threat_type",
+      "mitigation_measures_applied",
+      "ongoing_mitigation_measures",
+      "cross_border_impact_details"
+    ],
+    "frequency": "Per significant incident",
+    "deadline_policy_id": "dl_incident_final_report_1month",
+    "obligation_id": "ob_incident_final_report_1month",
+    "confidence": "high",
+    "source_article": "Article 23(4)(d)"
+  },
+  {
+    "id": "ev_competent_authority_registration",
+    "label": "Registration with Competent Authority",
+    "description": "Registration record with the competent authority of the Member State of main establishment.",
+    "platform": "National competent authority registration portal or mechanism established by Member State",
+    "required_fields": [
+      "entity_name",
+      "registered_address",
+      "contact_details",
+      "email_address",
+      "ip_ranges",
+      "sector_and_subsector"
+    ],
+    "frequency": "One-time; update within 2 weeks of any changes",
+    "deadline_policy_id": "dl_registration_changes_2weeks",
+    "obligation_id": "ob_register_with_competent_authority",
+    "confidence": "high",
+    "source_article": "Articles 3(3), 3(4)"
+  },
+  {
+    "id": "ev_enisa_registry_submission",
+    "label": "ENISA Registry Submission",
+    "description": "Submission to ENISA's registry for digital infrastructure / digital provider entities.",
+    "platform": "ENISA registry portal",
+    "required_fields": [
+      "entity_name",
+      "address",
+      "contact_details",
+      "ip_ranges",
+      "sector_and_subsector",
+      "relevant_member_states",
+      "member_state_of_main_establishment"
+    ],
+    "frequency": "One-time; updated as information changes",
+    "obligation_id": "ob_submit_to_enisa_registry",
+    "confidence": "high",
+    "source_article": "Article 27(2)"
+  },
+  {
+    "id": "ev_domain_registration_database",
+    "label": "Domain Name Registration Database",
+    "description": "Maintained WHOIS-equivalent database with accurate and complete domain name registration data. Non-personal data made publicly available; specific registrant data provided on lawful request within 72 hours.",
+    "platform": "Internal database; public non-personal data layer; request-response process for personal data",
+    "required_fields": [
+      "domain_name",
+      "registrant_name",
+      "registrant_email",
+      "registrant_phone",
+      "registrant_contact_point_details",
+      "registration_date",
+      "expiry_date"
+    ],
+    "frequency": "Maintained continuously",
+    "deadline_policy_id": "dl_domain_data_access_72h",
+    "obligation_id": "ob_maintain_domain_registration_database",
+    "confidence": "high",
+    "source_article": "Article 28"
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "dp_2030",
+    "label": "Échéance de réduction 2030",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2030-12-31",
+    "offset_months": 0,
+    "recurrence": "one_time",
+    "verification_by": "2031-12-31",
+    "note": "Le gestionnaire de la plateforme vérifie l'atteinte des objectifs au plus tard le 31 décembre 2031. La consommation de référence pour vérification est la consommation ajustée des variations climatiques.",
+    "source_article": "Art. R. 131-42 ; Art. L. 111-10-3",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_2040",
+    "label": "Échéance de réduction 2040",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2040-12-31",
+    "offset_months": 0,
+    "recurrence": "one_time",
+    "verification_by": "2041-12-31",
+    "source_article": "Art. R. 131-42 ; Art. L. 111-10-3",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_2050",
+    "label": "Échéance de réduction 2050",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2050-12-31",
+    "offset_months": 0,
+    "recurrence": "one_time",
+    "verification_by": "2051-12-31",
+    "source_article": "Art. R. 131-42 ; Art. L. 111-10-3",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_annual_reporting",
+    "label": "Déclaration annuelle OPERAT — 30 septembre",
+    "anchor_type": "fixed_date",
+    "anchor_value": "each year September 30",
+    "recurrence": "annual",
+    "period_months": 12,
+    "first_occurrence": "2022-09-30",
+    "note": "Données relatives à l'année N-1 transmises au plus tard le 30 septembre de l'année N. Première échéance : 30 septembre 2022 pour les données 2020 et 2021 (Art. 13 de l'arrêté du 10 avril 2020 : délai accordé jusqu'au 30/09/2022 pour les premières déclarations). À partir de 2023, déclaration annuelle pour l'année N-1.",
+    "source_article": "Art. R. 131-41, alinéa 8 ; Art. 13 arrêté 10 avril 2020",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_eco_energie_tertiaire_display_transition",
+    "label": "Mesure transitoire — affichage Eco Énergie Tertiaire facultatif jusqu'au 1er juillet 2026",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2026-07-01",
+    "offset_months": 0,
+    "recurrence": "one_time",
+    "note": "Par mesure transitoire (Art. 2 arrêté 1er août 2025), l'évaluation du respect de l'obligation de notation Eco Énergie Tertiaire (Art. R. 174-31 dernier alinéa CCH) et l'affichage correspondant (Art. R. 174-32 CCH) sont facultatifs jusqu'au 1er juillet 2026.",
+    "source_article": "Art. 2 arrêté 1er août 2025 (NOR: ATDL2430864A)",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_annual_publication",
+    "label": "Publication annuelle de l'attestation numérique",
+    "anchor_type": "fixed_date",
+    "anchor_value": "chaque année après génération de l'attestation numérique annuelle par OPERAT",
+    "recurrence": "annual",
+    "period_months": 12,
+    "note": "Le décret précise que la publication est basée sur l'attestation numérique annuelle générée par OPERAT, mais ne fixe pas de délai précis pour la publication. Il est raisonnable d'assumer qu'elle intervient après la déclaration de septembre.",
+    "source_article": "Art. R. 131-43",
+    "confidence": "medium",
+    "human_review_note": "Le délai exact de publication n'est pas explicitement fixé dans le décret. Il doit être confirmé par les guides d'application ADEME ou arrêté complémentaire."
+  },
+  {
+    "id": "dp_compliance_notice_3_months",
+    "label": "Délai de mise en conformité après mise en demeure (défaut de transmission OPERAT)",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_mise_en_demeure_prefecture",
+    "offset_months": 3,
+    "recurrence": "one_time",
+    "note": "Délai accordé par le préfet pour se conformer à l'obligation de transmission OPERAT après mise en demeure formelle",
+    "source_article": "Art. R. 131-44, I",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_action_program_6_months",
+    "label": "Délai pour soumettre le programme d'actions conjoint après 1ère mise en demeure (non-respect objectifs)",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_premiere_mise_en_demeure_prefecture",
+    "offset_months": 6,
+    "recurrence": "one_time",
+    "source_article": "Art. R. 131-44, II",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_modulation_declaration_2030",
+    "label": "Déclaration des modulations pour l'échéance 2030 — au plus tard le 30 septembre 2027",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2027-09-30",
+    "offset_months": 0,
+    "recurrence": "one_time",
+    "note": "Art. 12 de l'arrêté du 10 avril 2020 : les assujettis qui souhaitent bénéficier d'une modulation pour l'échéance 2030 doivent avoir déclaré les éléments justificatifs sur OPERAT au plus tard le 30 septembre de la 5ème année suivant la première déclaration, soit au plus tard le 30 septembre 2027 (si première déclaration en 2022).",
+    "source_article": "Art. 12 arrêté 10 avril 2020",
+    "confidence": "high"
+  },
+  {
+    "id": "dp_individual_action_program_3_months",
+    "label": "Délai pour soumettre le programme d'actions individuel après 2ème mise en demeure",
+    "anchor_type": "fact_relative",
+    "anchor_value": "date_seconde_mise_en_demeure_prefecture",
+    "offset_months": 3,
+    "recurrence": "one_time",
+    "source_article": "Art. R. 131-44, II",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "rcw_important_to_essential_size_threshold",
+    "label": "Important entity may have become essential due to size increase",
+    "source_article": "Article 3(1)(a), Article 3(2)",
+    "trigger_conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "important_entity" },
+      { "fact_id": "employee_count", "operator": ">=", "value": 250 }
+    ],
+    "current_assumed_role": "important_entity",
+    "potentially_applicable_role": "essential_entity",
+    "warning": "This entity is classified as an important entity but reports 250 or more employees, which meets the large-enterprise threshold under Recommendation 2003/361/EC. Annex I entities with ≥250 employees (or >€50M turnover or >€43M balance sheet) must be classified as essential entities under Article 3(1)(a). Seek legal advice and notify the competent authority if the classification should be updated.",
+    "obligations_at_stake": ["ob_implement_cybersecurity_risk_management", "ob_management_body_approve_measures", "ob_management_body_training"],
+    "confidence": "high"
+  },
+  {
+    "id": "rcw_important_to_essential_turnover_threshold",
+    "label": "Important entity may have become essential due to turnover exceeding €50M",
+    "source_article": "Article 3(1)(a)",
+    "trigger_conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "important_entity" },
+      { "fact_id": "annual_turnover_eur", "operator": ">", "value": 50000000 }
+    ],
+    "current_assumed_role": "important_entity",
+    "potentially_applicable_role": "essential_entity",
+    "warning": "This entity is classified as an important entity but has an annual turnover exceeding €50M, which meets the large-enterprise threshold. Annex I entities exceeding this turnover must be classified as essential entities. Verify current classification with your competent authority.",
+    "obligations_at_stake": ["ob_implement_cybersecurity_risk_management"],
+    "confidence": "high"
+  },
+  {
+    "id": "rcw_sole_provider_essential_designation",
+    "label": "Entity may be designated as essential as sole provider in Member State",
+    "source_article": "Article 2(2)(b), Article 3(1)(f)",
+    "trigger_conditions": [
+      { "fact_id": "is_sole_provider_in_member_state", "operator": "=", "value": true }
+    ],
+    "current_assumed_role": "important_entity",
+    "potentially_applicable_role": "essential_entity",
+    "warning": "This entity has been identified as the sole provider of an essential service in a Member State. Under Article 2(2)(b) and Article 3(1)(f), such entities may be identified as essential entities by the Member State regardless of size. Confirm with the competent authority whether a formal designation has been or should be made.",
+    "obligations_at_stake": ["ob_implement_cybersecurity_risk_management", "ob_management_body_approve_measures"],
+    "confidence": "high"
+  },
+  {
+    "id": "rcw_digital_infrastructure_provider_scope_expansion",
+    "label": "Entity providing digital infrastructure services may also qualify as essential regardless of size",
+    "source_article": "Article 2(2)(a), Article 3(1)(b)",
+    "trigger_conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "important_entity" },
+      { "fact_id": "sector", "operator": "=", "value": "digital_infrastructure" }
+    ],
+    "current_assumed_role": "important_entity",
+    "potentially_applicable_role": "essential_entity",
+    "warning": "Entities in the digital_infrastructure sector include several sub-types (trust service providers, TLD name registries, DNS service providers, public electronic communications providers) that are classified as essential entities regardless of size under Article 3(1)(b)-(d). If this entity is a trust service provider, TLD registry, DNS service provider, or public electronic communications provider, it should be classified as essential — consult with the competent authority to confirm.",
+    "obligations_at_stake": ["ob_implement_cybersecurity_risk_management", "ob_management_body_approve_measures", "ob_management_body_training"],
+    "confidence": "medium",
+    "human_review_note": "The digital_infrastructure sector is broad and includes both general entities (classified as important if medium-sized) and specific sub-types that are essential regardless of size. This warning is intentionally broad — reviewer should confirm the entity's specific sub-type."
+  },
+  {
+    "id": "rcw_nis1_oes_to_essential",
+    "label": "Former NIS1 operator of essential services is automatically classified as essential",
+    "source_article": "Article 3(1)(h)",
+    "trigger_conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "important_entity" },
+      { "fact_id": "was_identified_as_oes_under_nis1", "operator": "=", "value": true }
+    ],
+    "current_assumed_role": "important_entity",
+    "potentially_applicable_role": "essential_entity",
+    "warning": "Entities identified as operators of essential services (OES) under the previous NIS1 Directive (Directive (EU) 2016/1148) are automatically classified as essential entities under Article 3(1)(h), regardless of size. If this entity held OES status before 18 October 2024, it should be reclassified as an essential entity.",
+    "obligations_at_stake": ["ob_implement_cybersecurity_risk_management", "ob_management_body_approve_measures", "ob_management_body_training"],
+    "confidence": "high"
+  }
+]
