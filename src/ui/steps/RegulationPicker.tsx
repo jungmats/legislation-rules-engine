@@ -19,7 +19,8 @@ export default function RegulationPicker({ onSelect }: Props) {
               onClick={() => onSelect(reg.slug)}
               className="w-full text-left px-5 py-4 rounded-lg border border-gray-200 bg-white hover:border-blue-500 hover:shadow-sm transition-all"
             >
-              <span className="font-medium">{reg.label}</span>
+              <span className="font-semibold text-gray-900">{reg.shortName}</span>
+              <span className="block text-sm text-gray-500 mt-0.5">{reg.label}</span>
             </button>
           </li>
         ))}

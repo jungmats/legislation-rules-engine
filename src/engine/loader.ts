@@ -27,13 +27,13 @@ function toMap<T extends { id: string }>(arr: T[]): Map<string, T> {
 // Auto-discover all regulation slugs from assets/legislation/*/regulation.json
 const regulationMeta = import.meta.glob('../../assets/legislation/*/regulation.json', { eager: true });
 
-export const BUNDLED_REGULATIONS: { slug: string; label: string }[] = Object.keys(regulationMeta)
+export const BUNDLED_REGULATIONS: { slug: string; label: string; shortName: string }[] = Object.keys(regulationMeta)
   .map((path) => {
     // path looks like: ../../assets/legislation/eu-ai-act-2024-1689/regulation.json
     const parts = path.split('/');
     const slug = parts[parts.length - 2] ?? '';
     const reg = (regulationMeta[path] as { default: Regulation }).default;
-    return { slug, label: reg.title ?? slug };
+    return { slug, label: reg.title ?? slug, shortName: reg.short_name ?? reg.title ?? slug };
   })
   .sort((a, b) => a.label.localeCompare(b.label));
 
