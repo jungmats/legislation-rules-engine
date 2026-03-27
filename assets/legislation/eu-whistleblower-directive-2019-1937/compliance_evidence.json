@@ -1,0 +1,189 @@
+[
+  {
+    "id": "evidence_channel_technical_setup",
+    "label": "Internal Reporting Channel Technical Setup Documentation",
+    "description": "Technical documentation proving the existence and configuration of the internal reporting channel, including system architecture, access controls, encryption measures, and channel options (written/oral/in-person).",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "Technical documentation, system screenshots, or audit report",
+    "retention_period_years": 5,
+    "source_article": "Article 8, Article 9"
+  },
+  {
+    "id": "evidence_channel_policy_documentation",
+    "label": "Internal Reporting Channel Policy and Procedure Documentation",
+    "description": "Written policy or procedure document governing the operation of the internal reporting channel, including how reports are received, handled, escalated, and followed up on, and how confidentiality is maintained.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "Policy document (PDF or equivalent)",
+    "retention_period_years": 5,
+    "source_article": "Article 8, Article 9"
+  },
+  {
+    "id": "evidence_designation_document",
+    "label": "Designation of Impartial Person or Department",
+    "description": "Written designation document identifying the person or department competent to receive and follow up on reports, including their role, responsibilities, and reporting lines.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "Signed designation letter or HR document",
+    "retention_period_years": 5,
+    "source_article": "Article 8(5)"
+  },
+  {
+    "id": "evidence_internal_policy_document",
+    "label": "Whistleblowing/Internal Reporting Policy Communicated to Staff",
+    "description": "The internal whistleblowing policy or information notice made available to workers, including coverage of channel access, confidentiality protections, anti-retaliation provisions, and the right to use external channels.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "Policy document and evidence of distribution (email records, intranet screenshots)",
+    "retention_period_years": 5,
+    "source_article": "Article 9(1)(e)"
+  },
+  {
+    "id": "evidence_communication_records",
+    "label": "Evidence of Communication of Reporting Channel to Workers",
+    "description": "Records demonstrating that information about the internal reporting channel was made accessible to workers, contractors, subcontractors, suppliers, and other relevant persons.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "Email distribution records, intranet logs, supplier communication records",
+    "retention_period_years": 5,
+    "source_article": "Article 9(1)(e)"
+  },
+  {
+    "id": "evidence_acknowledgement_record",
+    "label": "Acknowledgement of Report Receipt Record",
+    "description": "Record proving that acknowledgement of receipt was sent to the reporting person within 7 days, including the date of receipt and date of acknowledgement.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "per_report",
+    "format": "Email or system log record",
+    "retention_period_years": 5,
+    "source_article": "Article 9(1)(b)"
+  },
+  {
+    "id": "evidence_investigation_record",
+    "label": "Investigation Record for Each Report",
+    "description": "Case file documenting the investigation steps taken in response to a report, including assessment of the breach, actions taken or intended, and referrals to competent authorities if applicable.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "per_report",
+    "format": "Case management record (confidential)",
+    "retention_period_years": 5,
+    "source_article": "Article 9(1)(f), Article 18"
+  },
+  {
+    "id": "evidence_feedback_record",
+    "label": "Feedback Communication Record",
+    "description": "Record proving that feedback on the outcome of the follow-up was communicated to the reporting person within 3 months of the acknowledgement date.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "per_report",
+    "format": "Email or system log record",
+    "retention_period_years": 5,
+    "source_article": "Article 9(1)(f)"
+  },
+  {
+    "id": "evidence_access_controls_documentation",
+    "label": "Access Controls Documentation for Reporting System",
+    "description": "Technical documentation showing that access to report data is restricted to authorised personnel only, including role-based access control configurations and audit logs.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "System access control documentation, audit logs",
+    "retention_period_years": 5,
+    "source_article": "Article 16"
+  },
+  {
+    "id": "evidence_training_records",
+    "label": "Training Records for Staff Handling Reports",
+    "description": "Records showing that authorised staff and managers received training on the whistleblowing system, confidentiality requirements, and anti-retaliation obligations.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "Training attendance records, completion certificates",
+    "retention_period_years": 5,
+    "source_article": "Article 16, Article 19"
+  },
+  {
+    "id": "evidence_case_management_records",
+    "label": "Case Management Records of All Reports Received",
+    "description": "Complete records of all reports received, including date received, channel used, subject matter, acknowledgement date, follow-up actions, and feedback date. Maintained in compliance with GDPR and confidentiality requirements.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "Case management system export (anonymised or controlled access)",
+    "retention_period_years": 5,
+    "source_article": "Article 18"
+  },
+  {
+    "id": "evidence_anti_retaliation_policy",
+    "label": "Anti-Retaliation Policy",
+    "description": "Documented anti-retaliation policy prohibiting all retaliatory actions listed in Article 19, communicated to all staff, and including the process for reporting persons to raise retaliation concerns.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "competent_authority",
+    "frequency": "on_demand",
+    "format": "Policy document",
+    "retention_period_years": 5,
+    "source_article": "Article 19"
+  },
+  {
+    "id": "evidence_dpia_record",
+    "label": "Data Protection Impact Assessment (DPIA) for Reporting Channel",
+    "description": "DPIA documenting the privacy risks associated with the internal reporting channel and the mitigation measures implemented, as required under GDPR Article 35.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "data_protection_authority",
+    "frequency": "on_demand",
+    "format": "DPIA document",
+    "retention_period_years": 5,
+    "source_article": "Article 17, GDPR Article 35"
+  },
+  {
+    "id": "evidence_privacy_notice",
+    "label": "Privacy Notice Covering Whistleblowing Processing",
+    "description": "GDPR-compliant privacy notice informing data subjects (reporting persons, concerned persons) about the processing of their personal data through the reporting channel.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "data_protection_authority",
+    "frequency": "on_demand",
+    "format": "Privacy notice document",
+    "retention_period_years": 5,
+    "source_article": "Article 17"
+  },
+  {
+    "id": "evidence_ropa_entry",
+    "label": "Register of Processing Activities (RoPA) Entry for Reporting Channel",
+    "description": "Entry in the entity's GDPR Register of Processing Activities covering the whistleblowing/internal reporting processing activity.",
+    "submitted_by": "obligated_entity",
+    "submitted_to": "data_protection_authority",
+    "frequency": "on_demand",
+    "format": "RoPA extract",
+    "retention_period_years": 5,
+    "source_article": "Article 17, GDPR Article 30"
+  },
+  {
+    "id": "evidence_external_channel_setup",
+    "label": "Competent Authority External Reporting Channel Setup Documentation",
+    "description": "Documentation by the competent authority of the established external reporting channel, including its technical configuration, operational procedures, and independence from other authority functions.",
+    "submitted_by": "competent_authority",
+    "submitted_to": "member_state",
+    "frequency": "on_demand",
+    "format": "Technical and procedural documentation",
+    "retention_period_years": 5,
+    "source_article": "Article 11, Article 12"
+  },
+  {
+    "id": "evidence_published_information",
+    "label": "Published Public Information on External Reporting Channel",
+    "description": "Evidence that the competent authority has published clear, complete, and accessible information on how to use the external reporting channel, including procedures, confidentiality protections, and anti-retaliation measures.",
+    "submitted_by": "competent_authority",
+    "submitted_to": "member_state",
+    "frequency": "on_demand",
+    "format": "Website screenshots, published guidance documents",
+    "retention_period_years": 5,
+    "source_article": "Article 13"
+  }
+]

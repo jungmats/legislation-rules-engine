@@ -1,0 +1,160 @@
+[
+  {
+    "id": "rule_large_private_entity_internal_channel",
+    "label": "Large private entities (250+ workers) must establish internal reporting channels",
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "private" },
+      { "fact_id": "worker_count", "operator": ">=", "value": 250 }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_establish_internal_reporting_channel", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_designate_reporting_channel_handler", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_provide_accessible_information_on_channels", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_prohibit_retaliation", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_gdpr_compliant_data_processing", "deadline_policy_id": "dl_transposition_large_private_public" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 8(1), Article 8(3), Article 26(1)"
+  },
+  {
+    "id": "rule_medium_private_entity_internal_channel",
+    "label": "Medium private entities (50–249 workers) must establish internal reporting channels",
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "private" },
+      { "fact_id": "worker_count", "operator": ">=", "value": 50 },
+      { "fact_id": "worker_count", "operator": "<", "value": 250 }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_establish_internal_reporting_channel", "deadline_policy_id": "dl_transposition_sme_private" },
+      { "obligation_id": "ob_designate_reporting_channel_handler", "deadline_policy_id": "dl_transposition_sme_private" },
+      { "obligation_id": "ob_provide_accessible_information_on_channels", "deadline_policy_id": "dl_transposition_sme_private" },
+      { "obligation_id": "ob_prohibit_retaliation", "deadline_policy_id": "dl_transposition_sme_private" },
+      { "obligation_id": "ob_gdpr_compliant_data_processing", "deadline_policy_id": "dl_transposition_sme_private" }
+    ],
+    "applicable_exemptions": ["ex_sme_shared_channels"],
+    "confidence": "high",
+    "source_article": "Article 8(1), Article 8(6), Article 26(2)"
+  },
+  {
+    "id": "rule_public_entity_internal_channel",
+    "label": "Public sector entities must establish internal reporting channels",
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "public" }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_establish_internal_reporting_channel", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_designate_reporting_channel_handler", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_provide_accessible_information_on_channels", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_prohibit_retaliation", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_gdpr_compliant_data_processing", "deadline_policy_id": "dl_transposition_large_private_public" }
+    ],
+    "applicable_exemptions": ["ex_small_municipality_public_entity"],
+    "confidence": "high",
+    "source_article": "Article 8(1), Article 8(9)"
+  },
+  {
+    "id": "rule_financial_services_entity_channel",
+    "label": "Financial services entities must establish reporting channels regardless of size",
+    "conditions": [
+      { "fact_id": "operates_in_financial_services", "operator": "=", "value": true }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_establish_internal_reporting_channel", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_designate_reporting_channel_handler", "deadline_policy_id": "dl_transposition_large_private_public" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 8(4)"
+  },
+  {
+    "id": "rule_report_received_internal_acknowledgement",
+    "label": "Obligated entity must acknowledge receipt of internal report within 7 days",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "obligated_entity" },
+      { "fact_id": "has_internal_reporting_channel", "operator": "=", "value": true },
+      { "fact_id": "report_received_date", "operator": "exists", "value": true }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_acknowledge_report_receipt_7_days", "deadline_policy_id": "dl_acknowledge_report_7_days" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 9(1)(b)"
+  },
+  {
+    "id": "rule_report_received_internal_followup",
+    "label": "Obligated entity must follow up and provide feedback within 3 months",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "obligated_entity" },
+      { "fact_id": "report_received_date", "operator": "exists", "value": true }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_follow_up_and_feedback_3_months", "deadline_policy_id": "dl_feedback_3_months" },
+      { "obligation_id": "ob_maintain_report_confidentiality", "deadline_policy_id": "dl_feedback_3_months" },
+      { "obligation_id": "ob_maintain_report_records", "deadline_policy_id": "dl_feedback_3_months" }
+    ],
+    "applicable_exemptions": ["ex_anonymous_report_follow_up_optional"],
+    "confidence": "high",
+    "source_article": "Article 9(1)(f)"
+  },
+  {
+    "id": "rule_competent_authority_external_channel",
+    "label": "Competent authorities must establish external reporting channels and follow-up procedures",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "competent_authority" }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_competent_authority_establish_external_channel", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_competent_authority_acknowledge_7_days", "deadline_policy_id": "dl_acknowledge_report_7_days" },
+      { "obligation_id": "ob_competent_authority_feedback_3_months", "deadline_policy_id": "dl_external_feedback_3_months" },
+      { "obligation_id": "ob_competent_authority_forward_other_authorities", "deadline_policy_id": "dl_external_feedback_3_months" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 11(1), Article 12"
+  },
+  {
+    "id": "rule_retaliation_prohibition_and_remedies",
+    "label": "Member States must ensure retaliation is prohibited and remedied",
+    "conditions": [
+      { "fact_id": "entity_role", "operator": "=", "value": "member_state" }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_member_state_remedial_measures", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_reversed_burden_of_proof", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_member_state_support_measures", "deadline_policy_id": "dl_transposition_large_private_public" },
+      { "obligation_id": "ob_member_state_set_penalties", "deadline_policy_id": "dl_transposition_large_private_public" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Articles 19, 20, 21, 23"
+  },
+  {
+    "id": "rule_retaliation_occurred",
+    "label": "When retaliation occurs, the burden of proof shifts to the employer",
+    "conditions": [
+      { "fact_id": "retaliation_occurred", "operator": "=", "value": true },
+      { "fact_id": "good_faith_reasonable_grounds", "operator": "=", "value": true }
+    ],
+    "obligations": [
+      { "obligation_id": "ob_reversed_burden_of_proof", "deadline_policy_id": "dl_transposition_large_private_public" }
+    ],
+    "applicable_exemptions": [],
+    "confidence": "high",
+    "source_article": "Article 21(5)"
+  },
+  {
+    "id": "rule_public_disclosure_conditions",
+    "label": "Reporting persons may make protected public disclosures under specific conditions",
+    "conditions": [
+      { "fact_id": "public_disclosure_conditions_met", "operator": "=", "value": true },
+      { "fact_id": "good_faith_reasonable_grounds", "operator": "=", "value": true }
+    ],
+    "obligations": [],
+    "applicable_exemptions": ["ex_reporting_person_good_faith_required"],
+    "confidence": "medium",
+    "human_review_note": "Public disclosure protection is conditioned on complex multi-step factual assessment under Article 15. Three alternative pathways exist: (1) no adequate follow-up after internal/external report; (2) no competent authority in the EU; (3) imminent/manifest public danger or serious risk of irreversible harm. Each pathway requires case-by-case human review.",
+    "source_article": "Article 15"
+  }
+]

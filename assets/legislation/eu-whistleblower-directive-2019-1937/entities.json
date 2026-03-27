@@ -1,0 +1,87 @@
+[
+  {
+    "id": "reporting_person",
+    "label": "Reporting Person (Whistleblower)",
+    "description": "A natural person who reports or publicly discloses information on breaches acquired in a work-related context. Includes current and former workers (employees, civil servants, self-employed), shareholders, members of administrative/management/supervisory bodies, volunteers, trainees, contractors, subcontractors, and suppliers. Job applicants who acquired information during recruitment are also included.",
+    "responsibilities": [
+      "Report through internal or external channels in good faith",
+      "Ensure information reported concerns a breach within the material scope of the Directive",
+      "May choose to report internally, externally, or publicly disclose depending on circumstances"
+    ],
+    "source_article": "Article 4"
+  },
+  {
+    "id": "facilitator",
+    "label": "Facilitator",
+    "description": "A natural person who assists a reporting person in the reporting process in a work-related context, whose assistance should be confidential. Facilitators are also protected from retaliation.",
+    "responsibilities": [
+      "Assist the reporting person confidentially if requested",
+      "Not be subject to retaliation for providing such assistance"
+    ],
+    "source_article": "Article 5(8)"
+  },
+  {
+    "id": "concerned_person",
+    "label": "Concerned Person",
+    "description": "A natural or legal person referred to in the report or public disclosure as the person who has allegedly committed the breach or who is allegedly linked to the breach. Must not be treated as automatically guilty and has rights under applicable Union law including the right to an effective remedy and a fair trial.",
+    "responsibilities": [
+      "Rights to defence and confidentiality protection under applicable law"
+    ],
+    "source_article": "Article 5(9), Article 22"
+  },
+  {
+    "id": "obligated_entity",
+    "label": "Obligated Entity (Legal Entity in Public or Private Sector)",
+    "description": "A legal entity in the public or private sector required to establish internal reporting channels and follow-up procedures. Private entities with 50+ workers and all public entities are obligated. Must designate a competent person or department to receive reports and follow up.",
+    "responsibilities": [
+      "Establish, operate and maintain internal reporting channels",
+      "Designate an impartial person or department to receive and follow up on reports",
+      "Acknowledge receipt of reports within 7 days",
+      "Follow up and provide feedback to reporting person within 3 months",
+      "Maintain confidentiality of reporting person's identity",
+      "Maintain records of reports received",
+      "Prohibit retaliation against reporting persons and facilitators",
+      "Provide clear and accessible information about reporting channels and procedures",
+      "Process personal data in accordance with GDPR"
+    ],
+    "source_article": "Article 8, Article 9, Article 12, Article 16, Article 17, Article 18"
+  },
+  {
+    "id": "competent_authority",
+    "label": "Competent Authority",
+    "description": "Any national authority designated by a Member State to receive reports through external reporting channels and to follow up on those reports. Must have adequate resources and procedures for receiving, following up on, and providing feedback on reports.",
+    "responsibilities": [
+      "Establish external reporting channels",
+      "Acknowledge receipt of reports within 7 days",
+      "Follow up diligently on reports",
+      "Provide feedback to reporting persons within 3 months (extendable to 6 months)",
+      "Maintain confidentiality of reporting person's identity",
+      "Refer reports outside their remit to appropriate authorities",
+      "Publish accessible information about reporting procedures",
+      "Cooperate with other competent authorities and EU institutions"
+    ],
+    "source_article": "Article 11, Article 12, Article 13, Article 16"
+  },
+  {
+    "id": "member_state",
+    "label": "Member State",
+    "description": "An EU Member State responsible for transposing the Directive into national law and ensuring its effective implementation, including designating competent authorities and setting effective, proportionate and dissuasive penalties.",
+    "responsibilities": [
+      "Transpose directive obligations into national law by 17 December 2021",
+      "Designate competent authorities with external reporting channels",
+      "Establish penalties for breaches of the Directive",
+      "Provide support measures for reporting persons (legal, financial, psychological)",
+      "Take measures to protect reporting persons and third parties from retaliation",
+      "Ensure courts can order interim measures to prevent retaliation",
+      "Maintain a public register of competent authorities"
+    ],
+    "source_article": "Article 24, Article 25, Article 26"
+  },
+  {
+    "id": "third_party_affected",
+    "label": "Third Party Affected by Report",
+    "description": "Persons connected with the reporting person (relatives, colleagues) who could suffer retaliation as a result of the report. Also includes legal entities owned or controlled by the reporting person. These persons are also protected from retaliation.",
+    "responsibilities": [],
+    "source_article": "Article 4(4)"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "id": "ex_small_municipality_public_entity",
+    "label": "Small Municipalities and Small Public Entities May Be Exempted from Internal Channel Obligation",
+    "description": "Member States may exempt municipalities with fewer than 10,000 inhabitants and other public entities with fewer than 50 workers from the obligation to establish internal reporting channels (Article 8(9)). This exemption is at Member State discretion and must be transposed into national law.",
+    "applicable_obligations": ["ob_establish_internal_reporting_channel"],
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "public" },
+      { "fact_id": "worker_count", "operator": "<", "value": 50 }
+    ],
+    "effect": "waiver",
+    "confidence": "high",
+    "source_article": "Article 8(9)"
+  },
+  {
+    "id": "ex_below_50_workers_private",
+    "label": "Private Entities with Fewer than 50 Workers Not Required to Establish Internal Channel",
+    "description": "Private legal entities with fewer than 50 workers are not required under the Directive to establish internal reporting channels. Workers at such entities retain the right to use external reporting channels to competent authorities.",
+    "applicable_obligations": ["ob_establish_internal_reporting_channel"],
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "private" },
+      { "fact_id": "worker_count", "operator": "<", "value": 50 }
+    ],
+    "effect": "waiver",
+    "confidence": "high",
+    "source_article": "Article 8(1)"
+  },
+  {
+    "id": "ex_anonymous_report_follow_up_optional",
+    "label": "Member State Discretion on Follow-Up for Anonymous Reports",
+    "description": "Member States may decide whether their obligated entities and competent authorities are required to follow up on anonymous reports. Where an anonymous reporter who was not identified is subsequently identified and faces retaliation, protection still applies (Article 6(2)).",
+    "applicable_obligations": ["ob_follow_up_and_feedback_3_months", "ob_acknowledge_report_receipt_7_days"],
+    "conditions": [
+      { "fact_id": "report_is_anonymous", "operator": "=", "value": true }
+    ],
+    "effect": "deferred",
+    "confidence": "medium",
+    "human_review_note": "Whether anonymous report follow-up is required depends on Member State implementation. The Directive grants Member States discretion on this point under Article 6(2). Check national transposition law.",
+    "source_article": "Article 6(2)"
+  },
+  {
+    "id": "ex_sme_shared_channels",
+    "label": "SMEs (50–249 Workers) May Share Internal Reporting Channel Resources",
+    "description": "Private legal entities with 50–249 workers may share internal reporting channels and resources for receiving and investigating reports, provided that confidentiality, acknowledgement of receipt, follow-up, and feedback obligations are fully met for each entity separately.",
+    "applicable_obligations": ["ob_establish_internal_reporting_channel"],
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "private" },
+      { "fact_id": "worker_count", "operator": ">=", "value": 50 },
+      { "fact_id": "worker_count", "operator": "<", "value": 250 }
+    ],
+    "effect": "modified",
+    "confidence": "high",
+    "source_article": "Article 8(6)"
+  },
+  {
+    "id": "ex_national_security_exclusion",
+    "label": "National Security, Defence, and Intelligence Activities Excluded from Scope",
+    "description": "The Directive does not affect the application of Union or Member State law on the protection of classified information and the protection of national security interests. Reports of breaches involving national security, defence, or intelligence activities may not be covered.",
+    "applicable_obligations": [],
+    "conditions": [],
+    "effect": "waiver",
+    "confidence": "high",
+    "source_article": "Article 3(3)(a)"
+  },
+  {
+    "id": "ex_legal_professional_privilege",
+    "label": "Legal Professional Privilege — Lawyers' Reporting Exemptions",
+    "description": "The Directive does not affect the rules on attorney-client privilege or the specific rights and obligations of regulated professions (including lawyers, notaries, external auditors, tax advisers) where those rights and obligations are established by Union or Member State law.",
+    "applicable_obligations": [],
+    "conditions": [],
+    "effect": "waiver",
+    "confidence": "high",
+    "source_article": "Article 3(3)(b)"
+  },
+  {
+    "id": "ex_judicial_proceedings_confidentiality",
+    "label": "Confidentiality of Judicial Proceedings Excluded",
+    "description": "The Directive does not affect the rules on the autonomy of the social partners and their right to enter into collective agreements, nor does it affect the confidentiality of judicial proceedings.",
+    "applicable_obligations": [],
+    "conditions": [],
+    "effect": "waiver",
+    "confidence": "high",
+    "source_article": "Article 3(3)(c)"
+  },
+  {
+    "id": "ex_reporting_person_good_faith_required",
+    "label": "No Protection for Reports Not Made in Good Faith",
+    "description": "Reporting persons are not entitled to protection under the Directive if they knowingly reported false information or information obtained through criminal conduct (e.g., hacking or trespass). Protection is conditioned on reasonable grounds for believing the reported information was true at the time of reporting.",
+    "applicable_obligations": [],
+    "conditions": [
+      { "fact_id": "good_faith_reasonable_grounds", "operator": "=", "value": false }
+    ],
+    "effect": "waiver",
+    "confidence": "high",
+    "source_article": "Article 6(1)"
+  }
+]

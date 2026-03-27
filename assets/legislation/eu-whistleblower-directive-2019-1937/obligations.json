@@ -1,0 +1,148 @@
+[
+  {
+    "id": "ob_establish_internal_reporting_channel",
+    "label": "Establish Internal Reporting Channel",
+    "description": "Legal entities in the private sector with 50 or more workers, and all legal entities in the public sector, must establish secure and confidential internal reporting channels and procedures for receiving reports and following up on them. Channels must allow both written (online system, mailbox, post) and oral (telephone hotline, answerphone) reporting. In-person reporting must be possible upon request within a reasonable timeframe.",
+    "threshold_type": "worker_count",
+    "threshold_value": 50,
+    "confidence": "high",
+    "source_article": "Article 8(1), Article 9(1)(a)"
+  },
+  {
+    "id": "ob_designate_reporting_channel_handler",
+    "label": "Designate Impartial Person or Department to Handle Reports",
+    "description": "The obligated entity must designate an impartial person or department competent to receive and follow up on reports. This may be an internal compliance officer, legal counsel, HR, or an external third party. The designated person must maintain confidentiality of the reporting person's identity.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 8(5)"
+  },
+  {
+    "id": "ob_acknowledge_report_receipt_7_days",
+    "label": "Acknowledge Receipt of Report Within 7 Days",
+    "description": "The obligated entity or competent authority must acknowledge receipt of the report to the reporting person within 7 days of receipt, unless the reporting person explicitly requested otherwise or the designated person reasonably believes acknowledgement would jeopardise confidentiality.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 9(1)(b)"
+  },
+  {
+    "id": "ob_follow_up_and_feedback_3_months",
+    "label": "Follow Up and Provide Feedback Within 3 Months",
+    "description": "The obligated entity must diligently follow up on reports received and inform the reporting person of the outcome of the follow-up action taken or intended to be taken, within a reasonable timeframe not exceeding 3 months from acknowledgement of receipt. Where no acknowledgement was sent, the period starts 7 days after receipt.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 9(1)(f)"
+  },
+  {
+    "id": "ob_maintain_report_confidentiality",
+    "label": "Maintain Confidentiality of Reporting Person's Identity",
+    "description": "The obligated entity must ensure that the identity of the reporting person is not disclosed to anyone beyond the authorised staff members competent to receive or follow up on reports, without the explicit consent of the reporting person. This obligation also applies to any other information from which the identity of the reporting person may be directly or indirectly deduced.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 16(1)"
+  },
+  {
+    "id": "ob_maintain_report_records",
+    "label": "Maintain Records of Reports",
+    "description": "The obligated entity must keep records of every report received in compliance with confidentiality requirements. Oral reports made by telephone or other voice messaging system must be recorded (with consent) or documented by the designated person. In-person meetings must be recorded (with consent) or documented in meeting minutes that the reporting person can verify and correct.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 18(1)"
+  },
+  {
+    "id": "ob_prohibit_retaliation",
+    "label": "Prohibit and Prevent Retaliation Against Reporting Persons",
+    "description": "The obligated entity must not take any retaliatory measures against reporting persons, facilitators, or third parties connected with the reporting person. Prohibited retaliation includes: suspension, dismissal, demotion, withholding promotion, negative performance assessments, imposition of disciplinary measures, coercion, intimidation, harassment, exclusion from training, negative references, damage to reputation, withdrawal of licence or permit, termination of contracts, referral to psychiatric/medical examination.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 19"
+  },
+  {
+    "id": "ob_provide_accessible_information_on_channels",
+    "label": "Provide Accessible Information on Internal Reporting Channels",
+    "description": "The obligated entity must make clearly understandable and easily accessible information on internal reporting channels and procedures available to workers and other persons in the entity's work-related context, including contractors, self-employed persons, and suppliers.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 9(1)(e)"
+  },
+  {
+    "id": "ob_gdpr_compliant_data_processing",
+    "label": "Process Personal Data in Compliance with GDPR",
+    "description": "All processing of personal data carried out pursuant to this Directive must comply with Regulation (EU) 2016/679 (GDPR). This includes: not collecting data that is manifestly not relevant, deleting irrelevant data received, establishing appropriate retention periods, and ensuring appropriate technical and organisational security measures.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 17"
+  },
+  {
+    "id": "ob_competent_authority_establish_external_channel",
+    "label": "Competent Authority: Establish External Reporting Channel",
+    "description": "Member States must designate competent authorities with external reporting channels, resources, and procedures for receiving, following up on, and forwarding reports. Channels must ensure confidentiality, allow written and oral reporting, and be operationally independent from other authority functions.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 11(1), Article 12"
+  },
+  {
+    "id": "ob_competent_authority_acknowledge_7_days",
+    "label": "Competent Authority: Acknowledge Receipt Within 7 Days",
+    "description": "Competent authorities must acknowledge receipt of external reports within 7 days of receipt, unless the reporting person explicitly requested otherwise or the authority reasonably believes acknowledgement would jeopardise the reporting person's confidentiality.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 12(1)(b)"
+  },
+  {
+    "id": "ob_competent_authority_feedback_3_months",
+    "label": "Competent Authority: Provide Feedback Within 3 Months (Extendable to 6)",
+    "description": "Competent authorities must diligently follow up on external reports and inform the reporting person of the action taken or intended, within 3 months. This period may be extended to 6 months in duly justified cases, notably the complexity or specific nature of the report.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 12(1)(e)"
+  },
+  {
+    "id": "ob_competent_authority_forward_other_authorities",
+    "label": "Competent Authority: Forward Reports to Other Competent Authorities",
+    "description": "Competent authorities must promptly forward reports that fall outside their competence to the appropriate competent authority, and inform the reporting person accordingly. If a report is forwarded to OLAF, EPPO or other Union bodies, that must also be communicated to the reporting person.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 12(1)(d)"
+  },
+  {
+    "id": "ob_member_state_set_penalties",
+    "label": "Member State: Establish Effective, Proportionate and Dissuasive Penalties",
+    "description": "Member States must lay down rules on penalties applicable to natural or legal persons who: (a) hinder or attempt to hinder reporting; (b) take retaliatory measures against reporting persons; (c) bring vexatious proceedings against reporting persons; (d) breach the duty of maintaining confidentiality of the reporting person's identity.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 23(1)"
+  },
+  {
+    "id": "ob_member_state_support_measures",
+    "label": "Member State: Provide Support Measures for Reporting Persons",
+    "description": "Member States must ensure that reporting persons have access to support measures including: comprehensive and independent information and advice on procedures and remedies; effective assistance from competent authorities before relevant authorities; and legal aid in criminal and cross-border proceedings.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 20(1)"
+  },
+  {
+    "id": "ob_member_state_remedial_measures",
+    "label": "Member State: Ensure Remedial Measures Against Retaliation",
+    "description": "Member States must take the necessary measures to ensure that all forms of retaliation, including threats and attempts of retaliation, are prohibited. Courts and administrative bodies must be able to grant interim measures, order cessation of retaliation, and award compensation including reinstatement.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 21"
+  },
+  {
+    "id": "ob_reversed_burden_of_proof",
+    "label": "Reversed Burden of Proof in Retaliation Proceedings",
+    "description": "In proceedings concerning retaliation, once a reporting person has established that they made a report and suffered a detriment, it shall be for the person who took the detrimental measure to prove that it was not taken in retaliation for the report.",
+    "threshold_type": "none",
+    "confidence": "high",
+    "source_article": "Article 21(5)"
+  },
+  {
+    "id": "ob_sme_shared_reporting_channel_option",
+    "label": "SME Option: Share Reporting Channels with Other Entities",
+    "description": "Private legal entities with 50–249 workers may share internal reporting channels with other such entities, provided all obligations regarding confidentiality, follow-up, and feedback are duly respected by each entity.",
+    "threshold_type": "worker_count",
+    "threshold_value": 249,
+    "confidence": "high",
+    "source_article": "Article 8(6)"
+  }
+]

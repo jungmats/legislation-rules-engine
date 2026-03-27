@@ -25,7 +25,7 @@ function conditionMet(condition: Condition, value: unknown): boolean {
 export function evaluateRule(rule: Rule, factMap: FactMap): RuleState {
   let hasUnknown = false;
 
-  for (const condition of rule.conditions) {
+  for (const condition of rule.conditions ?? []) {
     const answered = factMap.has(condition.fact_id);
     if (!answered) {
       hasUnknown = true;

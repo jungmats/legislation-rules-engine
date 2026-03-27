@@ -1,0 +1,247 @@
+[
+  {
+    "id": "entity_role",
+    "label": "Entity Role",
+    "type": "enum",
+    "allowed_values": [
+      "reporting_person",
+      "facilitator",
+      "concerned_person",
+      "obligated_entity",
+      "competent_authority",
+      "member_state",
+      "third_party_affected"
+    ],
+    "source": "Determined by the entity's position in the whistleblowing process and its legal obligations under the Directive.",
+    "source_article": "Articles 4, 5, 8, 11"
+  },
+  {
+    "id": "entity_sector",
+    "label": "Entity Sector",
+    "type": "enum",
+    "allowed_values": ["private", "public"],
+    "value_descriptions": {
+      "private": "A legal entity in the private sector, including companies, partnerships, and other undertakings not owned or controlled by the state.",
+      "public": "A legal entity in the public sector, including state entities, regional and local authorities, municipalities, and other bodies governed by public law."
+    },
+    "source": "Self-declared by entity based on ownership and governance structure.",
+    "source_article": "Article 8(1)"
+  },
+  {
+    "id": "entity_type",
+    "label": "Entity Type",
+    "type": "enum",
+    "allowed_values": ["company", "municipality", "public_authority", "financial_services_entity", "other"],
+    "value_descriptions": {
+      "company": "A private legal entity (corporation, partnership, or similar) engaged in commercial activities.",
+      "municipality": "A local government authority with a defined population. Subject to different thresholds under Article 8(9).",
+      "public_authority": "A central, regional or other government authority or body governed by public law.",
+      "financial_services_entity": "An entity operating in financial services, anti-money laundering, or terrorist financing sectors subject to specific Union law requirements.",
+      "other": "Any other legal entity not falling into the above categories."
+    },
+    "source": "Determined from entity's legal form and activities.",
+    "source_article": "Article 8"
+  },
+  {
+    "id": "worker_count",
+    "label": "Worker Count",
+    "type": "number",
+    "unit": "workers",
+    "source": "Number of workers (employees) as reported by entity.",
+    "source_article": "Article 8(1)"
+  },
+  {
+    "id": "municipality_inhabitants",
+    "label": "Municipality Population",
+    "type": "number",
+    "unit": "inhabitants",
+    "source": "Official population figure for the municipality.",
+    "source_article": "Article 8(9)"
+  },
+  {
+    "id": "operates_in_financial_services",
+    "label": "Operates in Financial Services / AML / CTF Sector",
+    "type": "boolean",
+    "source": "Determined by whether the entity's activities fall within financial services, anti-money laundering, or counter-terrorism financing as defined by applicable Union law listed in the Annex.",
+    "source_article": "Article 8(4)"
+  },
+  {
+    "id": "has_internal_reporting_channel",
+    "label": "Has Established Internal Reporting Channel",
+    "type": "boolean",
+    "source": "Verified by competent authority or through compliance documentation.",
+    "source_article": "Article 8(1)"
+  },
+  {
+    "id": "internal_channel_allows_anonymous",
+    "label": "Internal Reporting Channel Accepts Anonymous Reports",
+    "type": "boolean",
+    "source": "Determined from the entity's reporting channel configuration and policy documentation.",
+    "source_article": "Article 9(2)"
+  },
+  {
+    "id": "breach_subject_matter",
+    "label": "Subject Matter of the Reported Breach",
+    "type": "enum",
+    "allowed_values": [
+      "public_procurement",
+      "financial_services",
+      "anti_money_laundering",
+      "product_safety",
+      "transport_safety",
+      "environmental_protection",
+      "nuclear_safety",
+      "food_and_feed_safety",
+      "animal_health_and_welfare",
+      "public_health",
+      "consumer_protection",
+      "data_protection_and_privacy",
+      "network_and_information_security",
+      "competition_law",
+      "corporate_taxation",
+      "eu_financial_interests",
+      "internal_market",
+      "other_eu_law"
+    ],
+    "value_descriptions": {
+      "public_procurement": "Breaches of Union rules on public procurement, utilities procurement, defence procurement, and concession contracts. Annex Part I, point 1.",
+      "financial_services": "Breaches of Union rules on financial services, products and markets, including banking, insurance, securities, investment funds, payment services, and market integrity. Annex Part I, point 2.",
+      "anti_money_laundering": "Breaches of Union rules on prevention of money laundering and terrorist financing. Annex Part I, point 2.",
+      "product_safety": "Breaches of Union rules on product safety and compliance, including general product safety, medical devices, toys, cosmetics, and other regulated products. Annex Part I, point 3.",
+      "transport_safety": "Breaches of Union rules on transport safety, covering aviation, maritime, road, and rail transport. Annex Part I, point 4.",
+      "environmental_protection": "Breaches of Union rules on environmental protection, including pollution prevention, waste management, chemicals (REACH), biocides, and climate change. Annex Part I, point 5.",
+      "nuclear_safety": "Breaches of Union rules on nuclear safety, including radiation protection and radioactive waste management. Annex Part I, point 6.",
+      "food_and_feed_safety": "Breaches of Union rules on food and feed safety, hygiene, animal feed, food additives, and food labelling. Annex Part I, point 7.",
+      "animal_health_and_welfare": "Breaches of Union rules on animal health and welfare, including disease control, veterinary checks, and animal welfare during transport and slaughter. Annex Part I, point 7.",
+      "public_health": "Breaches of Union rules on public health, including cross-border health threats, medicinal products, medical devices, and tobacco products. Annex Part I, point 8.",
+      "consumer_protection": "Breaches of Union rules on consumer protection, including unfair commercial practices, product liability, consumer rights, and timeshare regulation. Annex Part I, point 9.",
+      "data_protection_and_privacy": "Breaches of Union rules on protection of privacy and personal data, including GDPR and the Law Enforcement Directive. Annex Part I, point 10.",
+      "network_and_information_security": "Breaches of Union rules on security of network and information systems, including the NIS Directive. Annex Part I, point 10.",
+      "competition_law": "Breaches of Articles 101 and 102 TFEU, State aid rules, and national competition laws. Annex Part II.",
+      "corporate_taxation": "Breaches or abuse of corporate tax rules and arrangements aimed at obtaining tax advantages contrary to the object or purpose of applicable corporate tax law. Annex Part II.",
+      "eu_financial_interests": "Breaches affecting the financial interests of the Union, including fraud, corruption, and irregularities involving EU funds. Annex Part II.",
+      "internal_market": "Breaches of internal market rules including Union rules on competition, State aid, corporate taxation, and digital single market. Annex Part II.",
+      "other_eu_law": "Any other breach of Union law not specifically listed but falling within the material scope as extended by Member States."
+    },
+    "source": "Determined from the content of the report by the reporting person or receiving person/department.",
+    "source_article": "Article 2(1), Annex Parts I and II"
+  },
+  {
+    "id": "report_received_date",
+    "label": "Date Report Was Received",
+    "type": "date",
+    "source": "Recorded by the obligated entity or competent authority upon receipt of the report.",
+    "source_article": "Article 9(1)(b)"
+  },
+  {
+    "id": "report_acknowledgement_sent",
+    "label": "Receipt Acknowledgement Sent",
+    "type": "boolean",
+    "source": "Recorded in the entity's case management system.",
+    "source_article": "Article 9(1)(b)"
+  },
+  {
+    "id": "feedback_provided_to_reporter",
+    "label": "Feedback Provided to Reporting Person",
+    "type": "boolean",
+    "source": "Recorded in case management system once feedback is communicated.",
+    "source_article": "Article 9(1)(f)"
+  },
+  {
+    "id": "reporting_channel_type",
+    "label": "Reporting Channel Type Used",
+    "type": "enum",
+    "allowed_values": ["internal", "external", "public_disclosure"],
+    "value_descriptions": {
+      "internal": "The reporting person has used the obligated entity's internal reporting channel to submit a report (Article 7).",
+      "external": "The reporting person has used the external reporting channel of a designated competent authority to submit a report (Article 10).",
+      "public_disclosure": "The reporting person has made information about a breach available to the public, including via media, social media, elected officials, or civil society organisations (Article 15)."
+    },
+    "source": "Determined by the channel through which the report was submitted.",
+    "source_article": "Articles 7, 10, 15"
+  },
+  {
+    "id": "good_faith_reasonable_grounds",
+    "label": "Reporting Person Had Reasonable Grounds to Believe Report Was True",
+    "type": "boolean",
+    "source": "Assessed based on the circumstances known to the reporting person at the time of the report. Good faith and reasonable belief are conditions for protection.",
+    "source_article": "Article 6(1)(a)"
+  },
+  {
+    "id": "retaliation_occurred",
+    "label": "Retaliation Against Reporting Person Has Occurred",
+    "type": "boolean",
+    "source": "Determined from evidence of adverse action taken against the reporting person in a work-related context following a report.",
+    "source_article": "Article 19"
+  },
+  {
+    "id": "retaliation_type",
+    "label": "Type of Retaliation",
+    "type": "enum",
+    "allowed_values": [
+      "dismissal",
+      "demotion",
+      "salary_reduction",
+      "harassment",
+      "blacklisting",
+      "negative_performance_review",
+      "denial_of_training",
+      "forced_transfer",
+      "contract_termination",
+      "licence_revocation",
+      "damage_to_reputation",
+      "other"
+    ],
+    "value_descriptions": {
+      "dismissal": "Termination of employment or the equivalent in a non-employment work relationship, directly linked to the report made by the reporting person.",
+      "demotion": "Reduction in position, rank, or level of seniority as a consequence of the report.",
+      "salary_reduction": "Reduction in salary, wages, or other financial benefits as a consequence of the report.",
+      "harassment": "Any hostile or unwanted conduct related to the report that has the purpose or effect of violating the dignity of the reporting person.",
+      "blacklisting": "Industry-wide or sector-wide informal or formal exclusion from employment, contracts or business opportunities as a consequence of the report.",
+      "negative_performance_review": "An unjustified negative assessment of the reporting person's performance linked to their report.",
+      "denial_of_training": "Refusal or failure to provide training opportunities that would otherwise have been available, linked to the report.",
+      "forced_transfer": "A compulsory reassignment to a different role, department, or location as a consequence of the report.",
+      "contract_termination": "Early termination or non-renewal of a supply, services, or goods contract as a consequence of the report.",
+      "licence_revocation": "Revocation, suspension or non-renewal of a permit or licence needed to carry on activities, linked to the report.",
+      "damage_to_reputation": "Actions that cause harm to the professional or personal reputation of the reporting person as a consequence of the report.",
+      "other": "Any other adverse measure or treatment not specifically listed above that is connected to the report."
+    },
+    "source": "Classified from evidence of the adverse action taken against the reporting person.",
+    "source_article": "Article 19"
+  },
+  {
+    "id": "confidentiality_breached",
+    "label": "Confidentiality of Reporting Person's Identity Has Been Breached",
+    "type": "boolean",
+    "source": "Determined from evidence that the reporting person's identity or identifying information was disclosed without consent beyond authorised staff.",
+    "source_article": "Article 16"
+  },
+  {
+    "id": "internal_reporting_channel_established_date",
+    "label": "Date Internal Reporting Channel Was Established",
+    "type": "date",
+    "source": "Recorded when the entity establishes its internal reporting channel.",
+    "source_article": "Article 8(1)"
+  },
+  {
+    "id": "report_is_anonymous",
+    "label": "Report Was Submitted Anonymously",
+    "type": "boolean",
+    "source": "Determined from the report submission metadata.",
+    "source_article": "Article 6(2)"
+  },
+  {
+    "id": "reporting_person_sought_legal_advice_first",
+    "label": "Reporting Person Sought Legal Advice Before Reporting",
+    "type": "boolean",
+    "source": "Self-declared by reporting person; relevant to determining reasonableness of belief in good faith.",
+    "source_article": "Recital 32"
+  },
+  {
+    "id": "public_disclosure_conditions_met",
+    "label": "Conditions for Protected Public Disclosure Are Met",
+    "type": "boolean",
+    "source": "Assessed against Article 15 conditions: prior internal/external reporting without adequate follow-up, or imminent/manifest public interest, or risk of retaliation via external channel.",
+    "source_article": "Article 15"
+  }
+]

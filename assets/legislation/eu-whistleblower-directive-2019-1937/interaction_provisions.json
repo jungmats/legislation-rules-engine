@@ -1,0 +1,89 @@
+[
+  {
+    "id": "ip_internal_to_external_escalation",
+    "label": "Reporting Person May Escalate from Internal to External Channel",
+    "description": "If a reporting person first uses the internal reporting channel and does not receive adequate follow-up within 3 months (or 7 days acknowledgement + 3 months feedback), they may report to the competent authority's external channel and are entitled to the same protections as direct external reporters.",
+    "initiating_entity_role": "reporting_person",
+    "receiving_entity_role": "competent_authority",
+    "trigger": "No adequate response received from obligated entity within 3 months of internal report, or reporting person reasonably believes internal report will not lead to effective follow-up or risks retaliation",
+    "outcome": "The reporting person is fully protected for the external report; the competent authority must follow up and provide feedback within 3 months (extendable to 6).",
+    "related_obligation_ids": [
+      "ob_follow_up_and_feedback_3_months",
+      "ob_competent_authority_feedback_3_months"
+    ],
+    "confidence": "high",
+    "source_article": "Article 10, Article 15(1)(a)"
+  },
+  {
+    "id": "ip_external_to_public_disclosure_escalation",
+    "label": "Reporting Person May Escalate to Public Disclosure After Inadequate External Follow-Up",
+    "description": "If a reporting person has reported through external channels and no appropriate action was taken within 3 months, or if there is no competent authority with an external channel, or if there is an imminent or manifest public interest danger, the reporting person may make a public disclosure and retain full protection.",
+    "initiating_entity_role": "reporting_person",
+    "receiving_entity_role": null,
+    "trigger": "One of three conditions met: (1) no adequate action taken on external report within 3 months; (2) no competent authority exists for the subject matter; (3) imminent/manifest public danger justifies bypassing internal/external channels.",
+    "outcome": "Public disclosure is protected. The reporting person is immune from civil, criminal, administrative, and disciplinary liability if acting in good faith with reasonable grounds.",
+    "related_obligation_ids": [],
+    "confidence": "medium",
+    "human_review_note": "The three conditions for protected public disclosure each require case-by-case factual analysis. The concept of 'imminent or manifest public danger' is not precisely defined in the Directive and will require national jurisprudence to clarify. Human review recommended.",
+    "source_article": "Article 15"
+  },
+  {
+    "id": "ip_competent_authority_to_other_authority_referral",
+    "label": "Competent Authority Forwards Out-of-Competence Reports to Appropriate Authority",
+    "description": "When a competent authority receives a report that falls outside its remit, it must promptly forward it to the appropriate competent national authority or to a relevant EU body (OLAF, EPPO, etc.), and inform the reporting person of the referral.",
+    "initiating_entity_role": "competent_authority",
+    "receiving_entity_role": "competent_authority",
+    "trigger": "Report received by a competent authority falls outside its material or territorial competence.",
+    "outcome": "The forwarded report is handled by the receiving authority under the same rules. The reporting person retains protection throughout.",
+    "related_obligation_ids": [
+      "ob_competent_authority_forward_other_authorities"
+    ],
+    "confidence": "high",
+    "source_article": "Article 12(1)(d)"
+  },
+  {
+    "id": "ip_obligated_entity_referral_to_authority",
+    "label": "Obligated Entity May Refer Serious Breaches to Competent Authorities",
+    "description": "When follow-up on an internal report reveals a serious breach of Union law, the obligated entity should (or in some Member States must) refer the matter to the relevant competent authority, while maintaining the reporting person's confidentiality.",
+    "initiating_entity_role": "obligated_entity",
+    "receiving_entity_role": "competent_authority",
+    "trigger": "Internal investigation reveals a breach of Union law that warrants regulatory or law enforcement action.",
+    "outcome": "Competent authority takes over investigation; obligated entity must not retaliate against the reporting person for the report that triggered the referral.",
+    "related_obligation_ids": [
+      "ob_follow_up_and_feedback_3_months",
+      "ob_maintain_report_confidentiality"
+    ],
+    "confidence": "medium",
+    "human_review_note": "The Directive does not explicitly require obligated entities to refer breaches to authorities, but encourages it through the overall framework. Whether national law imposes a mandatory referral obligation depends on national transposition. Human review recommended.",
+    "source_article": "Article 9(1)(f)"
+  },
+  {
+    "id": "ip_facilitator_and_third_party_protection",
+    "label": "Facilitators and Third Parties Are Protected from Retaliation",
+    "description": "Persons who assist the reporting person (facilitators) and third parties connected to the reporting person (relatives, colleagues, legal entities they own) are also protected from retaliation taken as a consequence of the report.",
+    "initiating_entity_role": "facilitator",
+    "receiving_entity_role": "obligated_entity",
+    "trigger": "A facilitator or third party suffers adverse treatment in a work-related context as a consequence of the reporting person's report.",
+    "outcome": "The same anti-retaliation protections, remedies, and reversed burden of proof apply as for the reporting person themselves.",
+    "related_obligation_ids": [
+      "ob_prohibit_retaliation",
+      "ob_reversed_burden_of_proof"
+    ],
+    "confidence": "high",
+    "source_article": "Article 4(4), Article 21"
+  },
+  {
+    "id": "ip_concerned_person_rights_preservation",
+    "label": "Rights of the Concerned Person Must Be Preserved Throughout Proceedings",
+    "description": "All procedures for handling reports must fully protect the fundamental rights of the concerned person, including presumption of innocence, right to a fair trial, and right to an effective remedy. The identity of the concerned person must also be protected from disclosure until a formal investigation is concluded, unless required by law.",
+    "initiating_entity_role": "obligated_entity",
+    "receiving_entity_role": "concerned_person",
+    "trigger": "A report is submitted naming or identifying a concerned person.",
+    "outcome": "Obligated entities and competent authorities must handle report data about the concerned person with strict confidentiality and procedural fairness.",
+    "related_obligation_ids": [
+      "ob_maintain_report_confidentiality"
+    ],
+    "confidence": "high",
+    "source_article": "Article 22"
+  }
+]

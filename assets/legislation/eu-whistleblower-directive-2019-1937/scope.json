@@ -1,0 +1,59 @@
+[
+  {
+    "id": "scope_private_entity_large",
+    "label": "Private legal entities with 250 or more workers",
+    "description": "Private legal entities employing 250 or more workers must establish internal reporting channels and comply with all obligations. Transposition deadline: 17 December 2021.",
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "private" },
+      { "fact_id": "worker_count", "operator": ">=", "value": 250 }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 8(1), Article 8(3)"
+  },
+  {
+    "id": "scope_private_entity_medium",
+    "label": "Private legal entities with 50 to 249 workers",
+    "description": "Private legal entities employing between 50 and 249 workers must establish internal reporting channels. These entities benefit from an extended transposition deadline of 17 December 2023 and may share reporting channel resources.",
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "private" },
+      { "fact_id": "worker_count", "operator": ">=", "value": 50 },
+      { "fact_id": "worker_count", "operator": "<", "value": 250 }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 8(1), Article 8(6), Article 26(2)"
+  },
+  {
+    "id": "scope_private_entity_financial_services",
+    "label": "Private entities in financial services regardless of size",
+    "description": "Private entities operating in the financial services sector, anti-money laundering, or terrorist financing domains must establish reporting channels regardless of worker count, as required by existing Union law.",
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "private" },
+      { "fact_id": "operates_in_financial_services", "operator": "=", "value": true }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 8(4)"
+  },
+  {
+    "id": "scope_public_entity",
+    "label": "All public sector entities",
+    "description": "All legal entities in the public sector, including State entities, regional and local authorities, and other bodies governed by public law. No worker-count threshold applies.",
+    "conditions": [
+      { "fact_id": "entity_sector", "operator": "=", "value": "public" }
+    ],
+    "explicit_exclusions": [
+      "Municipalities with fewer than 10,000 inhabitants and other public entities with fewer than 50 workers may be exempted by Member States from the obligation to establish internal reporting channels (Article 8(9))"
+    ],
+    "source_article": "Article 8(1), Article 8(9)"
+  },
+  {
+    "id": "scope_municipality_large",
+    "label": "Municipalities with 10,000 or more inhabitants",
+    "description": "Municipalities with 10,000 or more inhabitants must establish internal reporting channels.",
+    "conditions": [
+      { "fact_id": "entity_type", "operator": "=", "value": "municipality" },
+      { "fact_id": "municipality_inhabitants", "operator": ">=", "value": 10000 }
+    ],
+    "explicit_exclusions": [],
+    "source_article": "Article 8(9)"
+  }
+]

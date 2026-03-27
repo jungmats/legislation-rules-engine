@@ -1,0 +1,115 @@
+[
+  {
+    "id": "penalty_hindering_reporting",
+    "label": "Penalty for Hindering or Attempting to Hinder Reporting",
+    "description": "Member States must establish effective, proportionate and dissuasive penalties against persons who hinder or attempt to hinder reporting, including by obstructing the use of internal or external reporting channels.",
+    "penalty_type": "administrative_or_criminal",
+    "amount_min": null,
+    "amount_max": null,
+    "amount_note": "Amounts determined by Member States in national law. Some Member States have set maximum fines in the range of €10,000–€1,000,000 or equivalent.",
+    "applies_to": ["obligated_entity", "competent_authority"],
+    "trigger_conditions": [
+      "Person takes active steps to prevent a reporting person from submitting a report",
+      "Person discourages a reporting person from submitting a report through threats, coercion, or intimidation"
+    ],
+    "confidence": "high",
+    "source_article": "Article 23(1)(a)"
+  },
+  {
+    "id": "penalty_retaliation",
+    "label": "Penalty for Taking Retaliatory Measures Against Reporting Persons",
+    "description": "Member States must establish effective, proportionate and dissuasive penalties against persons who take retaliatory measures against reporting persons, facilitators, or third parties connected with reporting persons.",
+    "penalty_type": "administrative_or_criminal",
+    "amount_min": null,
+    "amount_max": null,
+    "amount_note": "Determined by Member States. In addition to penalties, affected reporting persons are entitled to full compensation for all losses suffered, plus reinstatement where applicable.",
+    "applies_to": ["obligated_entity"],
+    "trigger_conditions": [
+      "Employer or any person in a work-related context takes any adverse action listed in Article 19 against a reporting person following their report"
+    ],
+    "confidence": "high",
+    "source_article": "Article 23(1)(b)"
+  },
+  {
+    "id": "penalty_vexatious_proceedings",
+    "label": "Penalty for Bringing Vexatious Proceedings Against Reporting Persons",
+    "description": "Member States must establish penalties against persons who bring vexatious proceedings against reporting persons, including abusive civil lawsuits intended to intimidate or punish them for reporting.",
+    "penalty_type": "administrative_or_criminal",
+    "amount_min": null,
+    "amount_max": null,
+    "amount_note": "Determined by Member States. Anti-SLAPP measures may also require courts to dismiss clearly unfounded cases early in proceedings.",
+    "applies_to": ["obligated_entity", "concerned_person"],
+    "trigger_conditions": [
+      "Legal proceedings are initiated against a reporting person in bad faith or as retaliation for their report",
+      "Proceedings are manifestly unfounded and intended to silence, harass, or punish the reporting person"
+    ],
+    "confidence": "high",
+    "source_article": "Article 23(1)(c)"
+  },
+  {
+    "id": "penalty_confidentiality_breach",
+    "label": "Penalty for Breaching Duty of Maintaining Reporting Person's Confidentiality",
+    "description": "Member States must establish penalties against persons who breach the duty of maintaining confidentiality of the reporting person's identity without their explicit consent.",
+    "penalty_type": "administrative_or_criminal",
+    "amount_min": null,
+    "amount_max": null,
+    "amount_note": "Determined by Member States. In practice, breach of confidentiality may also constitute a GDPR violation, exposing the entity to additional fines under GDPR enforcement.",
+    "applies_to": ["obligated_entity", "competent_authority"],
+    "trigger_conditions": [
+      "Identity of the reporting person is disclosed without their consent to persons beyond authorised staff",
+      "Any other identifying information is disclosed that could directly or indirectly identify the reporting person"
+    ],
+    "confidence": "high",
+    "source_article": "Article 23(1)(d)"
+  },
+  {
+    "id": "penalty_false_reporting",
+    "label": "Penalty for Knowingly Making False Reports",
+    "description": "Member States must lay down effective, proportionate and dissuasive penalties against persons who knowingly report or publicly disclose false information. Concerned persons who suffered harm as a result of false reports have the right to seek compensation.",
+    "penalty_type": "administrative_or_criminal",
+    "amount_min": null,
+    "amount_max": null,
+    "amount_note": "Determined by Member States. Does not apply to reports made in good faith based on reasonable belief, even if later found to be incorrect.",
+    "applies_to": ["reporting_person"],
+    "trigger_conditions": [
+      "Reporting person knowingly submits a report containing false information",
+      "Reporting person knowingly makes a public disclosure of false information"
+    ],
+    "confidence": "high",
+    "source_article": "Article 23(2)"
+  },
+  {
+    "id": "penalty_failure_to_establish_channel",
+    "label": "Consequence for Failure to Establish Mandatory Internal Reporting Channel",
+    "description": "Member States must ensure that failure by obligated entities to establish internal reporting channels within the required timeline results in effective enforcement action. The Directive does not specify a fixed penalty but requires Member States to provide effective, proportionate and dissuasive sanctions.",
+    "penalty_type": "administrative",
+    "amount_min": null,
+    "amount_max": null,
+    "amount_note": "Determined by Member States in their national transposition laws. Some Member States have established fines of up to €50,000 per violation.",
+    "applies_to": ["obligated_entity"],
+    "trigger_conditions": [
+      "Obligated entity with 50+ workers fails to establish or maintain an internal reporting channel",
+      "Obligated entity fails to designate a competent person to handle reports",
+      "Obligated entity fails to follow up on reports or provide feedback within 3 months"
+    ],
+    "confidence": "medium",
+    "human_review_note": "Specific penalty amounts for failure to establish channels are not set in the Directive itself but are determined by Member States. The €50,000 figure cited in some sources is illustrative of one Member State's implementation. Review applicable national law.",
+    "source_article": "Article 23(1)"
+  },
+  {
+    "id": "penalty_member_state_non_transposition",
+    "label": "EU Commission Infringement Proceedings for Non-Transposition",
+    "description": "Member States that failed to transpose the Directive by 17 December 2021 (or 17 December 2023 for SME obligations) may face infringement proceedings by the European Commission, which can result in financial penalties payable to the EU.",
+    "penalty_type": "eu_infringement",
+    "amount_min": null,
+    "amount_max": null,
+    "amount_note": "EU infringement fines are calculated based on the severity of the breach and duration of non-compliance. The Commission has already initiated proceedings against non-compliant Member States.",
+    "applies_to": ["member_state"],
+    "trigger_conditions": [
+      "Member State fails to notify transposition measures by the applicable deadline",
+      "Member State's transposition is incomplete or incorrect"
+    ],
+    "confidence": "high",
+    "source_article": "Article 26, TFEU Article 258"
+  }
+]

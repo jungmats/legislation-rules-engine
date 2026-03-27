@@ -65,11 +65,11 @@ export default function FactQuestion({ fact, onAnswer, onSkip, questionNumber, w
           </div>
         )}
 
-        {(fact.type === 'number' || fact.type === 'string' || fact.type === 'date') && (
+        {(fact.type === 'number' || fact.type === 'integer' || fact.type === 'string' || fact.type === 'date') && (
           <div className="flex gap-3 items-end">
             <div className="flex-1">
               <input
-                type={fact.type === 'number' ? 'number' : fact.type === 'date' ? 'date' : 'text'}
+                type={fact.type === 'number' || fact.type === 'integer' ? 'number' : fact.type === 'date' ? 'date' : 'text'}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 placeholder={fact.unit ? `Value in ${fact.unit}` : 'Enter value'}
@@ -105,7 +105,7 @@ export default function FactQuestion({ fact, onAnswer, onSkip, questionNumber, w
 }
 
 function parseValue(fact: Fact, raw: string): unknown {
-  if (fact.type === 'number') return parseFloat(raw);
+  if (fact.type === 'number' || fact.type === 'integer') return parseFloat(raw);
   if (fact.type === 'boolean') return raw === 'true';
   return raw;
 }

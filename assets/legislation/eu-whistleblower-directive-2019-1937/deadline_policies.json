@@ -1,0 +1,63 @@
+[
+  {
+    "id": "dl_transposition_large_private_public",
+    "label": "Transposition Deadline: 17 December 2021 (Large Private + All Public Entities)",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2021-12-17",
+    "offset_days": 0,
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 26(1)"
+  },
+  {
+    "id": "dl_transposition_sme_private",
+    "label": "Transposition Deadline: 17 December 2023 (Private Entities with 50–249 Workers)",
+    "anchor_type": "fixed_date",
+    "anchor_value": "2023-12-17",
+    "offset_days": 0,
+    "recurrence": "one_time",
+    "confidence": "high",
+    "source_article": "Article 26(2)"
+  },
+  {
+    "id": "dl_acknowledge_report_7_days",
+    "label": "Acknowledge Report: Within 7 Days of Receipt",
+    "anchor_type": "fact_relative",
+    "anchor_value": "report_received_date",
+    "offset_days": 7,
+    "recurrence": "per_event",
+    "confidence": "high",
+    "source_article": "Article 9(1)(b)"
+  },
+  {
+    "id": "dl_feedback_3_months",
+    "label": "Feedback to Reporting Person: Within 3 Months of Acknowledgement",
+    "anchor_type": "fact_relative",
+    "anchor_value": "report_received_date",
+    "offset_months": 3,
+    "recurrence": "per_event",
+    "confidence": "high",
+    "source_article": "Article 9(1)(f)"
+  },
+  {
+    "id": "dl_external_feedback_3_months",
+    "label": "Competent Authority Feedback: Within 3 Months (Extendable to 6)",
+    "anchor_type": "fact_relative",
+    "anchor_value": "report_received_date",
+    "offset_months": 3,
+    "recurrence": "per_event",
+    "confidence": "high",
+    "source_article": "Article 12(1)(e)"
+  },
+  {
+    "id": "dl_external_feedback_6_months_extended",
+    "label": "Competent Authority Feedback Extended: Up to 6 Months (Duly Justified)",
+    "anchor_type": "fact_relative",
+    "anchor_value": "report_received_date",
+    "offset_months": 6,
+    "recurrence": "per_event",
+    "confidence": "medium",
+    "human_review_note": "Extension to 6 months is only available in duly justified cases of complexity or specific nature of the report. Whether a specific case qualifies requires human assessment.",
+    "source_article": "Article 12(1)(e)"
+  }
+]

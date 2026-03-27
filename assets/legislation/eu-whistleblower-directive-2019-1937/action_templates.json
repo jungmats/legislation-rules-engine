@@ -1,0 +1,172 @@
+[
+  {
+    "id": "act_setup_internal_reporting_channel",
+    "label": "Set Up Internal Reporting Channel",
+    "triggered_by": "ob_establish_internal_reporting_channel",
+    "description": "Establish a secure, confidential internal reporting channel that enables both written and oral reporting. The channel must be designed and operated in a way that ensures completeness, integrity, and confidentiality of reports.",
+    "steps": [
+      "Select and configure a reporting channel platform (dedicated hotline, encrypted online form, secure mailbox, or combination)",
+      "Ensure the channel accepts written reports (online system, mailbox, or post) and oral reports (phone hotline or voice messaging)",
+      "Configure the system to allow in-person meeting requests from reporting persons",
+      "Implement access controls so only designated authorised persons can view reports",
+      "Test confidentiality and security of the channel before go-live",
+      "Document the channel setup and maintain operational procedures"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_channel_technical_setup",
+    "source_article": "Article 8(1), Article 9(1)(a)"
+  },
+  {
+    "id": "act_designate_channel_handler",
+    "label": "Designate an Impartial Person or Department to Handle Reports",
+    "triggered_by": "ob_designate_reporting_channel_handler",
+    "description": "Designate a specific impartial person or department (internal or external) as competent to receive, acknowledge, follow up on, and maintain confidentiality of reports. Document the designation in writing.",
+    "steps": [
+      "Identify a suitable candidate: compliance officer, legal counsel, HR director, audit committee, or external ombudsman/provider",
+      "Verify the designated person/department is impartial and not in a conflict of interest",
+      "Formally appoint the person or department in writing",
+      "Brief the designated person/department on confidentiality requirements, follow-up procedures, and timelines",
+      "Ensure the designated person has authority to escalate and take protective action where needed"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_designation_document",
+    "source_article": "Article 8(5)"
+  },
+  {
+    "id": "act_communicate_channel_to_workers",
+    "label": "Communicate Internal Reporting Channel to Workers and Other Persons",
+    "triggered_by": "ob_provide_accessible_information_on_channels",
+    "description": "Make clearly understandable and easily accessible information about the internal reporting channel and procedures available to workers, contractors, suppliers, and other relevant persons.",
+    "steps": [
+      "Draft a whistleblowing policy or information notice covering: how to access the channel, who handles reports, confidentiality guarantees, the right to use external channels, and anti-retaliation protections",
+      "Publish the policy on the company intranet and/or internal communications portal",
+      "Distribute to all new workers as part of onboarding",
+      "Provide information to contractors, subcontractors, suppliers and other work-related persons",
+      "Make information available in all relevant languages spoken by workers",
+      "Keep the policy current and re-communicate any changes"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_internal_policy_document",
+    "source_article": "Article 9(1)(e)"
+  },
+  {
+    "id": "act_acknowledge_report_receipt",
+    "label": "Send Acknowledgement of Report Receipt Within 7 Days",
+    "triggered_by": "ob_acknowledge_report_receipt_7_days",
+    "description": "Upon receiving a report through the internal channel, send a written acknowledgement of receipt to the reporting person within 7 calendar days, unless they requested no acknowledgement or confidentiality would be jeopardised.",
+    "steps": [
+      "Record the exact date and time the report was received",
+      "Assess whether the reporting person has requested no acknowledgement",
+      "Assess whether sending acknowledgement would jeopardise the reporting person's confidentiality",
+      "Unless exempted, prepare and send written acknowledgement within 7 calendar days",
+      "Log the acknowledgement date in the case management system"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_acknowledgement_record",
+    "source_article": "Article 9(1)(b)"
+  },
+  {
+    "id": "act_follow_up_on_report",
+    "label": "Follow Up on Report and Provide Feedback Within 3 Months",
+    "triggered_by": "ob_follow_up_and_feedback_3_months",
+    "description": "Diligently investigate or assess the report and communicate the outcome to the reporting person within 3 months from the acknowledgement date (or 3 months from 7 days after receipt if no acknowledgement was sent).",
+    "steps": [
+      "Assess the report for completeness and plausibility",
+      "Determine whether the reported breach falls within the Directive's material scope",
+      "Initiate an internal investigation or refer to appropriate body if needed",
+      "Document investigation steps and findings",
+      "Determine what follow-up action has been or will be taken (investigation, closure, referral to authorities)",
+      "Communicate feedback to the reporting person within 3 months, describing actions taken or intended",
+      "Log the feedback date in the case management system"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_investigation_record",
+    "source_article": "Article 9(1)(f)"
+  },
+  {
+    "id": "act_protect_reporter_confidentiality",
+    "label": "Implement Confidentiality Protections for the Reporting Person",
+    "triggered_by": "ob_maintain_report_confidentiality",
+    "description": "Ensure the reporting person's identity and any information that could identify them is not disclosed without their explicit consent, beyond authorised personnel who need to handle the report.",
+    "steps": [
+      "Restrict access to reports and case files to designated authorised persons only",
+      "Implement access logging and audit trails on the reporting system",
+      "Train authorised staff on confidentiality obligations and consequences of breach",
+      "Where necessary, anonymise the reporting person's identity in communications with departments under investigation",
+      "Obtain explicit written consent before disclosing the reporter's identity for investigative purposes",
+      "Document any accidental or required disclosures (e.g., to judicial authorities) with justification"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_access_controls_documentation",
+    "source_article": "Article 16"
+  },
+  {
+    "id": "act_maintain_report_records",
+    "label": "Maintain Compliant Records of Reports",
+    "triggered_by": "ob_maintain_report_records",
+    "description": "Keep complete records of every report received. For oral reports, create recordings or transcripts. For in-person meetings, create minutes. Retain records only as long as necessary and in compliance with GDPR.",
+    "steps": [
+      "Implement a case management system for recording all reports with metadata (date, channel, subject matter)",
+      "For telephone/voice reports: obtain consent to record, or create a written transcript and allow the reporting person to verify and correct it",
+      "For in-person meetings: prepare detailed minutes and share with the reporting person for verification and correction",
+      "Apply GDPR data retention policies — define and document retention periods",
+      "Ensure secure, encrypted storage of all report records",
+      "Destroy records after the retention period following data deletion procedures"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_case_management_records",
+    "source_article": "Article 18"
+  },
+  {
+    "id": "act_anti_retaliation_policy",
+    "label": "Establish and Enforce Anti-Retaliation Policy",
+    "triggered_by": "ob_prohibit_retaliation",
+    "description": "Implement organisational policies, training, and monitoring to ensure no retaliation is taken against reporting persons, facilitators, or third parties connected with them.",
+    "steps": [
+      "Draft and adopt an anti-retaliation policy prohibiting all forms of retaliation listed in Article 19",
+      "Communicate the policy clearly to all managers and HR personnel",
+      "Train managers on identifying and avoiding prohibited retaliatory actions",
+      "Establish an internal process for reporting persons who believe retaliation has been taken against them",
+      "Monitor HR decisions (promotions, transfers, performance reviews, terminations) for patterns linked to prior reports",
+      "Document any reviewed cases and action taken to address retaliation"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_anti_retaliation_policy",
+    "source_article": "Article 19"
+  },
+  {
+    "id": "act_gdpr_data_protection_measures",
+    "label": "Implement GDPR-Compliant Data Protection for Reporting Channels",
+    "triggered_by": "ob_gdpr_compliant_data_processing",
+    "description": "Ensure all personal data processed through internal reporting channels complies with GDPR requirements, including lawfulness of processing, data minimisation, security, retention, and data subject rights.",
+    "steps": [
+      "Conduct a Data Protection Impact Assessment (DPIA) for the reporting channel system",
+      "Identify and document legal basis for processing under GDPR",
+      "Implement technical and organisational security measures (encryption, access controls, audit logs)",
+      "Define and document data retention periods for reports and related case files",
+      "Establish procedures for handling data subject access requests from reporting persons and concerned persons",
+      "Include the reporting channel in the register of processing activities (RoPA)",
+      "Update privacy notices to cover whistleblowing processing"
+    ],
+    "responsible_entity_role": "obligated_entity",
+    "evidence_produced": "evidence_dpia_record",
+    "source_article": "Article 17"
+  },
+  {
+    "id": "act_external_channel_setup",
+    "label": "Competent Authority: Set Up External Reporting Channel",
+    "triggered_by": "ob_competent_authority_establish_external_channel",
+    "description": "Competent authorities designated by the Member State must establish secure, confidential, and operationally independent external reporting channels and publish accessible information about them.",
+    "steps": [
+      "Establish dedicated reporting channels (online portal, hotline, secure mailbox) independent from other authority functions",
+      "Ensure the channel allows written and oral reporting and in-person meetings",
+      "Publish accessible information on how to report, procedures, timelines, confidentiality protections, and anti-retaliation measures",
+      "Train staff on handling reports, maintaining confidentiality, and applicable legal obligations",
+      "Establish case management systems and internal procedures for follow-up",
+      "Establish referral procedures for reports outside the authority's competence"
+    ],
+    "responsible_entity_role": "competent_authority",
+    "evidence_produced": "evidence_external_channel_setup",
+    "source_article": "Article 11, Article 12, Article 13"
+  }
+]
