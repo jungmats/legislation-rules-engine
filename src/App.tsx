@@ -1,4 +1,5 @@
 import { useReducer, useEffect, useRef, useState } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { initialState, sessionReducer } from './engine/session';
 import type { SessionAction, SessionState } from './engine/session';
 import type { RegulationIndex } from './engine/loader';
@@ -8,6 +9,9 @@ import RoleSelector from './ui/steps/RoleSelector';
 import Questionnaire from './ui/steps/Questionnaire';
 
 export default function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [index, setIndex] = useState<RegulationIndex | null>(null);
   const indexRef = useRef<RegulationIndex | null>(null);
   indexRef.current = index;
@@ -17,11 +21,33 @@ export default function App() {
     initialState(),
   );
 
+  // Bootstrap session when loading a regulation URL directly
+  useEffect(() => {
+    const slug = location.pathname.replace(/^\//, '').split('/')[0];
+    if (slug) {
+      dispatch({ type: 'SELECT_REGULATION', slug });
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     if (state.regulationSlug) {
-      loadRegulation(state.regulationSlug).then(setIndex);
+      loadRegulation(state.regulationSlug)
+        .then(setIndex)
+        .catch(() => navigate('/'));
     }
-  }, [state.regulationSlug]);
+  }, [state.regulationSlug]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Navigate home when session resets to regulation_pick
+  useEffect(() => {
+    if (state.step === 'regulation_pick' && location.pathname !== '/') {
+      navigate('/');
+    }
+  }, [state.step]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const handleSelectRegulation = (slug: string) => {
+    dispatch({ type: 'SELECT_REGULATION', slug });
+    navigate(`/${slug}`);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
@@ -50,21 +76,30 @@ export default function App() {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-8">
-        {state.step === 'regulation_pick' && (
-          <RegulationPicker onSelect={(slug) => dispatch({ type: 'SELECT_REGULATION', slug })} />
-        )}
-        {state.step === 'role_select' && (
-          index
-            ? <RoleSelector
-                entities={index.entities}
-                entityRoleFact={index.facts.get('entity_role')}
-                onSelect={(roleId) => dispatch({ type: 'SELECT_ROLE', roleId })}
-              />
-            : <p className="text-gray-500">Loading regulation…</p>
-        )}
-        {(state.step === 'questioning' || state.step === 'complete') && index && (
-          <Questionnaire state={state} index={index} dispatch={dispatch} />
-        )}
+        <Routes>
+          <Route path="/" element={
+            <RegulationPicker onSelect={handleSelectRegulation} />
+          } />
+          <Route path="/:slug" element={
+            <>
+              {state.step === 'regulation_pick' && (
+                <p className="text-gray-500">Loading regulation…</p>
+              )}
+              {state.step === 'role_select' && (
+                index
+                  ? <RoleSelector
+                      entities={index.entities}
+                      entityRoleFact={index.facts.get('entity_role')}
+                      onSelect={(roleId) => dispatch({ type: 'SELECT_ROLE', roleId })}
+                    />
+                  : <p className="text-gray-500">Loading regulation…</p>
+              )}
+              {(state.step === 'questioning' || state.step === 'complete') && index && (
+                <Questionnaire state={state} index={index} dispatch={dispatch} />
+              )}
+            </>
+          } />
+        </Routes>
       </main>
     </div>
   );

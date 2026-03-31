@@ -50,7 +50,7 @@ export interface Entity {
 
 // ── facts.json ────────────────────────────────────────────────────────────────
 
-export type FactType = 'boolean' | 'enum' | 'number' | 'string' | 'date';
+export type FactType = 'boolean' | 'enum' | 'number' | 'integer' | 'string' | 'date';
 
 export interface Fact {
   id: string;

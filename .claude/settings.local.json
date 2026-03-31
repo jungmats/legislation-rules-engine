@@ -4,7 +4,24 @@
       "Bash(node:*)",
       "Bash(npx playwright:*)",
       "Bash(npm test:*)",
-      "Bash(cat test-results/smoke-EU-AI-Act-*-provider-*/error-context.md)"
+      "Bash(cat test-results/smoke-EU-AI-Act-*-provider-*/error-context.md)",
+      "Skill(create-agent-skill)",
+      "Bash(cp:*)",
+      "Bash(rm -rf /Users/majung/.claude/skills/legislation-watch)",
+      "Bash(./install.sh)",
+      "mcp__trello__get_user_boards",
+      "mcp__trello__get_board_lists",
+      "mcp__trello__get_board_cards",
+      "mcp__claude_ai_Google_Calendar__gcal_list_calendars",
+      "mcp__claude_ai_Gmail__gmail_search_messages",
+      "mcp__claude_ai_Google_Calendar__gcal_list_events",
+      "mcp__claude_ai_Gmail__gmail_read_thread",
+      "Bash(xargs ls:*)",
+      "Bash(npm install:*)",
+      "Bash(git remote:*)",
+      "Bash(npm run:*)",
+      "Bash(git stash:*)",
+      "Bash(npx vite:*)"
     ]
   }
 }
