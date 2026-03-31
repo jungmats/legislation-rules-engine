@@ -56,7 +56,7 @@ export default function App() {
           <h1 className="text-lg font-semibold tracking-tight">
             Legislation Rules Engine
           </h1>
-          {state.step !== 'regulation_pick' && (
+          {(state.step === 'questioning' || state.step === 'complete') && (
             <div className="flex items-center gap-4">
               <button
                 onClick={() => dispatch({ type: 'BACK' })}
@@ -65,7 +65,7 @@ export default function App() {
                 ← Back
               </button>
               <button
-                onClick={() => dispatch({ type: 'RESTART' })}
+                onClick={() => dispatch({ type: 'SELECT_REGULATION', slug: state.regulationSlug! })}
                 className="text-sm text-gray-400 hover:text-gray-600"
               >
                 Start over
