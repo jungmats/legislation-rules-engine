@@ -6,7 +6,107 @@ import ObligationPanel from '../panels/ObligationPanel';
 import ActionPanel from '../panels/ActionPanel';
 import WarningsPanel from '../panels/WarningsPanel';
 import PenaltiesPanel from '../panels/PenaltiesPanel';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
+
+function FeedbackForm() {
+  const [useful, setUseful] = useState<'yes' | 'no' | null>(null);
+  const [why, setWhy] = useState('');
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    setSubmitting(true);
+    await fetch('https://formspree.io/f/xgonzwrp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ useful, why, email }),
+    });
+    setSubmitting(false);
+    setSubmitted(true);
+  }
+
+  if (submitted) {
+    return (
+      <div className="mt-4 bg-gray-50 rounded-lg border border-dashed border-gray-300 p-6">
+        <p className="text-sm text-green-700 font-medium">Thank you — your feedback means a lot.</p>
+      </div>
+    );
+  }
+
+  return (
+    <>
+    <div className="mt-8 flex items-center gap-3">
+      <div className="flex-1 border-t border-gray-200" />
+      <span className="text-xs text-gray-400 uppercase tracking-wide shrink-0">Before you go</span>
+      <div className="flex-1 border-t border-gray-200" />
+    </div>
+
+    <form onSubmit={handleSubmit} className="mt-4 bg-gray-50 rounded-lg border border-dashed border-gray-300 p-6 space-y-4">
+      <p className="text-xs font-medium text-gray-400 uppercase tracking-wide">Research feedback</p>
+      <p className="text-sm text-gray-600">
+        This is an experiment to find out if determining compliance obligations can be simplified
+        and automated. Your feedback is invaluable.
+      </p>
+
+      <div>
+        <p className="text-sm font-medium text-gray-700 mb-2">Was this useful?</p>
+        <div className="flex gap-2">
+          {(['yes', 'no'] as const).map((v) => (
+            <button
+              key={v}
+              type="button"
+              onClick={() => setUseful(v)}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors
+                ${useful === v
+                  ? 'bg-blue-600 text-white border-blue-600'
+                  : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'}`}
+            >
+              {v === 'yes' ? 'Yes' : 'No'}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Why / why not?
+        </label>
+        <input
+          type="text"
+          value={why}
+          onChange={(e) => setWhy(e.target.value)}
+          placeholder="Tell us more…"
+          className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm focus:border-blue-500 focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Your email
+        </label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@example.com"
+          required
+          className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm focus:border-blue-500 focus:outline-none"
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={submitting || useful === null}
+        className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium disabled:opacity-40 hover:bg-blue-700 transition-colors"
+      >
+        {submitting ? 'Sending…' : 'Send feedback'}
+      </button>
+    </form>
+    </>
+  );
+}
 
 interface Props {
   state: SessionState;
@@ -68,12 +168,15 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
             </button>
           </>
         ) : (
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <h3 className="text-lg font-medium text-green-700 mb-1">Questionnaire complete</h3>
-            <p className="text-sm text-gray-500">
-              All relevant questions have been answered. Review your obligations on the right.
-            </p>
-          </div>
+          <>
+            <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <h3 className="text-lg font-medium text-green-700 mb-1">Questionnaire complete</h3>
+              <p className="text-sm text-gray-500">
+                All relevant questions have been answered. Review your obligations on the right.
+              </p>
+            </div>
+            <FeedbackForm />
+          </>
         )}
       </div>
 
