@@ -181,6 +181,13 @@ for (const { shortName, roles } of regulations) {
         expect(page.locator('main'), 'blank page detected\n' + replaySummary()).toBeTruthy();
 
         if (await page.locator('text=Questionnaire complete').isVisible({ timeout: 300 }).catch(() => false)) break;
+        if (await page.locator('text=Assessment complete').isVisible({ timeout: 300 }).catch(() => false)) break;
+
+        // Assessment intro — skip to results
+        if (await page.locator('text=Your obligations are confirmed').isVisible({ timeout: 300 }).catch(() => false)) {
+          await page.locator('button', { hasText: 'Skip' }).first().click();
+          break;
+        }
 
         await expect(page.locator('h3').first()).toBeVisible({ timeout: 3000 });
 
@@ -209,7 +216,9 @@ for (const { shortName, roles } of regulations) {
       }
 
       // Must reach completion
-      const isComplete = await page.locator('text=Questionnaire complete').isVisible({ timeout: 5000 }).catch(() => false);
+      const isQComplete = await page.locator('text=Questionnaire complete').isVisible({ timeout: 5000 }).catch(() => false);
+      const isAComplete = await page.locator('text=Assessment complete').isVisible({ timeout: 1000 }).catch(() => false);
+      const isComplete = isQComplete || isAComplete;
       const hasObligations = await page.locator('text=Confirmed').isVisible({ timeout: 1000 }).catch(() => false);
       expect(
         isComplete || hasObligations,

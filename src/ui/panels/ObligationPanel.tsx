@@ -9,9 +9,10 @@ interface Props {
   ruledOutCount: number;
   index: RegulationIndex;
   factMap: FactMap;
+  complianceBadges?: Map<string, string>;
 }
 
-export default function ObligationPanel({ confirmed, possible, ruledOutCount, index, factMap }: Props) {
+export default function ObligationPanel({ confirmed, possible, ruledOutCount, index, factMap, complianceBadges }: Props) {
   const factLabels = new Map(Array.from(index.facts.values()).map((f) => [f.id, f.label]));
 
   return (
@@ -29,7 +30,12 @@ export default function ObligationPanel({ confirmed, possible, ruledOutCount, in
                 return (
                   <li key={obligation.id} className="text-sm">
                     <div className="flex items-start justify-between gap-2">
-                      <span className="text-gray-800">{obligation.label}</span>
+                      <span className="text-gray-800">
+                        {complianceBadges?.get(obligation.id) && (
+                          <span className="mr-1">{complianceBadges.get(obligation.id)}</span>
+                        )}
+                        {obligation.label}
+                      </span>
                       <DeadlineBadge result={deadline} />
                     </div>
                     {applicableExemptions.length > 0 && (

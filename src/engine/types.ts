@@ -229,6 +229,14 @@ export interface RoleChangeWarning {
 /** All facts answered so far in a session. Value is null when skipped. */
 export type FactMap = Map<string, unknown | null>;
 
+/** Per-obligation compliance result produced during the assessment phase. */
+export interface ComplianceResult {
+  obligationId: string;
+  /** ComplianceStatus is imported from threshold.ts at usage sites to avoid circular deps */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  complianceStatus: any;
+}
+
 export type RuleState = 'confirmed' | 'possible' | 'ruled_out';
 
 export interface EvaluatedRule {
