@@ -41,12 +41,18 @@ function DeltaLine({ cs }: { cs: ComplianceStatus }) {
       </div>
       {cs.status === 'violation' && (
         <div className="text-red-600 font-medium">
-          Overshoot: +{formatNumber(delta, unit)} ({Math.round((delta / threshold) * 100)}% above target)
+          {threshold > 0
+            ? <>Overshoot: +{formatNumber(delta, unit)} ({Math.round(Math.abs(delta / threshold) * 100)}% above target)</>
+            : <>Overshoot: +{formatNumber(delta, unit)} (target is invalid — check baseline value)</>
+          }
         </div>
       )}
       {cs.status === 'risk' && (
         <div className="text-amber-600">
-          Headroom: {formatNumber(-delta, unit)} — within {cs.proximityPct}% of limit, monitor pace
+          {delta === 0
+            ? <>At limit — no headroom remaining</>
+            : <>Headroom: {formatNumber(-delta, unit)} — within {cs.proximityPct}% of limit, monitor pace</>
+          }
         </div>
       )}
       {cs.status === 'compliant' && (

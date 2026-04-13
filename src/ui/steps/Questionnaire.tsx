@@ -118,6 +118,13 @@ interface Props {
 
 const TABS = ['Obligations', 'Actions', 'Penalties', 'Warnings', 'Compliance'] as const;
 type Tab = typeof TABS[number];
+const TAB_LABELS: Record<Tab, string> = {
+  Obligations: 'Oblig.',
+  Actions:     'Actions',
+  Penalties:   'Fines',
+  Warnings:    'Warnings',
+  Compliance:  'Compliance',
+};
 
 function complianceBadge(status: ComplianceStatus['status']): string | null {
   switch (status) {
@@ -181,7 +188,7 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
   const measurableCount = state.confirmed.filter((r) => r.obligation.threshold_type).length;
 
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-6">
       {/* Left: question / status */}
       <div className="flex-1 min-w-0">
 
@@ -203,6 +210,7 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
             {state.currentQuestion ? (
               <>
                 <FactQuestion
+                  key={state.currentQuestion.id}
                   fact={state.currentQuestion}
                   questionNumber={state.totalQuestionsAsked + 1}
                   whyAsked={whyAsked(state.currentQuestion.id)}
@@ -281,6 +289,7 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
                 })()}
 
                 <FactQuestion
+                  key={state.currentMeasurementQuestion.id}
                   fact={state.currentMeasurementQuestion}
                   questionNumber={answeredMeasurement + 1}
                   whyAsked={whyMeasured(state.currentMeasurementQuestion.id)}
@@ -317,7 +326,7 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
       </div>
 
       {/* Right: live results */}
-      <div className="w-80 shrink-0">
+      <div className="w-[26rem] shrink-0">
         <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
           {/* Tabs */}
           <div className="flex border-b border-gray-100">
@@ -330,7 +339,7 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
                     ? 'text-blue-600 border-b-2 border-blue-500 bg-blue-50'
                     : 'text-gray-500 hover:text-gray-700'}`}
               >
-                {tab}
+                {TAB_LABELS[tab]}
                 {tab === 'Obligations' && state.confirmed.length > 0 && (
                   <span className="ml-1 text-green-600">({state.confirmed.length})</span>
                 )}

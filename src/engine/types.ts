@@ -127,6 +127,12 @@ export interface Rule {
   conditions: Condition[];
   obligations: RuleObligation[];
   applicable_exemptions?: string[];
+  /**
+   * When set, this rule is activated by a real-world event (e.g. "energy type change"),
+   * not by answering questionnaire facts. Such rules are skipped in the questionnaire
+   * evaluator — they cannot be confirmed or ruled out by static fact collection.
+   */
+  trigger_event?: string;
   source_article: string;
   confidence: Confidence;
   human_review_note?: string;

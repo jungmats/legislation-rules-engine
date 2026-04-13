@@ -23,6 +23,9 @@ function conditionMet(condition: Condition, value: unknown): boolean {
 
 /** Three-state evaluation of a single rule */
 export function evaluateRule(rule: Rule, factMap: FactMap): RuleState {
+  // Event-triggered rules cannot be evaluated by the questionnaire — skip them
+  if (rule.trigger_event) return 'possible';
+
   let hasUnknown = false;
 
   for (const condition of rule.conditions ?? []) {
