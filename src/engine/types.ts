@@ -73,8 +73,9 @@ export interface Obligation {
   description: string;
   threshold_type?: 'relative' | 'absolute';
   reduction_pct?: number;
-  reference_fact?: string;
-  target_fact?: string;
+  baseline_fact?: string;
+  measured_fact?: string;
+  threshold_fact?: string;
   max_value?: number;
   unit?: string;
   alternative_obligation_id?: string;
