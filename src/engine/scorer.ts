@@ -1,4 +1,4 @@
-import type { Rule, Fact, FactMap, RuleState } from './types';
+import type { Rule, Fact, FactMap, RuleState, ResolvedObligation } from './types';
 import { evaluateRule } from './evaluator';
 
 /**
@@ -58,4 +58,48 @@ export function nextQuestion(
   }
 
   return best;
+}
+
+/**
+ * Return the ordered list of measurement facts still needed for the assessment phase.
+ *
+ * For each confirmed obligation that has a threshold_type, collect:
+ *   baseline_fact (relative only) → measured_fact → threshold_fact (if present)
+ * in that order, skipping any already answered or skipped in factMap.
+ *
+ * Facts are deduplicated: if the same fact id appears across multiple obligations
+ * it is only included once (at first occurrence).
+ */
+export function measurementFactsNeeded(
+  confirmed: ResolvedObligation[],
+  factMap: FactMap,
+  facts: Map<string, Fact>,
+): Fact[] {
+  const seen = new Set<string>();
+  const result: Fact[] = [];
+
+  for (const { obligation } of confirmed) {
+    if (!obligation.threshold_type) continue;
+
+    const candidates: (string | undefined)[] = [];
+
+    if (obligation.threshold_type === 'relative') {
+      candidates.push(obligation.baseline_fact);
+    }
+    candidates.push(obligation.measured_fact);
+    if (obligation.threshold_fact) {
+      candidates.push(obligation.threshold_fact);
+    }
+
+    for (const factId of candidates) {
+      if (!factId) continue;
+      if (seen.has(factId)) continue;
+      seen.add(factId);
+      if (factMap.has(factId)) continue; // already answered or skipped
+      const fact = facts.get(factId);
+      if (fact) result.push(fact);
+    }
+  }
+
+  return result;
 }

@@ -73,8 +73,9 @@ export interface Obligation {
   description: string;
   threshold_type?: 'relative' | 'absolute';
   reduction_pct?: number;
-  reference_fact?: string;
-  target_fact?: string;
+  baseline_fact?: string;
+  measured_fact?: string;
+  threshold_fact?: string;
   max_value?: number;
   unit?: string;
   alternative_obligation_id?: string;
@@ -126,6 +127,12 @@ export interface Rule {
   conditions: Condition[];
   obligations: RuleObligation[];
   applicable_exemptions?: string[];
+  /**
+   * When set, this rule is activated by a real-world event (e.g. "energy type change"),
+   * not by answering questionnaire facts. Such rules are skipped in the questionnaire
+   * evaluator — they cannot be confirmed or ruled out by static fact collection.
+   */
+  trigger_event?: string;
   source_article: string;
   confidence: Confidence;
   human_review_note?: string;
@@ -227,6 +234,14 @@ export interface RoleChangeWarning {
 
 /** All facts answered so far in a session. Value is null when skipped. */
 export type FactMap = Map<string, unknown | null>;
+
+/** Per-obligation compliance result produced during the assessment phase. */
+export interface ComplianceResult {
+  obligationId: string;
+  /** ComplianceStatus is imported from threshold.ts at usage sites to avoid circular deps */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  complianceStatus: any;
+}
 
 export type RuleState = 'confirmed' | 'possible' | 'ruled_out';
 

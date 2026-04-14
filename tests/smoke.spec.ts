@@ -116,6 +116,13 @@ for (const { shortName, roles } of regulations) {
 
         // Done if complete step is showing
         if (await page.locator('text=Questionnaire complete').isVisible({ timeout: 300 }).catch(() => false)) break;
+        if (await page.locator('text=Assessment complete').isVisible({ timeout: 300 }).catch(() => false)) break;
+
+        // If assessment intro is showing, skip it to reach complete
+        if (await page.locator('text=Your obligations are confirmed').isVisible({ timeout: 300 }).catch(() => false)) {
+          await page.locator('button', { hasText: 'Skip' }).first().click();
+          break;
+        }
 
         // A question card must be visible
         await expect(page.locator('h3').first()).toBeVisible({ timeout: 3000 });
@@ -151,8 +158,10 @@ for (const { shortName, roles } of regulations) {
       }
 
       // ── 5. Complete state must be visible ───────────────────────────────────
-      const isComplete = await page.locator('text=Questionnaire complete').isVisible({ timeout: 5000 }).catch(() => false);
+      const isQComplete = await page.locator('text=Questionnaire complete').isVisible({ timeout: 5000 }).catch(() => false);
+      const isAComplete = await page.locator('text=Assessment complete').isVisible({ timeout: 1000 }).catch(() => false);
       const hasObligations = await page.locator('text=Confirmed').isVisible({ timeout: 1000 }).catch(() => false);
+      const isComplete = isQComplete || isAComplete;
       expect(
         isComplete || hasObligations,
         `Did not reach completion for role "${role.id}" in "${shortName}"`,

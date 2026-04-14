@@ -56,7 +56,10 @@ export default function App() {
           <h1 className="text-lg font-semibold tracking-tight">
             Legislation Rules Engine
           </h1>
-          {(state.step === 'questioning' || state.step === 'complete') && (
+          {(state.step === 'questioning' ||
+            state.step === 'assessment_intro' ||
+            state.step === 'assessment_questioning' ||
+            state.step === 'complete') && (
             <div className="flex items-center gap-4">
               <button
                 onClick={() => dispatch({ type: 'BACK' })}
@@ -94,7 +97,10 @@ export default function App() {
                     />
                   : <p className="text-gray-500">Loading regulation…</p>
               )}
-              {(state.step === 'questioning' || state.step === 'complete') && index && (
+              {(state.step === 'questioning' ||
+                state.step === 'assessment_intro' ||
+                state.step === 'assessment_questioning' ||
+                state.step === 'complete') && index && (
                 <Questionnaire state={state} index={index} dispatch={dispatch} />
               )}
             </>

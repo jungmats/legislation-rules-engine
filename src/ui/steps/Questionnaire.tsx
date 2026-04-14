@@ -1,12 +1,14 @@
 import type { SessionState, SessionAction } from '../../engine/session';
 import type { RegulationIndex } from '../../engine/loader';
-import { computeGatingScores } from '../../engine/scorer';
+import { computeGatingScores, measurementFactsNeeded } from '../../engine/scorer';
 import FactQuestion from '../components/FactQuestion';
 import ObligationPanel from '../panels/ObligationPanel';
 import ActionPanel from '../panels/ActionPanel';
 import WarningsPanel from '../panels/WarningsPanel';
 import PenaltiesPanel from '../panels/PenaltiesPanel';
-import { useState, FormEvent } from 'react';
+import CompliancePanel from '../panels/CompliancePanel';
+import type { ComplianceStatus } from '../../engine/threshold';
+import { useState, FormEvent, useEffect } from 'react';
 
 function FeedbackForm() {
   const [useful, setUseful] = useState<'yes' | 'no' | null>(null);
@@ -114,17 +116,47 @@ interface Props {
   dispatch: (action: SessionAction) => void;
 }
 
-const TABS = ['Obligations', 'Actions', 'Penalties', 'Warnings'] as const;
+const TABS = ['Obligations', 'Actions', 'Penalties', 'Warnings', 'Compliance'] as const;
 type Tab = typeof TABS[number];
+const TAB_LABELS: Record<Tab, string> = {
+  Obligations: 'Oblig.',
+  Actions:     'Actions',
+  Penalties:   'Fines',
+  Warnings:    'Warnings',
+  Compliance:  'Compliance',
+};
+
+function complianceBadge(status: ComplianceStatus['status']): string | null {
+  switch (status) {
+    case 'violation': return '❌';
+    case 'risk':      return '⚠️';
+    case 'compliant': return '✅';
+    default:          return null;
+  }
+}
 
 export default function Questionnaire({ state, index, dispatch }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>('Obligations');
+
+  const assessmentStarted =
+    state.step === 'assessment_questioning' ||
+    state.step === 'complete' && state.complianceResults.length > 0;
+
+  // Auto-switch to Compliance tab when assessment begins
+  useEffect(() => {
+    if (state.step === 'assessment_questioning') {
+      setActiveTab('Compliance');
+    }
+  }, [state.step]);
 
   const ruledOutCount = state.evaluatedRules.filter((r) => r.state === 'ruled_out').length;
   const scores = computeGatingScores(index.facts, index.rules, state.factMap);
   const totalRelevant = Array.from(scores.values()).filter((s) => s > 0).length + state.totalQuestionsAsked;
 
-  // Compute "why is this fact being asked" from which obligations it gates
+  // Count total measurement facts for progress indicator
+  const totalMeasurement = measurementFactsNeeded(state.confirmed, new Map(), index.facts).length;
+  const answeredMeasurement = state.measurementHistory.length;
+
   function whyAsked(factId: string): string {
     const gatedRules = index.rules.filter(
       (r) => r.conditions.some((c) => c.fact_id === factId)
@@ -134,45 +166,158 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
     return `Determines whether ${obligationCount} obligation${obligationCount !== 1 ? 's' : ''} apply (${gatedRules.map((r) => r.source_article).join(', ')}).`;
   }
 
-  return (
-    <div className="flex gap-8">
-      {/* Left: question */}
-      <div className="flex-1 min-w-0">
-        {/* Progress */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="flex-1 bg-gray-200 rounded-full h-1.5">
-            <div
-              className="bg-blue-500 h-1.5 rounded-full transition-all"
-              style={{ width: `${Math.min(100, (state.totalQuestionsAsked / Math.max(1, totalRelevant)) * 100)}%` }}
-            />
-          </div>
-          <span className="text-xs text-gray-400 shrink-0">
-            {state.totalQuestionsAsked} answered
-          </span>
-        </div>
+  function whyMeasured(factId: string): string {
+    const ob = state.confirmed.find(
+      (r) =>
+        r.obligation.measured_fact === factId ||
+        r.obligation.baseline_fact === factId ||
+        r.obligation.threshold_fact === factId,
+    );
+    if (!ob) return 'Required to evaluate compliance.';
+    return `Needed to assess: "${ob.obligation.label}"`;
+  }
 
-        {state.step === 'questioning' && state.currentQuestion ? (
+  // Compute per-obligation compliance badge for ObligationPanel
+  const complianceBadges = new Map<string, string>();
+  for (const result of state.complianceResults) {
+    const cs = result.complianceStatus as ComplianceStatus;
+    const badge = complianceBadge(cs.status);
+    if (badge) complianceBadges.set(result.obligationId, badge);
+  }
+
+  const measurableCount = state.confirmed.filter((r) => r.obligation.threshold_type).length;
+
+  return (
+    <div className="flex gap-6">
+      {/* Left: question / status */}
+      <div className="flex-1 min-w-0">
+
+        {/* ── Gating questionnaire ── */}
+        {state.step === 'questioning' && (
           <>
-            <FactQuestion
-              fact={state.currentQuestion}
-              questionNumber={state.totalQuestionsAsked + 1}
-              whyAsked={whyAsked(state.currentQuestion.id)}
-              onAnswer={(value) => dispatch({ type: 'ANSWER_FACT', factId: state.currentQuestion!.id, value })}
-              onSkip={() => dispatch({ type: 'SKIP_FACT', factId: state.currentQuestion!.id })}
-            />
-            <button
-              onClick={() => dispatch({ type: 'FINISH_EARLY' })}
-              className="mt-4 text-sm text-gray-400 hover:text-gray-600 underline"
-            >
-              Stop here and see results
-            </button>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex-1 bg-gray-200 rounded-full h-1.5">
+                <div
+                  className="bg-blue-500 h-1.5 rounded-full transition-all"
+                  style={{ width: `${Math.min(100, (state.totalQuestionsAsked / Math.max(1, totalRelevant)) * 100)}%` }}
+                />
+              </div>
+              <span className="text-xs text-gray-400 shrink-0">
+                {state.totalQuestionsAsked} answered
+              </span>
+            </div>
+
+            {state.currentQuestion ? (
+              <>
+                <FactQuestion
+                  key={state.currentQuestion.id}
+                  fact={state.currentQuestion}
+                  questionNumber={state.totalQuestionsAsked + 1}
+                  whyAsked={whyAsked(state.currentQuestion.id)}
+                  onAnswer={(value) => dispatch({ type: 'ANSWER_FACT', factId: state.currentQuestion!.id, value })}
+                  onSkip={() => dispatch({ type: 'SKIP_FACT', factId: state.currentQuestion!.id })}
+                />
+                <button
+                  onClick={() => dispatch({ type: 'FINISH_EARLY' })}
+                  className="mt-4 text-sm text-gray-400 hover:text-gray-600 underline"
+                >
+                  Stop here and see results
+                </button>
+              </>
+            ) : null}
           </>
-        ) : (
+        )}
+
+        {/* ── Assessment intro ── */}
+        {state.step === 'assessment_intro' && (
+          <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <h3 className="text-lg font-medium text-blue-700 mb-1">Your obligations are confirmed</h3>
+            <p className="text-sm text-gray-500 mb-4">
+              You have {state.confirmed.length} confirmed obligation{state.confirmed.length !== 1 ? 's' : ''}.
+              {measurableCount > 0 && (
+                <> {measurableCount} of them {measurableCount === 1 ? 'has' : 'have'} measurable targets —
+                we can check whether you are currently meeting {measurableCount === 1 ? 'it' : 'them'}.</>
+              )}
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => dispatch({ type: 'BEGIN_ASSESSMENT' })}
+                className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors"
+              >
+                Assess compliance
+              </button>
+              <button
+                onClick={() => dispatch({ type: 'SKIP_ASSESSMENT' })}
+                className="px-4 py-2 rounded-lg border border-gray-300 text-sm text-gray-600 hover:border-gray-400 transition-colors"
+              >
+                Skip — show my results
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── Assessment questioning ── */}
+        {state.step === 'assessment_questioning' && (
+          <>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex-1 bg-gray-200 rounded-full h-1.5">
+                <div
+                  className="bg-blue-500 h-1.5 rounded-full transition-all"
+                  style={{ width: `${Math.min(100, (answeredMeasurement / Math.max(1, totalMeasurement)) * 100)}%` }}
+                />
+              </div>
+              <span className="text-xs text-gray-400 shrink-0">
+                Assessing {answeredMeasurement + 1} of {totalMeasurement}
+              </span>
+            </div>
+
+            {state.currentMeasurementQuestion && (
+              <>
+                {/* Which obligation this belongs to */}
+                {(() => {
+                  const ob = state.confirmed.find(
+                    (r) =>
+                      r.obligation.measured_fact === state.currentMeasurementQuestion!.id ||
+                      r.obligation.baseline_fact === state.currentMeasurementQuestion!.id ||
+                      r.obligation.threshold_fact === state.currentMeasurementQuestion!.id,
+                  );
+                  return ob ? (
+                    <div className="mb-3 text-xs text-blue-600 font-medium uppercase tracking-wide">
+                      Assessing: {ob.obligation.label}
+                    </div>
+                  ) : null;
+                })()}
+
+                <FactQuestion
+                  key={state.currentMeasurementQuestion.id}
+                  fact={state.currentMeasurementQuestion}
+                  questionNumber={answeredMeasurement + 1}
+                  whyAsked={whyMeasured(state.currentMeasurementQuestion.id)}
+                  onAnswer={(value) => dispatch({ type: 'ANSWER_MEASUREMENT_FACT', factId: state.currentMeasurementQuestion!.id, value })}
+                  onSkip={() => dispatch({ type: 'SKIP_MEASUREMENT_FACT', factId: state.currentMeasurementQuestion!.id })}
+                />
+                <button
+                  onClick={() => dispatch({ type: 'SKIP_ASSESSMENT' })}
+                  className="mt-4 text-sm text-gray-400 hover:text-gray-600 underline"
+                >
+                  Stop, show my results
+                </button>
+              </>
+            )}
+          </>
+        )}
+
+        {/* ── Complete ── */}
+        {state.step === 'complete' && (
           <>
             <div className="bg-white rounded-lg border border-gray-200 p-6">
-              <h3 className="text-lg font-medium text-green-700 mb-1">Questionnaire complete</h3>
+              <h3 className="text-lg font-medium text-green-700 mb-1">
+                {state.complianceResults.length > 0 ? 'Assessment complete' : 'Questionnaire complete'}
+              </h3>
               <p className="text-sm text-gray-500">
-                All relevant questions have been answered. Review your obligations on the right.
+                {state.complianceResults.length > 0
+                  ? 'Review your compliance status in the Compliance tab on the right.'
+                  : 'All relevant questions have been answered. Review your obligations on the right.'}
               </p>
             </div>
             <FeedbackForm />
@@ -181,7 +326,7 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
       </div>
 
       {/* Right: live results */}
-      <div className="w-80 shrink-0">
+      <div className="w-[26rem] shrink-0">
         <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
           {/* Tabs */}
           <div className="flex border-b border-gray-100">
@@ -194,7 +339,7 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
                     ? 'text-blue-600 border-b-2 border-blue-500 bg-blue-50'
                     : 'text-gray-500 hover:text-gray-700'}`}
               >
-                {tab}
+                {TAB_LABELS[tab]}
                 {tab === 'Obligations' && state.confirmed.length > 0 && (
                   <span className="ml-1 text-green-600">({state.confirmed.length})</span>
                 )}
@@ -211,6 +356,7 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
                 ruledOutCount={ruledOutCount}
                 index={index}
                 factMap={state.factMap}
+                complianceBadges={complianceBadges}
               />
             )}
             {activeTab === 'Actions' && (
@@ -226,6 +372,15 @@ export default function Questionnaire({ state, index, dispatch }: Props) {
             )}
             {activeTab === 'Warnings' && (
               <WarningsPanel index={index} factMap={state.factMap} />
+            )}
+            {activeTab === 'Compliance' && (
+              <CompliancePanel
+                complianceResults={state.complianceResults}
+                confirmed={state.confirmed}
+                index={index}
+                factMap={state.factMap}
+                assessmentStarted={assessmentStarted}
+              />
             )}
           </div>
         </div>
